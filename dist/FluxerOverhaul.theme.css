@@ -1,0 +1,20 @@
+/**
+ * @name FluxerOverhaul
+ * @author GH0STP4WZ#0001
+ * @version 1.0.0
+ * @description An overhaul of the Fluxer UI
+ * @source https://github.com/Nexus-Themes/FluxerOverhaul
+ */
+
+@import url('https://nexus-themes.github.io/FluxerOverhaul/FluxerOverhaul.css');
+
+/* 
+	The "root" file that will be included in the dev and public files. 
+	Anything in here will be a 1-1 copy.
+
+	You do not need to @import 'main.css'; as the compiler will do that for you.
+*/
+
+:root {
+	--theme-variable: red;
+}
