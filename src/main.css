@@ -6,6 +6,6 @@
 
 	At build time, this will inline the /theme/chat.css contents directly into your main.css file.
 */
-[class="GuildsLayout.module__fluxerButton___XzI4MD"] {
-	background-color: red;
+.GuildsLayout\.module__fluxerButton___XzI4MD {
+	display: none;
 }
