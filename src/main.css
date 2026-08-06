@@ -7,5 +7,5 @@
 	At build time, this will inline the /theme/chat.css contents directly into your main.css file.
 */
 .GuildsLayout\.module__fluxerButton___XzI4MD {
-	display: none;
+	display: none!important;
 }
