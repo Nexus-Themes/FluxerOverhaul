@@ -1,4 +1,4 @@
 /* --- src/main.css --- */
-[class="GuildsLayout.module__fluxerButton___XzI4MD"] {
-  background-color: red;
+.GuildsLayout\.module__fluxerButton___XzI4MD {
+  display: none;
 }
