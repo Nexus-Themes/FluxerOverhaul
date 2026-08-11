@@ -1,27 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --global-border-radius: 12px;
-  --primary-theme-accent: #f38ba8;
-  --application-font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --primary-theme-accent: #ff0000;
+  --application-font-family: "Montserrat", "Inter", "Helvetica Neue";
 }
 
 :root {
   --primary-theme-accent-dim-1: color-mix(
     in srgb,
-    var(--primary-theme-accent) $amount,
+    var(--primary-theme-accent) 90%,
     black
   );
   --primary-theme-accent-dim-2: color-mix(
     in srgb,
-    var(--primary-theme-accent) $amount,
+    var(--primary-theme-accent) 75%,
     black
   );
   --primary-theme-accent-dim-3: color-mix(
     in srgb,
-    var(--primary-theme-accent) $amount,
+    var(--primary-theme-accent) 50%,
+    black
+  );
+  --primary-theme-accent-dim-4: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 25%,
+    black
+  );
+  --primary-theme-accent-dim-5: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 10%,
+    black
+  );
+  --primary-theme-accent-dim-6: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 5%,
     black
   );
 }
 
 :root {
   --font-sans: var(--application-font-family)!important;
+}
+
+.ChannelChatLayout\.module__textareaArea___YjY1N2 {
+  translate: 0px -20px;
+  width: 98%;
+  margin: 10px auto;
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  max-height: 600px;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .Scroller\.module__scroller___ZmI2ND {
+  background-color: var(--primary-theme-accent-dim-4);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW {
+  background-color: var(--primary-theme-accent-dim-6);
+  padding: 0;
+  margin-left: -5px;
+  margin-right: -5px;
+  translate: 2px 0;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .TextareaInput\.module__mainWrapperDense___XzJmNz {
+  padding: var(--textarea-horizontal-padding);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .TextareaInput\.module__flexColumn___XzJmNz {
+  max-height: 400px !important;
+  background-color: var(--primary-theme-accent-dim-6);
+}
+
+.ChannelChatLayout\.module__container___YjY1N2 {
+  background-color: var(--primary-theme-accent-dim-6);
+}
+.ChannelChatLayout\.module__container___YjY1N2 .ChannelMessages\.module__scrollerInner___XzlhYW {
+  margin: 0 100px;
+}
+
+.Scroller\.module__scroller___ZmI2ND {
+  background: linear-gradient(180deg, var(--primary-theme-accent-dim-5) 80%, var(--primary-theme-accent-dim-5) 95%, var(--primary-theme-accent-dim-6) 100%);
+}
+
+.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj {
+  transition: all ease 0.3s;
+  flex: none;
+}
+.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within)) {
+  width: 30px !important;
+}
+.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within)) .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
+  transition: all ease 0.3s;
+  transition: background 1.5s ease;
+  transition: border 1.5s ease;
+}
+.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within)) .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT:not(:hover, :active, :focus-within) {
+  background: transparent;
+  border: none;
+  width: 30px !important;
+  min-width: 0 !important;
+}
+.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within)) .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT:not(:hover, :active, :focus-within) input {
+  display: none;
+}
+
+.UserArea\.module__userAreaInnerWrapper___XzI2YW {
+  position: absolute;
+  bottom: 30px;
+  left: 62px;
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  margin-left: 10px;
+  width: calc(var(--layout-sidebar-width) - 7px);
+  padding: 0px;
+}
+.UserArea\.module__userAreaInnerWrapper___XzI2YW .UserArea\.module__userAreaContainer___XzI2YW {
+  padding: 5px;
+}
+
+.Scroller\.module__scroller___ZmI2ND .ChannelListContent\.module__channelGroupsContainer___ZDI5M2 {
+  margin-bottom: 40px;
+}
+
+.ChannelIndexPage\.module__memberListDivider___XzNmOW,
+.MemberListContainer\.module__memberListContainer___XzJhOT {
+  transition: all ease 0.3s !important;
+}
+
+body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .ChannelIndexPage\.module__memberListDivider___XzNmOW,
+body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .MemberListContainer\.module__memberListContainer___XzJhOT {
+  margin-right: -210px;
+}
+
+.GuildLayout\.module__guildMainContent___XzY3N2,
+.ChannelLayout\.module__channelLayoutContainer___ZDU4Mz,
+.ChannelIndexPage\.module__channelGrid___XzNmOW {
+  background-color: var(--primary-theme-accent-dim-6);
 }

@@ -12,31 +12,5 @@
 
 
 
-:root {
-  --global-border-radius: 12px;
-  --primary-theme-accent: #f38ba8;
-  --application-font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 
-:root {
-  --primary-theme-accent-dim-1: color-mix(
-    in srgb,
-    var(--primary-theme-accent) $amount,
-    black
-  );
-  --primary-theme-accent-dim-2: color-mix(
-    in srgb,
-    var(--primary-theme-accent) $amount,
-    black
-  );
-  --primary-theme-accent-dim-3: color-mix(
-    in srgb,
-    var(--primary-theme-accent) $amount,
-    black
-  );
-}
-
-:root {
-  --font-sans: var(--application-font-family)!important;
-}
 
