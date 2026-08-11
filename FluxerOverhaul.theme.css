@@ -4,17 +4,39 @@
  * @version 1.0.0
  * @description An overhaul of the Fluxer UI
  * @source https://github.com/Nexus-Themes/FluxerOverhaul
- */
-
-@import url('https://nexus-themes.github.io/FluxerOverhaul/FluxerOverhaul.css');
-
-/* 
-	The "root" file that will be included in the dev and public files. 
-	Anything in here will be a 1-1 copy.
-
-	You do not need to @import 'main.css'; as the compiler will do that for you.
+ * @tags Styling, Overhaul, UI, Theme
+ * @workswith Stable, Canary
 */
 
+
+
+
+
 :root {
-	--theme-variable: red;
+  --global-border-radius: 12px;
+  --primary-theme-accent: #f38ba8;
+  --application-font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+:root {
+  --primary-theme-accent-dim-1: color-mix(
+    in srgb,
+    var(--primary-theme-accent) $amount,
+    black
+  );
+  --primary-theme-accent-dim-2: color-mix(
+    in srgb,
+    var(--primary-theme-accent) $amount,
+    black
+  );
+  --primary-theme-accent-dim-3: color-mix(
+    in srgb,
+    var(--primary-theme-accent) $amount,
+    black
+  );
+}
+
+:root {
+  --font-sans: var(--application-font-family)!important;
+}
+
