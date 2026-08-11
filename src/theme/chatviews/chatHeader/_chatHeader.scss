@@ -1,0 +1,28 @@
+.ChannelHeader\.module__headerWrapper___XzU4Mj {
+    .ChannelHeader\.module__headerContainer___XzU4Mj {
+        background-color: var(--primary-theme-accent-dim-5);
+        .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj {
+            transition: all ease 0.3s;
+            flex: none;
+            &:not(:has(.MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within)) {
+                width: 30px!important;
+                .MessageSearchBar\.module__anchor___Y2RiYT {
+                    .MessageSearchBar\.module__inputContainer___Y2RiYT {
+                        transition: all ease 0.3s;
+                        transition: background 1.5s ease;
+                        transition: border 1.5s ease;
+                        &:not(:hover, :active, :focus-within) {
+                            background: transparent;
+                            border: none;
+                            width: 30px!important;
+                            min-width: 0!important;
+                            input {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

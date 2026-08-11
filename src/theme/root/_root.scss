@@ -2,11 +2,13 @@
 // In a later revision, it is planned to make some of these configurable with a Settings section in the main theme.css file
 // This, however, is not expected to work in the Near Future, or at least until InFlux is fully implemented.
 // While InFlux is still in early Proof of Concept, the Settings will have to wait.
+
 @use "sass:color";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
   --global-border-radius: 12px;
-  --primary-theme-accent: #f38ba8;
-  --application-font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif; // !TODO: Find a more apropriate font-family for the theme.
+  --primary-theme-accent: #ff0000;
+  --application-font-family: "Montserrat", "Inter", "Helvetica Neue"; // !TODO: Find a more apropriate font-family for the theme.
 }
 
 // Dynamically generate dimmed versions of the accent color for use in various UI elements 
@@ -35,6 +37,11 @@
   --primary-theme-accent-dim-5: color-mix(
     in srgb,
     var(--primary-theme-accent) 10%,
+    black
+  );
+  --primary-theme-accent-dim-6: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 5%,
     black
   );
 }

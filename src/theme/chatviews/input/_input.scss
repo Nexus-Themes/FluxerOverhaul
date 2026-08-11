@@ -4,7 +4,22 @@
     margin: 10px auto;
     border: 1px solid var(--primary-theme-accent-dim-2);
     border-radius: var(--global-border-radius);
+    max-height: 600px;
     .InputWrapper\.module__box___ZWM3OW {
-        background-color: var(--primary-theme-accent-dim-5);
+        .Scroller\.module__scroller___ZmI2ND  {
+            background-color: var(--primary-theme-accent-dim-4);
+        }
+        background-color: var(--primary-theme-accent-dim-6);
+        padding: 0;
+        margin-left: -5px;
+        margin-right: -5px;
+        translate: 2px 0;
+        .TextareaInput\.module__mainWrapperDense___XzJmNz{
+            padding:  var(--textarea-horizontal-padding);
+        }
+        .TextareaInput\.module__flexColumn___XzJmNz {
+            max-height: 400px!important;
+            background-color: var(--primary-theme-accent-dim-6);
+        }
     }
 }

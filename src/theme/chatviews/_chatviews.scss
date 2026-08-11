@@ -1,1 +1,12 @@
 @use "./input/input";
+@use "./chatContent/chatContent";
+@use "./chatHeader/chatHeader";
+@use "./userArea/userArea";
+@use "./membersList/membersList";
+
+
+.GuildLayout\.module__guildMainContent___XzY3N2,
+.ChannelLayout\.module__channelLayoutContainer___ZDU4Mz,
+.ChannelIndexPage\.module__channelGrid___XzNmOW {
+    background-color: var(--primary-theme-accent-dim-6);
+}
