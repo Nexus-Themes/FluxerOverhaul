@@ -1,0 +1,27 @@
+// This file houses the Root Variables for the theme.
+// In a later revision, it is planned to make some of these configurable with a Settings section in the main theme.css file
+// This, however, is not expected to work in the Near Future, or at least until InFlux is fully implemented.
+// While InFlux is still in early Proof of Concept, the Settings will have to wait.
+@use "sass:color";
+:root {
+  --global-border-radius: 12px;
+  --primary-theme-accent: #f38ba8;
+  --application-font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif; // !TODO: Find a more apropriate font-family for the theme.
+}
+
+// Dynamically generate dimmed versions of the accent color for use in various UI elements 
+$dim-levels: (
+  1: 90%,
+  2: 75%,
+  3: 60%
+);
+
+:root {
+  @each $level, $amount in $dim-levels {
+    --primary-theme-accent-dim-#{$level}: color-mix(
+      in srgb,
+      var(--primary-theme-accent) $amount,
+      black
+    );
+  }
+}
