@@ -1,3 +1,3 @@
 # FluxerOverhaul
 
-An overhaul of the Fluxer UI
+A Work in Progress overhaul of the Fluxer UI
