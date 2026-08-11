@@ -2,7 +2,7 @@
 export default {
 	meta: {
 		name: 'FluxerOverhaul',
-		author: 'Nexus-Themes',
+		author: 'GH0STP4WZ#0001',
 		version: '1.0.0',
 		description: 'An overhaul of the Fluxer UI',
 		source: 'https://github.com/Nexus-Themes/FluxerOverhaul'
