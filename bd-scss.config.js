@@ -6,6 +6,7 @@ export default {
 		version: '1.0.0',
 		description: 'An overhaul of the Fluxer UI',
 		source: 'https://github.com/Nexus-Themes/FluxerOverhaul',
-		tags: ['Fluxer', 'Overhaul', 'UI', 'Theme']
+		tags: ['Styling', ' Overhaul', ' UI', ' Theme'],
+		workswith: ['Stable', ' Canary']
 	}
 };
