@@ -10,18 +10,31 @@
 }
 
 // Dynamically generate dimmed versions of the accent color for use in various UI elements 
-$dim-levels: (
-  1: 90%,
-  2: 75%,
-  3: 60%
-);
-
+// !TODO: Why the fuck does this not work
 :root {
-  @each $level, $amount in $dim-levels {
-    --primary-theme-accent-dim-#{$level}: color-mix(
-      in srgb,
-      var(--primary-theme-accent) $amount,
-      black
-    );
-  }
+  --primary-theme-accent-dim-1: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 90%,
+    black
+  );
+  --primary-theme-accent-dim-2: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 75%,
+    black
+  );
+  --primary-theme-accent-dim-3: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 50%,
+    black
+  );
+  --primary-theme-accent-dim-4: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 25%,
+    black
+  );
+  --primary-theme-accent-dim-5: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 10%,
+    black
+  );
 }
