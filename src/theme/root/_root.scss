@@ -4,16 +4,50 @@
 // While InFlux is still in early Proof of Concept, the Settings will have to wait.
 
 @use "sass:color";
+/* General font import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-:root {
-  --global-border-radius: 12px;
+/* Code font import */
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+// Theme Settings — Early impl.
+body {
+  /**
+   * Fluxer Overhaul is a massive overhaul of the visual appearance of the Fluxer Client.
+   * Some of its features are quite drastic, and may not be to everyone's taste.
+   * For this reason, Presented below is a configurator for some of the more dramatic changes,
+   * allowing you, the user, to pick and choose which features you don't and do want to use.
+   * If you're an InFlux user, Chances are you will have access to a graphical configurator for these settings.
+   * You may still need to manually open the Theme.css file to import a custom font, though.
+  */
+  /* Primary Theme Accent Color — Default: #ff0000; valid values: any valid CSS color */
+  /* This color is used throughout the theme for various UI elements. */
   --primary-theme-accent: #ff0000;
-  --application-font-family: "Montserrat", "Inter", "Helvetica Neue"; // !TODO: Find a more apropriate font-family for the theme.
+
+  /* Global Border Radius — Default: 12px; valid values: any valid CSS length */
+  /* This value is used to round the corners of various UI elements. */
+  --global-border-radius: 12px;
+
+
+  /* General Font — Default: "Montserrat"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for most of the entire application, such as messages and menu text.
+  To use remote fonts from repositories such as Google Fonts, you need to import them at the top of this file. */
+  --general-font: "Montserrat";
+
+  /* Code Font — Default: "Kode Mono"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for code blocks and inline code. */
+  --code-font: "Kode Mono";
+
+  /* Use Message Bubbles — Default: off; valid values: on, off */
+  /* Wraps messages in a bubble-like container, similar to other messaging apps like Signal or Telegram. */
+  --use-bubbles: off;
+
+  /* Replace Search Bar — Default: off; valid values: on, off */
+  /* Replaces the default search bar with an icon that optimizes space. Will expand on hover or focus. */
+  --replace-search-bar: off;
 }
 
 // Dynamically generate dimmed versions of the accent color for use in various UI elements 
-// !TODO: Why the fuck does this not work
-:root {
+body {
   --primary-theme-accent-dim-1: color-mix(
     in srgb,
     var(--primary-theme-accent) 90%,
@@ -44,4 +78,10 @@
     var(--primary-theme-accent) 5%,
     black
   );
+  font-family: var(--general-font)!important;
+  .Markup\.module__markup___XzQ5ZD pre,
+  .Markup\.module__inline___XzQ5ZD,
+  code {
+    font-family: var(--code-font)!important;
+  }
 }
