@@ -1,11 +1,58 @@
+/**
+ *                        ▄▄                                            ▄▄            
+ *                 ▄▄▄▄▄███   ▄▄         ▄▄   ▄     ▄▄▄   ▄▄▄    ▄▄▄▄▄███ ▄▄▄▄▄▄▄▄   
+ *               ▄█▓▓▀▀▀███ ▄█▓█       ▄█▓█   █▄▄  ██▓█   ████ ▄█▓▓▀▀▀███ ██▓▓▀█▓█▄▄ 
+ *               █▓▒█ ▄▄ ▀▀ █▓▒█       █▓▒█   ██▄▄ ▀▓▒▄▄ ▄▓▒▀▀ █▓▒█ ▄▄ ▀▀ █▓▒█   ▓▒█ 
+ *               ▓▒░▒▓██    ▓▒░█       ▓▒░█   ▒▓▓█  ▄░░▒▓▓█▌▌  ▓▒░▒▓██    ▓▒▓▒▒▒▓██  
+ *               ▒░██ ▀▀    ▒░██       ▒░██   ▒▒██ ▒░█▀▀ ▀▓▒▌▌ ▒░██ ▀▀    ▒░██  ▀▓▒▄▄
+ *               ░███       ░██▀▄      ░░█▀▄▄▓▒▓▌▌ ░███   ▒▒▌▌ ░██▀▄  ▄░█ ░███   ░░▌▌
+ *               ▀███        ▀██████▄▀ ▀░░███░▒▀▀   ▀██   ░▒██  ▀████████ ████   █░█ 
+ *                 ▀                                                  ▀██            
+ *                                ▄▄                                                           
+ *  ▄▄▄▄▄▄      ▄▄  ▄▄      ▄▄▄▄▄███ ▄▄▄▄▄▄▄▄     ▄▄▄   ▄▄▄    ▄▄▄▄▄▄      ▄▄   ▄      ▄▄      
+ *▄█▓▓▀▀▓█▄▄  ▄█▓█  ▓█▄▄  ▄█▓▓▀▀▀███ ██▓▓▀█▓█▄▄  ██▓█   ████ ▄█▓▓▀▀▓█▄▄  ▄█▓█   █▄▄  ▄█▓█      
+ *█▓▒█   ░▒▄▄ █▓▒█   ░▒▄▄ █▓▒█ ▄▄ ▀▀ █▓▒█   ▓▒█  █▓▒█   ▓▒██ █▓▒█   ▓▒▄▄ █▓▒█   ██▄▄ █▓▒█      
+ *▓▒▌▌   ░░▓█ ▓▒░█   ░░▓█ ▓▒░▒▓██    ▓▒▓▒▒▒▓██   ▓▒░░▒▓▓██▓█ ▓▒░░▒▓▓██▓█ ▓▒░█   ▒▓▓█ ▓▒░█      
+ *▒░██   ▓▒▓█ ▒░██   ▓▒▓█ ▒░██ ▀▀    ▒░██  ▀▓▒▄▄ ▒░██   ▓▒▓█ ▒░██   ▓▒▓█ ▒░██   ▒▒██ ▒░██      
+ *░██▀▄▄▄░░█  ░██▀▄▄▀░░█  ░██▀▄  ▄░█ ░███   ░░▌▌ ░███   ▒▒▌▌ ░███  ▐▒▒█  ░░█▀▄▄▓▒▓▌▌ ░██▀▄     
+ * ▀█████▄▀    ▀█████▄▀    ▀████████ ████   █░█   ▀██   ░▒█   ▀██  █░▒█  ▀░░███░▒▀▀   ▀██████▄▀
+ *                               ▀██                                                           
+**/
+/* General font import */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-:root {
-  --global-border-radius: 12px;
+/* Code font import */
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+body {
+  /**
+   * Fluxer Overhaul is a massive overhaul of the visual appearance of the Fluxer Client.
+   * Some of its features are quite drastic, and may not be to everyone's taste.
+   * For this reason, Presented below is a configurator for some of the more dramatic changes,
+   * allowing you, the user, to pick and choose which features you don't and do want to use.
+   * If you're an InFlux user, Chances are you will have access to a graphical configurator for these settings.
+   * You may still need to manually open the Theme.css file to import a custom font, though.
+  */
+  /* Primary Theme Accent Color — Default: #ff0000; valid values: any valid CSS color */
+  /* This color is used throughout the theme for various UI elements. */
   --primary-theme-accent: #ff0000;
-  --application-font-family: "Montserrat", "Inter", "Helvetica Neue";
+  /* Global Border Radius — Default: 12px; valid values: any valid CSS length */
+  /* This value is used to round the corners of various UI elements. */
+  --global-border-radius: 12px;
+  /* General Font — Default: "Montserrat"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for most of the entire application, such as messages and menu text.
+  To use remote fonts from repositories such as Google Fonts, you need to import them at the top of this file. */
+  --general-font: "Montserrat";
+  /* Code Font — Default: "Kode Mono"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for code blocks and inline code. */
+  --code-font: "Kode Mono";
+  /* Use Message Bubbles — Default: off; valid values: on, off */
+  /* Wraps messages in a bubble-like container, similar to other messaging apps like Signal or Telegram. */
+  --use-bubbles: off;
+  /* Replace Search Bar — Default: off; valid values: on, off */
+  /* Replaces the default search bar with an icon that optimizes space. Will expand on hover or focus. */
+  --replace-search-bar: off;
 }
 
-:root {
+body {
   --primary-theme-accent-dim-1: color-mix(
     in srgb,
     var(--primary-theme-accent) 90%,
@@ -36,10 +83,12 @@
     var(--primary-theme-accent) 5%,
     black
   );
+  font-family: var(--general-font) !important;
 }
-
-:root {
-  --font-sans: var(--application-font-family)!important;
+body .Markup\.module__markup___XzQ5ZD pre,
+body .Markup\.module__inline___XzQ5ZD,
+body code {
+  font-family: var(--code-font) !important;
 }
 
 .ChannelChatLayout\.module__textareaArea___YjY1N2 {
@@ -72,38 +121,86 @@
   background-color: var(--primary-theme-accent-dim-6);
 }
 .ChannelChatLayout\.module__container___YjY1N2 .ChannelMessages\.module__scrollerInner___XzlhYW {
-  margin: 0 100px;
+  margin: 0 50px;
 }
 
 .Scroller\.module__scroller___ZmI2ND {
   background: linear-gradient(180deg, var(--primary-theme-accent-dim-5) 80%, var(--primary-theme-accent-dim-5) 95%, var(--primary-theme-accent-dim-6) 100%);
 }
 
+@property --replace-search-bar {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
 .ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj {
   background-color: var(--primary-theme-accent-dim-5);
 }
-.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj {
-  transition: all ease 0.3s;
-  flex: none;
-}
-.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within)) {
-  width: 30px !important;
-}
-.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within)) .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
-  transition: all ease 0.3s;
-  transition: background 1.5s ease;
-  transition: border 1.5s ease;
-}
-.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within)) .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT:not(:hover, :active, :focus-within) {
-  background: transparent;
-  border: none;
-  width: 30px !important;
-  min-width: 0 !important;
-}
-.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within)) .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT:not(:hover, :active, :focus-within) input {
-  display: none;
-}
 
+@container body style(--replace-search-bar: on) {
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj {
+    transition: all ease 0.3s !important;
+    justify-content: flex-end !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT {
+    transition: all ease 0.3s !important;
+    justify-content: flex-start !important;
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent);
+    border-radius: var(--global-border-radius);
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__scopeButton___Y2RiYT {
+    transition: all ease 0.3s !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__scopeButton___Y2RiYT .MessageSearchBar\.module__scopeBadge___Y2RiYT {
+    transition: all ease 0.3s !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    transition: all ease 0.3s !important;
+    background: none;
+    border: transparent;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__input___Y2RiYT {
+    transition: all ease 0.3s !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) {
+    width: 30px !important;
+    min-width: 25px !important;
+    flex: 0 0 25px !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__scopeButton___Y2RiYT {
+    scale: 1.3;
+    translate: -2px 0;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__scopeButton___Y2RiYT .MessageSearchBar\.module__scopeBadge___Y2RiYT {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__input___Y2RiYT {
+    min-width: 0px !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__anchor___Y2RiYT {
+    width: 30px !important;
+    min-width: 30px !important;
+    flex: 0 0 30px !important;
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    flex: 0 0 30px !important;
+    width: 30px !important;
+    min-width: 30px !important;
+  }
+}
+@container body style(--replace-search-bar: off) {
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent);
+    border-radius: var(--global-border-radius);
+  }
+}
 .UserArea\.module__userAreaInnerWrapper___XzI2YW {
   position: absolute;
   bottom: 30px;
@@ -133,8 +230,88 @@ body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover))
   margin-right: -210px;
 }
 
+@property --use-bubbles {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: off;
+}
+@container body style(--use-bubbles: on) {
+  [data-flx="channel.message-group.group"] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    width: 100% !important;
+    max-width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 0px 12px 12px 12px;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__message___YzRhZj {
+    grid-template-areas: "gutter-left avatar gutter-right reply" ". . . content" ". . . container";
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"] {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+  }
+  [data-flx="channel.message-group.group"]:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-bottom: 25px;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+    justify-self: left;
+    top: 75px;
+    left: 5px;
+    display: grid;
+    flex-direction: row;
+    height: 25px !important;
+    background: var(--primary-theme-accent-dim-4);
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj::before {
+    display: none;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedTextPreview___YzRhZj {
+    grid-area: 2/1/3/3;
+    flex: none;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedUsername___YzRhZj {
+    grid-area: 1/2/2/4;
+    max-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedAvatar___YzRhZj {
+    grid-area: 1/1/2/2;
+    max-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:has([data-flx-author-self=true]) {
+    margin-left: auto !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] {
+    direction: rtl;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+    border-radius: 12px 0px 12px 12px;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__repliedMessage___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .TextualAttachmentPreview\.module__textualPreview___YjI0OG {
+    direction: ltr !important;
+  }
+}
 .GuildLayout\.module__guildMainContent___XzY3N2,
 .ChannelLayout\.module__channelLayoutContainer___ZDU4Mz,
 .ChannelIndexPage\.module__channelGrid___XzNmOW {
   background-color: var(--primary-theme-accent-dim-6);
+}
+
+body {
+  container-name: body;
 }
