@@ -1,4 +1,21 @@
+.TextareaInput\.module__textareaOuterRow___XzJmNz {
+    min-height: 0;
+    &:before {
+        display: none;
+    }
+}
+
+.InputWrapper\.module__statusRail___ZWM3OW {
+    bottom: -30px;
+}
+
+
 .ChannelChatLayout\.module__textareaArea___YjY1N2 {
+    .TextareaInput\.module__mainWrapperDense___XzJmNz {
+        min-height: 35px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }    
     translate: 0px -20px;
     width: 98%;
     margin: 10px auto;
@@ -6,6 +23,7 @@
     border-radius: var(--global-border-radius);
     max-height: 600px;
     .InputWrapper\.module__box___ZWM3OW {
+        background-color: transparent!important;
         .Scroller\.module__scroller___ZmI2ND  {
             background-color: var(--primary-theme-accent-dim-4);
         }
@@ -14,12 +32,21 @@
         margin-left: -5px;
         margin-right: -5px;
         translate: 2px 0;
-        .TextareaInput\.module__mainWrapperDense___XzJmNz{
-            padding:  var(--textarea-horizontal-padding);
-        }
-        .TextareaInput\.module__flexColumn___XzJmNz {
-            max-height: 400px!important;
-            background-color: var(--primary-theme-accent-dim-6);
+        .InputWrapper\.module__stackSection___ZWM3OW {
+            padding-left: 10px;
+            padding-right: 10px;
+            max-height: 500px!important;
+            .TextareaInput\.module__mainWrapperDense___XzJmNz{
+                padding:  var(--textarea-horizontal-padding);
+            }
+            .TextareaInput\.module__flexColumn___XzJmNz {
+                max-height: 500px!important;
+                background-color: var(--primary-theme-accent-dim-6);
+            }
+            .LexicalMessageComposer\.module__paragraph___ZjY5OG {
+                max-height: 450px!important;
+                overflow-y: auto;
+            }
         }
     }
 }
