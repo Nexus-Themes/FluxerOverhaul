@@ -50,3 +50,57 @@
         }
     }
 }
+
+
+// Reply stuff
+.InputWrapper\.module__composerActionStack___ZWM3OW {
+    margin-top: -10px!important;
+    margin-right: -4px!important;
+    margin-left: 2px!important;
+    background-color: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-2);
+    border-bottom-color: transparent;
+}
+
+
+
+
+// Discord Mana style Send Button behavior
+// .TextareaInput\.module__buttonContainerDense___XzJmNz {
+//     transition: all 0.2s ease-in-out;
+//     transition-property: opacity, margin-right;
+//     .TextareaButton\.module__button___XzgyZD {
+//         transition: all 0.1s ease-in-out;
+//         transition-property: opacity, margin-right;
+//         &:disabled {
+//             opacity: 0;
+//             // margin-right: -55px;
+//             max-width: 0!important;
+//             width: 0!important;
+//         }
+//     }
+//     &:has(.TextareaButton\.module__button___XzgyZD:last-child:disabled) {
+//         margin-right: -55px;
+
+//     }
+// }
+
+
+
+.TextareaInput\.module__buttonContainerDense___XzJmNz {
+    transition: all 0.2s ease-in-out;
+    margin-right: 35px;
+    transition-property: opacity, margin-right;
+    .TextareaButton\.module__button___XzgyZD:last-child {
+        transition: all 0.2s ease-in-out;
+        position: absolute;
+        right: 0;
+        &:disabled {
+            opacity: 0;
+            right: -25px;
+        }
+    }
+    &:has(.TextareaButton\.module__button___XzgyZD:last-child:disabled) {
+        margin-right: -15px;
+    }
+}
