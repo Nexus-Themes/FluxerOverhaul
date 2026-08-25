@@ -13,15 +13,17 @@
 .ChannelChatLayout\.module__textareaArea___YjY1N2 {
     .TextareaInput\.module__mainWrapperDense___XzJmNz {
         min-height: 35px;
-        margin-top: 5px;
+        margin-top: 0.8rem;
         margin-bottom: 5px;
+        // padding-top: 0.5rem;
     }    
-    translate: 0px -20px;
+    translate: 0px -1.4rem;
     width: 98%;
     margin: 10px auto;
     border: 1px solid var(--primary-theme-accent-dim-2);
     border-radius: var(--global-border-radius);
-    max-height: 600px;
+    max-height: 40rem;
+    min-height: 3.7rem;
     background-color: var(--primary-theme-accent-dim-4);
     .InputWrapper\.module__box___ZWM3OW {
         background-color: transparent!important;
