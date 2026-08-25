@@ -22,29 +22,30 @@
     border: 1px solid var(--primary-theme-accent-dim-2);
     border-radius: var(--global-border-radius);
     max-height: 600px;
+    background-color: var(--primary-theme-accent-dim-4);
     .InputWrapper\.module__box___ZWM3OW {
         background-color: transparent!important;
-        .Scroller\.module__scroller___ZmI2ND  {
-            background-color: var(--primary-theme-accent-dim-4);
-        }
-        background-color: var(--primary-theme-accent-dim-6);
         padding: 0;
         margin-left: -5px;
         margin-right: -5px;
         translate: 2px 0;
+
         .InputWrapper\.module__stackSection___ZWM3OW {
             padding-left: 10px;
             padding-right: 10px;
-            max-height: 500px!important;
+            max-height: 35rem!important;
+            .Scroller\.module__scrollerChildren___ZmI2ND {
+                overflow-y: scroll;
+            }
             .TextareaInput\.module__mainWrapperDense___XzJmNz{
                 padding:  var(--textarea-horizontal-padding);
             }
             .TextareaInput\.module__flexColumn___XzJmNz {
-                max-height: 500px!important;
+                max-height: 35rem!important;
                 background-color: var(--primary-theme-accent-dim-6);
             }
             .LexicalMessageComposer\.module__paragraph___ZjY5OG {
-                max-height: 450px!important;
+                max-height: 20rem!important;
                 overflow-y: auto;
             }
         }
@@ -61,31 +62,6 @@
     border: 1px solid var(--primary-theme-accent-dim-2);
     border-bottom-color: transparent;
 }
-
-
-
-
-// Discord Mana style Send Button behavior
-// .TextareaInput\.module__buttonContainerDense___XzJmNz {
-//     transition: all 0.2s ease-in-out;
-//     transition-property: opacity, margin-right;
-//     .TextareaButton\.module__button___XzgyZD {
-//         transition: all 0.1s ease-in-out;
-//         transition-property: opacity, margin-right;
-//         &:disabled {
-//             opacity: 0;
-//             // margin-right: -55px;
-//             max-width: 0!important;
-//             width: 0!important;
-//         }
-//     }
-//     &:has(.TextareaButton\.module__button___XzgyZD:last-child:disabled) {
-//         margin-right: -55px;
-
-//     }
-// }
-
-
 
 .TextareaInput\.module__buttonContainerDense___XzJmNz {
     transition: all 0.2s ease-in-out;
