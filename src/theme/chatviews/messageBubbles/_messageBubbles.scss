@@ -8,13 +8,13 @@
 @container body style(--use-bubbles: on) {
     [data-flx="channel.message-group.group"] {
         .Message\.module__messageContent___YzRhZj,
-        .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+        .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
+        .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
             background: var(--primary-theme-accent-dim-6);
             border: 1px solid var(--primary-theme-accent-dim-3);
             width: 100%!important;
             max-width: 100%;
             padding: 5px;
-            margin: 5px 0;
             border-radius: 0px 12px 12px 12px;
         }
         .Message\.module__message___YzRhZj {
@@ -27,11 +27,106 @@
                 '. . . content'
                 '. . . container'
             ;
+            padding-right: 0!important;
         }
         [data-flx*="channel.message-group.rendered-messages.div"] {
             // background: red;
             width: fit-content;
             max-width: 100%;
+            .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+                width: fit-content!important;
+                max-width: 100%;
+            }
+            &:not([data-is-group-start="true"]):has(.AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj, .Attachment\.module__attachmentWrapper___YTIxYT) {
+                .Message\.module__messageContent___YzRhZj {
+                    width: fit-content!important;
+                }
+            }
+            &:is([data-is-group-start="true"]):not(:has([data-flx-reply="true"])) {
+                .Message\.module__messageContent___YzRhZj {
+                    width: fit-content!important;
+                }
+            }
+        }
+        .Message\.module__messageNoText___YzRhZj {
+            // Edge Case: Message has no text.
+            .Message\.module__container___YzRhZj {
+                margin-top: -2rem;
+                .Message\.module__messageAuthorInfo___YzRhZj {
+                    margin-right: auto!important;
+                }
+                // Lets not put another bubble inside this buble.
+                .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+                    background: none;
+                    border: none;
+                }
+            }
+            &:has(.Message\.module__repliedMessage___YzRhZj) {
+                .Message\.module__messageAuthorInfo___YzRhZj {
+                    margin-bottom: 2.5rem;
+                }
+                .Message\.module__repliedMessage___YzRhZj {
+                    z-index:1;
+                    // top: 0!important;
+                }
+            }
+        }
+        :not([data-is-group-start="true"]) .Message\.module__messageNoText___YzRhZj {
+            .Message\.module__container___YzRhZj {
+                margin-top: 0!important;
+            }
+        }
+        .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+            .AttachmentLayoutGrid\.module__twoImageGrid___XzliZD {
+            // Edge Case: Two images in a message. Preview becomes tiny and unreadable.
+                grid-template-columns: repeat(2, 15rem)!important;
+            }
+            .AttachmentLayoutGrid\.module__threeImageGrid___XzliZD {
+                // Edge Case: Three images in a message. Preview becomes tiny and unreadable.
+                grid-template-rows: auto auto;
+                grid-template-columns: 15rem 7.5rem;
+            }
+            .AttachmentLayoutGrid\.module__fourImageGrid___XzliZD {
+                // Edge Case: Four images in a message. Preview becomes tiny and unreadable.
+                grid-template-rows: auto auto;
+                grid-template-columns: 11.5rem 11.5rem;
+            }
+            .AttachmentLayoutGrid\.module__fiveImageGrid___XzliZD {
+                // Edge Case: Five images in a message. Preview becomes tiny and unreadable.
+                grid-template-rows: auto auto;
+                grid-template-columns: repeat(6, 3.7rem);
+            }
+            .AttachmentLayoutGrid\.module__sixImageGrid___XzliZD {
+                // Edge Case: Six images in a message. Preview becomes tiny and unreadable.
+                grid-template-rows: auto auto;
+                grid-template-columns: repeat(3, 7.5rem);
+            }
+            .AttachmentLayoutGrid\.module__sevenImageContainer___XzliZD {
+                // Edge Case: Seven images in a message. Preview becomes tiny and unreadable.
+                .AttachmentLayoutGrid\.module__sevenGrid___XzliZD {
+                    grid-template-rows: repeat(2, 7.5rem);
+                    grid-template-columns: repeat(3, 7.5rem);
+                }
+            }
+            .AttachmentLayoutGrid\.module__eightImageContainer___XzliZD {
+                // Edge Case: Eight images in a message. Preview becomes tiny and unreadable.
+                .AttachmentLayoutGrid\.module__eightBottomGrid___XzliZD {
+                    grid-template-rows: repeat(2, 7.5rem);
+                    grid-template-columns: repeat(3, 7.5rem);
+                }
+            }
+            .AttachmentLayoutGrid\.module__nineImageGrid___XzliZD {
+                // Edge Case: Nine images in a message. Preview becomes tiny and unreadable.
+                grid-template-rows: repeat(3, 7.5rem);
+                grid-template-columns: repeat(3, 7.5rem);
+            }
+            .AttachmentLayoutGrid\.module__tenImageContainer___XzliZD {
+                // Edge Case: Ten images in a message. Preview becomes tiny and unreadable.
+                .AttachmentLayoutGrid\.module__tenGrid___XzliZD {
+                    grid-template-rows: repeat(3, 7.5rem);
+                    grid-template-columns: repeat(3, 7.5rem);
+                }
+            }
         }
         &:has(.Message\.module__repliedMessage___YzRhZj) {
             .Message\.module__messageAuthorInfo___YzRhZj {
@@ -39,7 +134,7 @@
             }
         }
         [data-is-group-start="true"] .Message\.module__messageContent___YzRhZj {
-            margin-top: -45px;
+            margin-top: -2rem;
         }
         [data-is-group-start="true"] .Message\.module__messageAvatar___YzRhZj {
             translate: 0 -25px;
@@ -49,10 +144,10 @@
             width: fit-content;
             max-width: 100%;
             justify-self: left;
-            top: 25px;
+            top: 2.5rem;
             left: 5px;
             display:grid;
-            height: 40px!important;
+            height: 2.3rem!important;
             padding: 5px;
             border-left: 1px solid var(--message-mention-color);
             border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
@@ -85,12 +180,14 @@
         }
         [data-flx*="channel.message-group.rendered-messages.div"]:has([data-flx-author-self="true"]) {
             margin-left: auto!important;
+            padding-right: 0!important;
         }
         [data-flx-author-self="true"] {
             direction: rtl;
             .Message\.module__messageContent___YzRhZj,
-            .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
-                border-radius: 12px 0px 12px 12px;
+            .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
+            .Message\.module__container___YzRhZj {
+                border-radius: 12px 0px 12px 12px!important;
             }
             .Message\.module__messageContent___YzRhZj,
             .Message\.module__repliedMessage___YzRhZj,
