@@ -44,6 +44,10 @@ body {
   /* Replace Search Bar — Default: off; valid values: on, off */
   /* Replaces the default search bar with an icon that optimizes space. Will expand on hover or focus. */
   --replace-search-bar: off;
+
+  /* Compact Members List — Default: on; valid values: on, off */
+  /* Collapses the members list, and expands it on hover, allowing for more space for messages. */
+  --compact-members-list: on;
 }
 
 // Dynamically generate dimmed versions of the accent color for use in various UI elements 
