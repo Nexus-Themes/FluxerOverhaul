@@ -337,8 +337,19 @@ body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover))
   [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__repliedMessage___YzRhZj {
     z-index: 1;
   }
+  [data-flx="channel.message-group.group"] .Message\.module__message___YzRhZj:has(.Message\.module__container___YzRhZj .MessageReactions\.module__reactionsGrid___XzhhMD) {
+    padding-bottom: 2.7rem;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__message___YzRhZj:has(.Message\.module__container___YzRhZj .MessageReactions\.module__reactionsGrid___XzhhMD) .MessageReactions\.module__reactionsGrid___XzhhMD {
+    position: absolute;
+    bottom: 0.3rem;
+  }
   [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
     margin-top: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) div .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
   }
   [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__twoImageGrid___XzliZD {
     grid-template-columns: repeat(2, 15rem) !important;
@@ -435,8 +446,18 @@ body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover))
   }
   [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
   [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__repliedMessage___YzRhZj,
-  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .TextualAttachmentPreview\.module__textualPreview___YjI0OG {
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .TextualAttachmentPreview\.module__textualPreview___YjI0OG,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageAttachments\.module__forwardedContainer___XzZiOT {
     direction: ltr !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT {
+    direction: ltr !important;
+    rotate: 180deg;
+    right: unset !important;
+    left: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT .MessageActionBar\.module__actionBar___YTE3ZT {
+    rotate: 180deg;
   }
 }
 .Message\.module__messageTimestampHover___YzRhZj.Message\.module__messageTimestampHover___YzRhZj {
