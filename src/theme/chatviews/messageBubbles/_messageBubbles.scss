@@ -210,6 +210,15 @@
             .MessageAttachments\.module__forwardedContainer___XzZiOT {
                 direction: ltr!important;
             }
+            .MessageActionBar\.module__actionBarContainer___YTE3ZT {
+                direction: ltr!important;
+                rotate: 180deg;
+                right: unset!important;
+                left: 0!important;
+                .MessageActionBar\.module__actionBar___YTE3ZT {
+                    rotate: 180deg;
+                }
+            }
         }
     }
 }
