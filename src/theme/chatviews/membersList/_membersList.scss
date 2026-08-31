@@ -1,1 +1,14 @@
 @use "./compactMembersList";
+
+
+
+// Members List Tweaks
+.MemberListContainer\.module__memberListContainer___XzJhOT {
+    .ChannelMembers\.module__virtualListContent___Xzc5ZG {
+        .MemberListItem\.module__button___XzM2MT {
+            background-color: var(--primary-theme-accent-dim-6);
+            border-radius: var(--global-border-radius);
+            border: 1px solid var(--primary-theme-accent-dim-2);
+        }
+    }
+}
