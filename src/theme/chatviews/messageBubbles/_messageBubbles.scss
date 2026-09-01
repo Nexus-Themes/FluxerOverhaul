@@ -72,17 +72,7 @@
             }
         }
         // Edge Case: Media messages with reactions will have reactions embedded in the bubble.
-        .Message\.module__message___YzRhZj {
-            &:has(.Message\.module__container___YzRhZj .MessageReactions\.module__reactionsGrid___XzhhMD) {
-                // background: red;
-                padding-bottom: 2.7rem;
-                .MessageReactions\.module__reactionsGrid___XzhhMD {
-                    position: absolute;
-                    bottom: -2rem;
-                    // left: 0;
-                }
-            }
-        }
+
         :not([data-is-group-start="true"]) .Message\.module__messageNoText___YzRhZj {
             .Message\.module__container___YzRhZj {
                 margin-top: 0!important;
