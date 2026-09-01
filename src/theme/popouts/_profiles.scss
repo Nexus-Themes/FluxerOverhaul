@@ -1,0 +1,231 @@
+@property --overhauled-profiles {
+    syntax: 'off | on';
+    inherits: false;
+    initial-value: on;
+}
+@container body style(--overhauled-profiles: on) {
+    .ProfileCardLayout\.module__profileCard___YWFiZW,
+    .UserProfileModal\.module__modalContainer___ZDg5Y2 {
+        background: var(--primary-theme-accent-dim-6);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+        .Tabs\.module__container___YzdlOD {
+            background: var(--primary-theme-accent-dim-5);
+            border: 1px solid var(--primary-theme-accent-dim-3);
+            border-radius: var(--global-border-radius);
+            display: flex;
+            justify-content: center;
+            width: fit-content;
+            margin: 0 auto;
+            .Tabs\.module__tab___YzdlOD {
+                background: var(--primary-theme-accent-dim-5);
+                color: var(--text-normal);
+                box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
+                border: 1px solid var(--primary-theme-accent-dim-3);
+                border-radius: var(--global-border-radius);
+                transition: all ease 0.3s!important;
+                &:hover {
+                    background: var(--primary-theme-accent-dim-4);
+                    color: var(--primary-theme-accent);
+                    box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
+                    border: 1px solid var(--primary-theme-accent-dim-2);
+                    border-radius: var(--global-border-radius);
+                }
+            }
+            .Tabs\.module__tab___YzdlOD.Tabs\.module__selected___YzdlOD {
+                background: var(--primary-theme-accent-dim-4);
+                color: var(--primary-theme-accent);
+                border: 1px solid var(--primary-theme-accent-dim-3);
+                border-radius: var(--global-border-radius);
+            }
+        }
+        .Scroller\.module__scrollerChildren___ZmI2ND {
+            background: var(--primary-theme-accent-dim-6);
+            // margin-top: -0.5rem;
+        }
+        .UserProfileModal\.module__profileContent___ZDg5Y2,
+        .ProfileCardContent\.module__contentSection___YzQ5YT {
+            // margin-top: 0.5rem;
+            background: var(--primary-theme-accent-dim-6);
+            border-radius: var(--global-border-radius);
+            // .UserProfilePopout\.module__profileCustomStatus___XzM0Zj {
+            //     background: var(--primary-theme-accent-dim-5);
+            //     border: 1px solid var(--primary-theme-accent-dim-3);
+            //     border-radius: var(--global-border-radius);
+            // }
+            .UserProfileShared\.module__bioContainer___ZTgyMG,
+            .UserProfileShared\.module__bioContainer___ZTgyMG {
+                background: var(--primary-theme-accent-dim-5);
+                border: 1px solid var(--primary-theme-accent-dim-3);
+                border-radius: var(--global-border-radius);
+            }
+        }
+    }
+    /* ---------------------------------------------------------------- */
+    /* discord-like user profiles by deer
+    /* ---------------------------------------------------------------- */
+
+    /* full user profile */
+    [class*='UserProfileModal.module__modalRoot_'] {
+        height: unset; /* shrink to only occupy necessary space */
+    }
+
+    /* pfp button */
+    [class*="ProfileCardBanner.module__avatarButton_"],
+    [class*="UserProfileModal.module__avatarContainer_"]
+    {
+        anchor-name: --anchor-userstatus;
+    }
+
+    /* "display name, username, pronouns */
+    [class*="ProfileCardUserInfo.module__userInfoContainer_"],
+    [class*="UserProfileModal.module__userInfoContent_"]
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    /* display name */
+    [class*="ProfileCardUserInfo.module__nameRow_"],
+    [class*="UserProfileModal.module__nameRow_"]
+    {
+        width: 100%;
+    }
+    /* username */
+    [class*="ProfileCardUserInfo.module__usernameRow_"],
+    [class*="UserProfileModal.module__usernameRow_"]
+    {
+        gap: unset;
+        color: var(--text-tertiary);
+    }
+    /* username pronouns separator */
+    [class*="ProfileCardUserInfo.module__pronouns_"]::before,
+    [class*="UserProfileModal.module__pronouns_"]::before
+    {
+        content: "";
+        width: 4px!important;
+        height: 4px!important;
+        margin: 0rem 0.5rem;
+        background-color: var(--text-tertiary);
+        border-radius: var(--radius-full);
+    }
+
+    /* pronouns */
+    [class*="ProfileCardUserInfo.module__pronouns_"],
+    [class*="UserProfileModal.module__pronouns_"]
+    {
+        font-size: 14px;
+        margin-top: unset;
+        color: var(--text-tertiary);
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* custom profile status */
+    [class*="UserProfilePopout.module__profileCustomStatus_"],
+    /* custom profile status (user area) */
+    [class*="UserAreaPopout.module__customStatusRow_"],
+    /* profile preview custom status */
+    [class*="ProfilePreview.module__profileCustomStatus_"]
+    {
+        align-items: flex-start;
+        
+        position: absolute;
+        position-anchor: --anchor-userstatus;
+        translate: 0 1rem;
+        position-area: right span-all;
+        position-visibility: always;
+        
+        
+        margin-left: 0.75rem;
+        
+        width: max-content;
+        max-width: 175px;
+        max-height: 3.7rem;
+        
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+        background: var(--primary-theme-accent-dim-5);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+        border-top-left-radius: 0!important;
+        z-index: 11; /* display above plutonium/visionary badge */
+        
+        transition: var(--transition-normal);
+    }
+    [class*="UserProfileModal.module__customStatusRow_"]
+    {
+        align-items: flex-start;
+        
+        position: absolute;
+        position-anchor: --anchor-userstatus;
+        // translate: 0 1rem;
+        position-area: right span-all;
+        position-visibility: always;
+        
+        
+        margin-left: 0.75rem;
+        
+        width: max-content;
+        max-width: 575px!important;
+        max-height: 3.7rem;
+        
+        overflow: hidden;
+        text-overflow: ellipsis;
+        
+        background: var(--primary-theme-accent-dim-5);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+        border-top-left-radius: 0;
+        z-index: 11; /* display above plutonium/visionary badge */
+        
+        transition: var(--transition-normal);
+    }
+
+
+    /* custom profile status */
+    [class*="UserProfilePopout.module__profileCustomStatus_"]:hover,
+    /* custom profile status (user area) */
+    [class*="UserAreaPopout.module__customStatusRow_"]:hover,
+    [class*="UserProfileModal.module__customStatusRow_"]:hover,
+    /* profile preview custom status */
+    [class*="ProfilePreview.module__profileCustomStatus_"]:hover {
+        max-height: 10rem;
+        translate: unset;
+    }
+
+    /* custom profile status inner */
+    [class*="CustomStatusDisplay"] > [class*="CustomStatusDisplay.module__content_"],
+    [class*="UserProfilePopout"] > [class*="CustomStatusDisplay.module__content_"],
+    [class*="UserProfileModal"] > [class*="CustomStatusDisplay.module__content_"],
+    [class*="ProfilePreview"] > [class*="CustomStatusDisplay.module__content_"],
+    [class*="UserAreaPopout.module__customStatusPlaceholder_"] {
+        margin: 0.25rem 0.5rem;
+    }
+
+    [class*="UserProfileModal.module__profileContentWrapper_"] {
+        background: var(--primary-theme-accent-dim-6);
+    }
+
+    /* profile popout bio background */
+    [class*="UserProfileShared.module__bioContainer_"] {
+        background: var(--primary-theme-accent-dim-5);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        
+    }
+
+
+    /* bio join date notes etc container */
+    [class*="UserProfileModal.module__profileContent_"] {
+        padding-top: 16px!important;
+    }
+    .ProfileCardUserInfo\.module__usernameButton___XzY3Zj {
+        &:before {
+            content: "@";
+        }
+    }
+}

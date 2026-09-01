@@ -1,5 +1,7 @@
 @use "./root/_root.scss";
 @use "./chatviews/chatviews";
+@use "./pages/pages";
+@use "./popouts/profiles";
 
 body {
     container-name: body;

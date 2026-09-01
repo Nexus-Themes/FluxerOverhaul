@@ -48,6 +48,11 @@ body {
   /* Compact Members List — Default: on; valid values: on, off */
   /* Collapses the members list, and expands it on hover, allowing for more space for messages. */
   --compact-members-list: on;
+
+  /* Overhaul User Profiles — Default: on; valid values: on, off */
+  /* Overhauls the user profile popout and modal to Appear more like Discord's user profile, with a more compact and modern design. */
+  /* All Credit for this feature goes to DeerUwU on Github, who made the original user profile overhaul. */
+  --overhauled-profiles: on;
 }
 
 // Dynamically generate dimmed versions of the accent color for use in various UI elements 

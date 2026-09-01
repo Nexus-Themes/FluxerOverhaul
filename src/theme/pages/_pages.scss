@@ -1,0 +1,93 @@
+// unthemed areas of certain pages go here
+#if-category {
+    display: none;
+}
+
+// Settings page
+.SettingsModalHeader\.module__headerTransition___XzNkMG,
+.SettingsModalLayout\.module__desktopSidebarInner___XzBjZD {
+    background-color: var(--primary-theme-accent-dim-5);
+}
+.UserSettingsModal\.module__userProfile___XzFlZT {
+    background-color: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+}
+
+
+
+// search page
+.ChannelIndexPage\.module__searchPanel___XzNmOW {
+    .ChannelSearchResults\.module__container___XzFhMD {
+        background-color: var(--primary-theme-accent-dim-5);
+        .ChannelSearchResults\.module__messageItem___XzFhMD {
+            background-color: var(--primary-theme-accent-dim-6);
+            border: 1px solid var(--primary-theme-accent-dim-3);
+            border-radius: var(--global-border-radius);
+        }
+    }
+}
+
+// Active Now sidebar
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz {
+    background-color: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    .VoiceActivityCard\.module__card___YmUzND {
+        background-color: var(--primary-theme-accent-dim-6);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+        .Button\.module__button___ZDBiYz {
+            background-color: var(--primary-theme-accent-dim-4);
+            border: 1px solid var(--primary-theme-accent-dim-3);
+            border-radius: var(--global-border-radius);
+        }
+    }
+}
+
+// DM page 
+.DMFriendsView\.module__content___XzFlMG,
+.DirectMessageList\.module__dmChannelList___YTlkYT {
+    background-color: var(--primary-theme-accent-dim-5);
+    .FormSurface\.module__surface___YzIwNT {
+        background-color: var(--primary-theme-accent-dim-6);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+    }
+}
+.DirectMessageList\.module__dmListHeader___YTlkYT,
+.GuildHeader\.module__headerWrapper___YmVlOG:not(:has(.GuildHeader.module__bannerBackground___YmVlOG)) .GuildHeader\.module__headerContainer___YmVlOG  {
+    background-color: var(--primary-theme-accent-dim-4);
+}
+
+
+.Button\.module__primary___ZDBiYz {
+    background-color: var(--primary-theme-accent-dim-4)!important;
+    border: 1px solid var(--primary-theme-accent-dim-3)!important;
+    border-radius: var(--global-border-radius);
+}
+.Button\.module__secondary___ZDBiYz {
+    background-color: var(--primary-theme-accent-dim-5)!important;
+    border: 1px solid var(--primary-theme-accent-dim-3)!important;
+    border-radius: var(--global-border-radius);
+}
+
+
+//inbox page
+.PopoverPopout\.module__popout___YzY5YW,
+.InboxPopout\.module__container___YzAwYT,
+.InboxPopout\.module__containerWithSidebar___YzAwYT {
+    .InboxPopout\.module__sidebar___YzAwYT {
+        background-color: var(--primary-theme-accent-dim-5);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+    }
+    background-color: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    .InboxMessageHeader\.module__header___ZmI4Nm {
+        background-color: var(--primary-theme-accent-dim-5);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+        padding: 0.5rem;
+    }
+}
