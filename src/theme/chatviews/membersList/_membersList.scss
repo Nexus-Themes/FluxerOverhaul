@@ -1,14 +1,98 @@
 @use "./compactMembersList";
-
+@use "./_CustomUserBackround";
 
 
 // Members List Tweaks
 .MemberListContainer\.module__memberListContainer___XzJhOT {
     .ChannelMembers\.module__virtualListContent___Xzc5ZG {
-        .MemberListItem\.module__button___XzM2MT {
-            background-color: var(--primary-theme-accent-dim-6);
-            border-radius: var(--global-border-radius);
-            border: 1px solid var(--primary-theme-accent-dim-2);
+        // background-color: blue!important; //sanity check
+        .ChannelMembers\.module__virtualMemberRow___Xzc5ZG {
+            // background-color: red!important; //sanity check
+            .MemberListItem\.module__grid___XzM2MT {
+                &:has([data-flx-status="offline"]) {
+                    background-image: linear-gradient(to right, color-mix(in srgb, var(--status-offline) 40%, transparent) 10%, transparent 20%, transparent)!important;
+                    margin-top: -.25rem;
+                    padding-top: .25rem;
+                    margin-bottom: -.25rem;
+                    padding-bottom: .25rem;
+                    border-radius: var(--global-border-radius);
+                    border-left: 0.35rem solid var(--status-offline);
+                    margin-left: -.1rem;
+                    padding-left: .1rem;
+                    margin-right: -.1rem;
+                    padding-right: .1rem;
+                }
+                &:has([data-flx-status="online"]) {
+                    background-image: linear-gradient(to right, color-mix(in srgb, var(--status-online) 40%, transparent) 10%, transparent 20%, transparent)!important;
+                    margin-top: -.25rem;
+                    padding-top: .25rem;
+                    margin-bottom: -.25rem;
+                    padding-bottom: .25rem;
+                    border-radius: var(--global-border-radius);
+                    border-left: 0.35rem solid var(--status-online);
+                    margin-left: -.1rem;
+                    padding-left: .1rem;
+                    margin-right: -.1rem;
+                    padding-right: .1rem;
+                }
+                &:has([data-flx-status="idle"]) {
+                    background-image: linear-gradient(to right, color-mix(in srgb, var(--status-idle) 40%, transparent) 10%, transparent 20%, transparent)!important;
+                    margin-top: -.25rem;
+                    padding-top: .25rem;
+                    margin-bottom: -.25rem;
+                    padding-bottom: .25rem;
+                    border-radius: var(--global-border-radius);
+                    border-left: 0.35rem solid var(--status-idle);
+                    margin-left: -.1rem;
+                    padding-left: .1rem;
+                    margin-right: -.1rem;
+                    padding-right: .1rem;
+                }
+                &:has([data-flx-status="dnd"]) {
+                    background-image: linear-gradient(to right, color-mix(in srgb, var(--status-dnd) 40%, transparent) 10%, transparent 20%, transparent)!important;
+                    margin-top: -.25rem;
+                    padding-top: .25rem;
+                    margin-bottom: -.25rem;
+                    padding-bottom: .25rem;
+                    border-radius: var(--global-border-radius);
+                    border-left: 0.35rem solid var(--status-dnd);
+                    margin-left: -.1rem;
+                    padding-left: .1rem;
+                    margin-right: -.1rem;
+                    padding-right: .1rem;
+                }
+                &:has([data-flx-mobile-status="true"]) {
+                    .MemberListItem\.module__name___XzM2MT {
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            width: 13px;
+                            height: 13px;
+                            margin-right: 3px;
+                            background-color: var(--status-online);
+                            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath d='M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z'/%3E%3C/svg%3E");
+                            mask-repeat: no-repeat;
+                            mask-size: contain;
+                        }
+                    }
+                }
+                .MemberListItem\.module__avatarContainer___XzM2MT {
+                    .BaseAvatar\.module__animatedMaskShape___ZmRhMD,
+                    .BaseAvatar\.module__statusContainer___ZmRhMD {
+                        display: none;
+                    }
+                    .BaseAvatar\.module__container___ZmRhMD {
+                        foreignObject {
+                            mask: none !important;
+                        }
+                    }
+                }
+            }
+            .MemberListItem\.module__button___XzM2MT {
+                height: 100%;
+                border-radius: var(--global-border-radius);
+                border: 1px solid var(--primary-theme-accent-dim-2);
+            }
         }
     }
 }

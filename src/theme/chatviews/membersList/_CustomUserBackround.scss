@@ -1,0 +1,26 @@
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG,
+.UserArea\.module__userAreaContainer___XzI2YW {
+    &:has([data-flx-user-id="1473358551264223281"]) {
+        --user-background: url("https://fluxerusercontent.com/attachments/1473358551264223281/1544251896804409346/liz-furry-live-wallpaper.png");
+        --darkening: 60%;
+        .MemberListItem\.module__buttonOffline___XzM2MT {
+            backdrop-filter: grayscale(100%);
+            opacity: 1;
+        }
+    }
+}
+
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG,
+.UserArea\.module__userAreaContainer___XzI2YW {
+    background-image: var(--user-background);
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--global-border-radius);
+    .MemberListItem\.module__button___XzM2MT {
+        background-color: color-mix(in srgb, black var(--darkening), transparent);
+    }
+    .MemberListItem\.module__buttonOffline___XzM2MT div{
+        filter: grayscale(20%);
+        opacity: 90%;
+    }
+}
