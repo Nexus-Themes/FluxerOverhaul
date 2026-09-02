@@ -5,7 +5,8 @@ export default {
 		author: 'GH0STP4WZ#0001',
 		version: '1.0-pre-release',
 		description: 'Color-flexible Cyber-aesthetic UI theme',
-		source: 'https://github.com/Nexus-Themes/FluxerOverhaul',
+		invite: 'https://fluxer.gg/TqOzU3eN',
+		source: 'https://github.com/Nexus-Themes/NeoFluxer',
 		tags: ['Styling', ' Overhaul', ' UI', ' Theme'],
 		workswith: ['Canary']
 	}
