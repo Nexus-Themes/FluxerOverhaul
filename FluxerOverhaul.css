@@ -50,13 +50,6 @@ body {
   /* Replace Search Bar — Default: off; valid values: on, off */
   /* Replaces the default search bar with an icon that optimizes space. Will expand on hover or focus. */
   --replace-search-bar: off;
-  /* Compact Members List — Default: on; valid values: on, off */
-  /* Collapses the members list, and expands it on hover, allowing for more space for messages. */
-  --compact-members-list: on;
-  /* Overhaul User Profiles — Default: on; valid values: on, off */
-  /* Overhauls the user profile popout and modal to Appear more like Discord's user profile, with a more compact and modern design. */
-  /* All Credit for this feature goes to DeerUwU on Github, who made the original user profile overhaul. */
-  --overhauled-profiles: on;
 }
 
 body {
@@ -98,84 +91,37 @@ body code {
   font-family: var(--code-font) !important;
 }
 
-.TextareaInput\.module__textareaOuterRow___XzJmNz {
-  min-height: 0;
-}
-.TextareaInput\.module__textareaOuterRow___XzJmNz:before {
-  display: none;
-}
-
-.InputWrapper\.module__statusRail___ZWM3OW {
-  bottom: -30px;
-}
-
-.ChannelChatLayout\.module__textareaArea___YjY1N2 .TextareaInput\.module__mainWrapperDense___XzJmNz {
-  min-height: 35px;
-  margin-top: 0.8rem;
-  margin-bottom: 5px;
-}
 .ChannelChatLayout\.module__textareaArea___YjY1N2 {
-  translate: 0px -1.4rem;
+  translate: 0px -20px;
   width: 98%;
   margin: 10px auto;
   border: 1px solid var(--primary-theme-accent-dim-2);
   border-radius: var(--global-border-radius);
-  max-height: 40rem;
-  min-height: 3.7rem;
+  max-height: 600px;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .Scroller\.module__scroller___ZmI2ND {
   background-color: var(--primary-theme-accent-dim-4);
 }
 .ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW {
-  background-color: transparent !important;
+  background-color: var(--primary-theme-accent-dim-6);
   padding: 0;
   margin-left: -5px;
   margin-right: -5px;
   translate: 2px 0;
 }
-.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW {
-  padding-left: 10px;
-  padding-right: 10px;
-  max-height: 35rem !important;
-}
-.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .Scroller\.module__scrollerChildren___ZmI2ND {
-  overflow-y: scroll;
-}
-.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .TextareaInput\.module__mainWrapperDense___XzJmNz {
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .TextareaInput\.module__mainWrapperDense___XzJmNz {
   padding: var(--textarea-horizontal-padding);
 }
-.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .TextareaInput\.module__flexColumn___XzJmNz {
-  max-height: 35rem !important;
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .TextareaInput\.module__flexColumn___XzJmNz {
+  max-height: 400px !important;
   background-color: var(--primary-theme-accent-dim-6);
 }
-.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .LexicalMessageComposer\.module__paragraph___ZjY5OG {
-  max-height: 20rem !important;
-  overflow-y: auto;
-}
 
-.InputWrapper\.module__composerActionStack___ZWM3OW {
-  margin-top: -10px !important;
-  margin-right: -4px !important;
-  margin-left: 2px !important;
-  background-color: var(--primary-theme-accent-dim-5);
-  border: 1px solid var(--primary-theme-accent-dim-2);
-  border-bottom-color: transparent;
-}
-
-.TextareaInput\.module__buttonContainerDense___XzJmNz {
-  transition: all 0.2s ease-in-out;
-  margin-right: 35px;
-  transition-property: opacity, margin-right;
-}
-.TextareaInput\.module__buttonContainerDense___XzJmNz .TextareaButton\.module__button___XzgyZD:last-child {
-  transition: all 0.2s ease-in-out;
+.ChannelChatLayout\.module__typingArea___YjY1N2 {
   position: absolute;
-  right: 0;
-}
-.TextareaInput\.module__buttonContainerDense___XzJmNz .TextareaButton\.module__button___XzgyZD:last-child:disabled {
-  opacity: 0;
-  right: -25px;
-}
-.TextareaInput\.module__buttonContainerDense___XzJmNz:has(.TextareaButton\.module__button___XzgyZD:last-child:disabled) {
-  margin-right: -15px;
+  bottom: 15px;
+  width: 100%;
+  height: 20px;
 }
 
 .ChannelChatLayout\.module__container___YjY1N2 {
@@ -264,12 +210,13 @@ body code {
 }
 .UserArea\.module__userAreaInnerWrapper___XzI2YW {
   position: absolute;
-  bottom: 2rem;
-  left: 4.5rem;
+  bottom: 30px;
+  left: 62px;
   background-color: var(--primary-theme-accent-dim-6);
   border: 1px solid var(--primary-theme-accent-dim-2);
   border-radius: var(--global-border-radius);
-  width: calc(var(--layout-sidebar-width) - 0.5rem);
+  margin-left: 10px;
+  width: calc(var(--layout-sidebar-width) - 7px);
   padding: 0px;
 }
 .UserArea\.module__userAreaInnerWrapper___XzI2YW .UserArea\.module__userAreaContainer___XzI2YW {
@@ -277,130 +224,17 @@ body code {
 }
 
 .Scroller\.module__scroller___ZmI2ND .ChannelListContent\.module__channelGroupsContainer___ZDI5M2 {
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 
-@property --compact-members-list {
-  syntax: "off | on";
-  inherits: false;
-  initial-value: on;
-}
-@container body style(--compact-members-list: on) {
-  .ChannelIndexPage\.module__memberListDivider___XzNmOW,
-  .MemberListContainer\.module__memberListContainer___XzJhOT {
-    transition: all ease 0.3s !important;
-  }
-  body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .ChannelIndexPage\.module__memberListDivider___XzNmOW,
-  body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .MemberListContainer\.module__memberListContainer___XzJhOT {
-    margin-right: -13rem;
-  }
-}
-.ChannelMembers\.module__virtualMemberRow___Xzc5ZG:has([data-flx-user-id="1473358551264223281"]),
-.UserArea\.module__userAreaContainer___XzI2YW:has([data-flx-user-id="1473358551264223281"]) {
-  --user-background: url("https://fluxerusercontent.com/attachments/1473358551264223281/1544251896804409346/liz-furry-live-wallpaper.png");
-  --darkening: 60%;
-}
-.ChannelMembers\.module__virtualMemberRow___Xzc5ZG:has([data-flx-user-id="1473358551264223281"]) .MemberListItem\.module__buttonOffline___XzM2MT,
-.UserArea\.module__userAreaContainer___XzI2YW:has([data-flx-user-id="1473358551264223281"]) .MemberListItem\.module__buttonOffline___XzM2MT {
-  backdrop-filter: grayscale(100%);
-  opacity: 1;
+.ChannelIndexPage\.module__memberListDivider___XzNmOW,
+.MemberListContainer\.module__memberListContainer___XzJhOT {
+  transition: all ease 0.3s !important;
 }
 
-.ChannelMembers\.module__virtualMemberRow___Xzc5ZG,
-.UserArea\.module__userAreaContainer___XzI2YW {
-  background-image: var(--user-background);
-  background-size: cover;
-  background-position: center;
-  border-radius: var(--global-border-radius);
-}
-.ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__button___XzM2MT,
-.UserArea\.module__userAreaContainer___XzI2YW .MemberListItem\.module__button___XzM2MT {
-  background-color: color-mix(in srgb, black var(--darkening), transparent);
-}
-.ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__buttonOffline___XzM2MT div,
-.UserArea\.module__userAreaContainer___XzI2YW .MemberListItem\.module__buttonOffline___XzM2MT div {
-  filter: grayscale(20%);
-  opacity: 90%;
-}
-
-.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=offline]) {
-  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-offline) 40%, transparent) 10%, transparent 20%, transparent) !important;
-  margin-top: -0.25rem;
-  padding-top: 0.25rem;
-  margin-bottom: -0.25rem;
-  padding-bottom: 0.25rem;
-  border-radius: var(--global-border-radius);
-  border-left: 0.35rem solid var(--status-offline);
-  margin-left: -0.1rem;
-  padding-left: 0.1rem;
-  margin-right: -0.1rem;
-  padding-right: 0.1rem;
-}
-.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=online]) {
-  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-online) 40%, transparent) 10%, transparent 20%, transparent) !important;
-  margin-top: -0.25rem;
-  padding-top: 0.25rem;
-  margin-bottom: -0.25rem;
-  padding-bottom: 0.25rem;
-  border-radius: var(--global-border-radius);
-  border-left: 0.35rem solid var(--status-online);
-  margin-left: -0.1rem;
-  padding-left: 0.1rem;
-  margin-right: -0.1rem;
-  padding-right: 0.1rem;
-}
-.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=idle]) {
-  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-idle) 40%, transparent) 10%, transparent 20%, transparent) !important;
-  margin-top: -0.25rem;
-  padding-top: 0.25rem;
-  margin-bottom: -0.25rem;
-  padding-bottom: 0.25rem;
-  border-radius: var(--global-border-radius);
-  border-left: 0.35rem solid var(--status-idle);
-  margin-left: -0.1rem;
-  padding-left: 0.1rem;
-  margin-right: -0.1rem;
-  padding-right: 0.1rem;
-}
-.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=dnd]) {
-  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-dnd) 40%, transparent) 10%, transparent 20%, transparent) !important;
-  margin-top: -0.25rem;
-  padding-top: 0.25rem;
-  margin-bottom: -0.25rem;
-  padding-bottom: 0.25rem;
-  border-radius: var(--global-border-radius);
-  border-left: 0.35rem solid var(--status-dnd);
-  margin-left: -0.1rem;
-  padding-left: 0.1rem;
-  margin-right: -0.1rem;
-  padding-right: 0.1rem;
-}
-.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-mobile-status=true]) .MemberListItem\.module__name___XzM2MT:before {
-  content: "";
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  margin-right: 3px;
-  background-color: var(--status-online);
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath d='M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z'/%3E%3C/svg%3E");
-          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath d='M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z'/%3E%3C/svg%3E");
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-          mask-size: contain;
-}
-.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__animatedMaskShape___ZmRhMD,
-.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__statusContainer___ZmRhMD {
-  display: none;
-}
-.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__container___ZmRhMD foreignObject {
-  -webkit-mask: none !important;
-          mask: none !important;
-}
-.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__button___XzM2MT {
-  height: 100%;
-  border-radius: var(--global-border-radius);
-  border: 1px solid var(--primary-theme-accent-dim-2);
+body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .ChannelIndexPage\.module__memberListDivider___XzNmOW,
+body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .MemberListContainer\.module__memberListContainer___XzJhOT {
+  margin-right: -210px;
 }
 
 @property --use-bubbles {
@@ -410,100 +244,28 @@ body code {
 }
 @container body style(--use-bubbles: on) {
   [data-flx="channel.message-group.group"] .Message\.module__messageContent___YzRhZj,
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
-  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
     background: var(--primary-theme-accent-dim-6);
     border: 1px solid var(--primary-theme-accent-dim-3);
     width: 100% !important;
     max-width: 100%;
     padding: 5px;
+    margin: 5px 0;
     border-radius: 0px 12px 12px 12px;
   }
   [data-flx="channel.message-group.group"] .Message\.module__message___YzRhZj {
     grid-template-areas: "gutter-left avatar gutter-right reply" ". . . content" ". . . container";
-    padding-right: 0 !important;
   }
   [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"] {
     width: -moz-fit-content;
     width: fit-content;
     max-width: 100%;
   }
-  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
-    width: -moz-fit-content !important;
-    width: fit-content !important;
-    max-width: 100%;
-  }
-  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:not([data-is-group-start=true]):has(.AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj, .Attachment\.module__attachmentWrapper___YTIxYT) .Message\.module__messageContent___YzRhZj {
-    width: -moz-fit-content !important;
-    width: fit-content !important;
-  }
-  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:is([data-is-group-start=true]):not(:has([data-flx-reply=true])) .Message\.module__messageContent___YzRhZj {
-    width: -moz-fit-content !important;
-    width: fit-content !important;
-  }
-  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
-    margin-top: -2rem;
-  }
-  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj .Message\.module__messageAuthorInfo___YzRhZj {
-    margin-right: auto !important;
-  }
-  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
-    background: none;
-    border: none;
-  }
-  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__messageAuthorInfo___YzRhZj {
-    margin-bottom: 2.5rem;
-  }
-  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__repliedMessage___YzRhZj {
-    z-index: 1;
-  }
-  [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
-    margin-top: 0 !important;
-  }
-  [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) div .Message\.module__messageContent___YzRhZj {
-    width: -moz-fit-content !important;
-    width: fit-content !important;
-  }
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__twoImageGrid___XzliZD {
-    grid-template-columns: repeat(2, 15rem) !important;
-  }
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__threeImageGrid___XzliZD {
-    grid-template-rows: auto auto;
-    grid-template-columns: 15rem 7.5rem;
-  }
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__fourImageGrid___XzliZD {
-    grid-template-rows: auto auto;
-    grid-template-columns: 11.5rem 11.5rem;
-  }
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__fiveImageGrid___XzliZD {
-    grid-template-rows: auto auto;
-    grid-template-columns: repeat(6, 3.7rem);
-  }
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__sixImageGrid___XzliZD {
-    grid-template-rows: auto auto;
-    grid-template-columns: repeat(3, 7.5rem);
-  }
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__sevenImageContainer___XzliZD .AttachmentLayoutGrid\.module__sevenGrid___XzliZD {
-    grid-template-rows: repeat(2, 7.5rem);
-    grid-template-columns: repeat(3, 7.5rem);
-  }
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__eightImageContainer___XzliZD .AttachmentLayoutGrid\.module__eightBottomGrid___XzliZD {
-    grid-template-rows: repeat(2, 7.5rem);
-    grid-template-columns: repeat(3, 7.5rem);
-  }
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__nineImageGrid___XzliZD {
-    grid-template-rows: repeat(3, 7.5rem);
-    grid-template-columns: repeat(3, 7.5rem);
-  }
-  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__tenImageContainer___XzliZD .AttachmentLayoutGrid\.module__tenGrid___XzliZD {
-    grid-template-rows: repeat(3, 7.5rem);
-    grid-template-columns: repeat(3, 7.5rem);
-  }
   [data-flx="channel.message-group.group"]:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__messageAuthorInfo___YzRhZj {
     margin-bottom: 40px;
   }
   [data-flx="channel.message-group.group"] [data-is-group-start=true] .Message\.module__messageContent___YzRhZj {
-    margin-top: -2rem;
+    margin-top: -45px;
   }
   [data-flx="channel.message-group.group"] [data-is-group-start=true] .Message\.module__messageAvatar___YzRhZj {
     translate: 0 -25px;
@@ -513,10 +275,10 @@ body code {
     width: fit-content;
     max-width: 100%;
     justify-self: left;
-    top: 2.5rem;
+    top: 25px;
     left: 5px;
     display: grid;
-    height: 2.3rem !important;
+    height: 40px !important;
     padding: 5px;
     border-left: 1px solid var(--message-mention-color);
     border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
@@ -547,30 +309,18 @@ body code {
   }
   [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:has([data-flx-author-self=true]) {
     margin-left: auto !important;
-    padding-right: 0 !important;
   }
   [data-flx="channel.message-group.group"] [data-flx-author-self=true] {
     direction: rtl;
   }
   [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
-  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
-  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__container___YzRhZj {
-    border-radius: 12px 0px 12px 12px !important;
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+    border-radius: 12px 0px 12px 12px;
   }
   [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
   [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__repliedMessage___YzRhZj,
-  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .TextualAttachmentPreview\.module__textualPreview___YjI0OG,
-  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageAttachments\.module__forwardedContainer___XzZiOT {
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .TextualAttachmentPreview\.module__textualPreview___YjI0OG {
     direction: ltr !important;
-  }
-  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT {
-    direction: ltr !important;
-    rotate: 180deg;
-    right: unset !important;
-    left: 0 !important;
-  }
-  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT .MessageActionBar\.module__actionBar___YTE3ZT {
-    rotate: 180deg;
   }
 }
 .Message\.module__messageTimestampHover___YzRhZj.Message\.module__messageTimestampHover___YzRhZj {
@@ -586,450 +336,12 @@ body code {
   direction: ltr !important;
 }
 
-.Message\.module__messageContent___YzRhZj .Markup\.module__timestamp___XzQ5ZD {
-  border: 1px solid var(--primary-theme-accent-dim-2);
-  background-color: var(--primary-theme-accent-dim-6);
-  border-radius: var(--global-border-radius);
-  font-family: var(--code-font);
-  font-size: 0.85rem;
-  padding: 0.15rem;
-  padding-right: 0.35rem;
-  color: var(--primary-theme-accent-dim-1);
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__timestamp___XzQ5ZD::before {
-  content: "🕔 ";
-  filter: grayscale(100%);
-}
-
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__codeContainer___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__inline___XzQ5ZD {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-2);
-  border-radius: var(--global-border-radius);
-  padding: 0.2rem;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-2);
-  border-radius: var(--global-border-radius);
-  padding: 0.2rem;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD {
-  color: var(--primary-theme-accent-dim-1);
-  opacity: 1;
-  filter: blur(5px);
-  transition: filter 0.3s ease;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD span::after {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 1.5em;
-  height: 1.5em;
-  content: "·";
-  mix-blend-mode: screen;
-  animation: 22s -27s move infinite ease-in-out alternate;
-  text-shadow: 7.2631494228em, 8.2966643803em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6927638789em, 3.5598760144em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3665875197em, 4.8587731767em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3798338792em, 0.3146600477em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8591751968em, 2.9950797977em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7954519438em, 0.1601845134em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4233905674em, 3.5806388073em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9551754643em, 6.5182253878em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3133124562em, 0.8187651077em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5647278397em, 8.2776832013em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0048124001em, 1.2458626659em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8598524458em, 7.862764815em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3781600847em, 7.0931512219em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4860869112em, 5.0071459322em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5002866362em, 4.9579589309em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2106984255em, 6.7147396746em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0297062436em, 0.8705510933em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9570372836em, 2.0149662114em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1967574658em, 9.349377735em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1101466776em, 1.3445692719em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9852229346em, 1.3460479374em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3285801917em, 7.4046783402em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1835389265em, 7.9739437405em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0994508109em, 3.8402390733em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7177541815em, 4.5926009823em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4101569285em, 1.2075464779em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3404122022em, 3.1369644254em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6588325935em, 6.2915577939em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1592093003em, 7.3336915663em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.351910202em, 2.0144367892em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0651626348em, 2.2980949726em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.009381754em, 2.2592993343em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5613069707em, 5.8420993082em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9008025308em, 0.2765226379em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1790440105em, 4.9088775675em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9581497165em, 4.4888596459em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8017763892em, 4.6276579784em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5730819284em, 5.9824520429em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7541123976em, 0.5802021289em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9676584876em, 1.9480146067em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6299526883em, -0.3436086803em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8042373392em, 7.2856658502em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0321352727em, 8.1778182765em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2909611441em, 8.5739379422em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7675606017em, 2.2583027857em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3722491352em, 5.1572677185em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3575735084em, 7.8260367066em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1169004594em, 1.3417177507em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4734060651em, 0.185554681em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6760305765em, 0.8284544775em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3366330484em, 6.8966657996em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.432109272em, 5.1650064239em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5445638113em, 3.5526194181em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7741859288em, 5.6420337582em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4998962365em, 7.7607340695em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2489765272em, 8.3944601574em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3083365773em, 2.3290018934em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8325445428em, 5.3882858615em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7598190259em, 4.6292807764em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7403153624em, -0.3252937271em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5327973792em, 7.7148443305em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1939190714em, 2.4826256134em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5491913867em, 1.7543087676em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.76079071em, 8.558868176em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8613206em, 1.063750418em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5114307106em, 0.5534902433em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3384568543em, 5.0686920928em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5952088012em, 0.2759086156em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4680728012em, 5.4103678215em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.991307736em, 7.1199622762em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8975648353em, 8.7886756281em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1642779291em, 9.2438432096em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4332875742em, 6.2040981941em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5201117995em, 2.7863403546em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1073737525em, 3.0299382459em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7028656155em, 9.4868036843em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1380528522em, 2.2920384018em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.095404394em, 3.6788806387em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8869293525em, 4.7911026672em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8118694288em, 0.6854192277em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9519767827em, 7.3844751719em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5103747181em, 4.0406008447em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4025633689em, 5.2264159846em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0269017062em, 6.884216951em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1924052568em, -0.034306939em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8844077035em, -0.3477826034em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2517612916em, 3.7780007039em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8008208006em, 6.2482533276em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5175968925em, 4.8043193774em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8242786586em, 2.9023156687em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7803740493em, 7.7347591457em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9713660983em, 4.3450530107em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9807930807em, 4.6523006464em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3678940006em, 4.7397211365em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6187366235em, 8.6597719655em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7939660949em, 3.409161137em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5084420176em, 3.3026447436em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2445638418em, 6.4446411897em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8699919071em, 4.0952563336em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2346033879em, 0.7924734619em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0680264968em, 2.1552217286em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5409881757em, -0.2383011064em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6933495663em, 7.5959002278em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6323995864em, 8.1300856657em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6594328384em, 1.24980453em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1420219222em, 1.9659142589em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9259166234em, 6.7163358029em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8153534433em, 3.0658119279em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5914929318em, 7.9746395565em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6807021849em, 5.4225256649em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1205877102em, 3.2100834669em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.638050445em, 4.8779248983em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8615327063em, 5.5831618202em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8581752566em, 5.4892615616em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2686814456em, 9.3695835878em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6743866237em, 9.4556646646em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8978424956em, 7.3997946229em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0467227436em, 0.9791175219em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1027239993em, 5.4895283988em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4822007554em, 4.3710046306em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3471476981em, 6.3495174497em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2934508054em, 2.8079528051em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3340707253em, -0.3897162622em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9322765058em, 4.7691141699em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6728764783em, 7.9222416313em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1345900967em, 0.0830851631em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1592252904em, 4.1930279716em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5301628849em, 3.2693121081em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.286427618em, 1.6963318841em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8892048061em, 4.7132110836em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4394488532em, 9.450778629em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.164933777em, 3.5067771356em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4956730224em, 3.8401586563em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8534153679em, 4.4333834561em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3576721585em, 5.0726058135em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5803332701em, 5.639579497em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3602204756em, 5.2263383574em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3453118264em, 6.9782434939em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0229159581em, 2.400860529em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1040152278em, 8.9830427196em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4481316602em, 6.9676074506em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2084365116em, 8.9815642549em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4249003188em, 8.4416075856em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8267071104em, 4.2169593398em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3657015776em, 0.3783847941em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4492528804em, 5.2377967943em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1604301696em, 7.1499239799em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4174019253em, 3.2500618315em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6421804056em, 8.7559691991em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9205473108em, 6.4916826935em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2174545116em, 5.1827082571em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2117150545em, 5.9382411469em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1470755058em, 4.6189348902em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9791459745em, 4.6119999251em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.876915301em, 0.2827757618em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.163294048em, 6.1929188755em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8463658013em, 1.7007503473em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5190330496em, 4.2234167455em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7852999518em, 3.8180974877em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0749755629em, 8.9180278409em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3619075072em, 8.4403461996em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3447954376em, 2.4655078948em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3173729179em, 3.7833711341em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3397559809em, 1.7331985059em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2335079121em, 6.5885164037em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9395592457em, 7.3393538568em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2354939099em, 9.216373844em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8981893128em, 5.9014782561em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.746529976em, 3.8302587208em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5339679806em, -0.0940150117em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1552144124em, 7.268931461em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0533127023em, 4.8150265347em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8564185828em, 1.4996833em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6148351167em, 0.6908926898em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7518124959em, -0.1381507134em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3234019224em, 8.7873121797em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1802024609em, 7.2636711145em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6433776975em, 3.9054406912em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1819173039em, 3.6802111525em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7250772161em, 2.0526262199em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5965765888em, 8.9797438229em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0697258724em, 8.1863143854em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2480576817em, 4.5566402639em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4955770297em, 4.6437760686em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5017700039em, 5.6409288315em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3091426281em, 6.470988517em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8473155349em, -0.0797336985em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8616723857em, -0.0347353939em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7427419353em, 3.0924157066em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0887762017em, 7.0806344625em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0978864688em, 1.3567382164em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5963176504em, 6.2860006305em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8377618347em, 2.9255202836em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1325585532em, 4.928971413em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3690925838em, 9.4797409347em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2494030265em, -0.4451637619em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2043665063em, 4.2793598748em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6793842667em, 5.5966866858em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0498888055em, 9.0615418701em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2448676805em, 0.1618222995em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3028070722em, 0.5979375763em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8729063317em, 9.4686927202em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0621185193em, 6.8399475956em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3699307695em, 7.6441655954em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6620625052em, 5.5423763114em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6720459821em, 5.1421257037em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7772562297em, 6.1239805208em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8150866727em, 7.5770942894em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0333178126em, 6.8706859652em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2284088047em, 4.8848589646em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9944380691em, 5.5742940945em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3354348821em, 4.9556601303em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5490172696em, 0.9886034735em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6984531458em, 3.7678415175em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.398828622em, 3.5631022578em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1767743637em, 0.60207258em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7242419362em, 2.3237983229em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0675275499em, 7.2063214497em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3382252691em, 8.1475678866em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1273792795em, 0.2788471813em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5081667928em, 1.8944837687em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1924842331em, 1.0476940491em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8220119998em, 9.4813305001em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6891333504em, 2.3075827945em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8285145954em, 6.637396483em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5100155876em, 1.4050404964em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1594537812em, -0.201757843em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6139844472em, 2.0790128452em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1329672501em, 4.078068202em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1817013693em, 8.1683128728em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1761385981em, 7.5918513494em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5958330794em, 6.4252545699em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8154784661em, 9.1441729825em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8876833978em, 1.5107472834em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8492021304em, 4.8084702328em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0265351016em, 6.4718458918em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2474879908em, 4.2737664641em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3644463599em, 8.8352979558em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3202742606em, 8.9456303669em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7415641312em, 0.7242429765em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4017394641em, 5.1873390003em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7370846218em, 1.3551248667em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.434696621em, 5.8919922586em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0930043619em, 5.8891810883em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5020450074em, 6.7519014353em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4555013936em, 4.7111331816em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9230957243em, 0.7551917861em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9673064305em, 1.7743341459em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.088728774em, 2.681410748em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5896952963em, 3.2514994749em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3516706905em, 6.220362329em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9121111463em, 4.4689413784em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2199396084em, 1.1729526334em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0619249305em, 4.6928162066em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1139715471em, 1.9308253243em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4945721092em, 5.8144892776em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3665114072em, 5.3116273191em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9611939096em, 5.9877423324em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8975134674em, 4.448255894em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4641500037em, 7.4003745637em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0784605167em, 1.8603844801em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.37962076em, 8.4299968558em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1538073068em, 3.8045014028em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7694040976em, 8.3388898523em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3937728065em, 0.1447818541em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2366346598em, 1.3890569807em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4190142236em, 7.629450221em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6695983261em, 3.3971205715em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3169661969em, -0.1887303104em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5110715238em, 9.0952174033em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8435680923em, 6.2955046622em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1370946135em, 4.6290511211em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2411799683em, 0.6078501395em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0185232855em, 4.1598795698em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4821444513em, 4.8324246394em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5760110351em, 0.3963989753em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2278303263em, 3.5433556236em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7608659883em, 7.6492940804em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7457032614em, 7.5659312056em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8403266101em, 4.0080466537em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2144307643em, 2.3625860932em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1740580311em, 4.3287421029em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8715695292em, 3.1576667886em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7636685047em, 1.3507553632em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6539310893em, 3.2254332455em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1240498049em, 9.2744510464em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9708283307em, 7.0123576946em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9009354691em, 4.6286059545em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6998419009em, 8.7701283094em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8299170878em, 6.4401097753em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7561370525em, 1.419526963em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8200540556em, -0.3741685902em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8607227131em, 6.8207769913em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8715364509em, 4.2098723542em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2168493039em, 3.413194852em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4626633711em, 8.5049886593em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5176278322em, 1.0272023123em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.136604212em, 3.2676773553em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0513769888em, 8.251433081em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4123936164em, 8.5569304115em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5501135563em, 0.6901842212em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7113895874em, 7.2529919624em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1010337841em, 0.455450331em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1389399679em, 8.2464997854em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7334497421em, 7.8146449277em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3813329426em, 8.9731453295em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9376553161em, 4.4905888236em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0829652082em, 6.7252390247em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1251466893em, 6.8292494324em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2510847989em, 5.0766264198em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1181374851em, 3.9381279191em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7223536023em, 3.2014779601em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9692131911em, 5.8402230241em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0327735726em, -0.1880296987em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.765530469em, 3.7399463921em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4518575319em, -0.0671219814em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1416734306em, 6.4292464067em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9891321646em, 4.2366600402em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0430662253em, 4.8062641116em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8245405888em, 3.6183570741em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3551178751em, 2.4158225198em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4605216744em, 3.9258605695em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1517232692em, 8.6143471792em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1725912567em, 5.1298266746em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2902290517em, 6.2421030808em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6651880804em, 6.7501689179em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7876809988em, 7.7909468897em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1522136839em, 6.6439241731em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9431566123em, 2.4335526798em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6669817217em, 8.8920651041em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.479336703em, 8.8368375055em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2296946673em, 8.6265720115em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2586287749em, 7.1683795495em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0170262584em, 6.4731011551em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.418551515em, 4.547759049em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4313702636em, 4.5582491089em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2074415759em, -0.2415278278em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0951245378em, 2.0963034541em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3391855931em, 8.8329321044em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4776630964em, 6.9474701718em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.060503109em, 7.5052222751em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2525708906em, 1.9548407842em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.024185711em, 5.4078012137em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0623178675em, 7.091640777em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2763897701em, -0.4843215701em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2787639366em, 7.9676845509em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6821906414em, 3.969433733em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8651021839em, 4.5633700463em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6637688618em, 4.0525738791em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6553574085em, 8.4396143876em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1233363265em, 1.973040616em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7824478654em, -0.4740087728em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3888460169em, 1.8217776743em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1593193085em, 0.0087168331em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9130644059em, 1.8393778583em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4430469661em, 2.1636869979em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9685386668em, 3.1060836817em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0811175518em, 7.0908217099em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8407026142em, -0.060938767em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.895347397em, 8.2899133415em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8652899796em, 3.7809882021em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6303327337em, 1.6802016533em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9880872754em, 6.1458864616em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.507299286em, 4.550413214em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6576727881em, 1.9659076072em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.685324684em, 7.9597641816em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1229008116em, 9.4736366496em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2467746012em, 3.0011064685em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1933650897em, 7.2462117737em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7922897561em, 4.717750638em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8821916686em, 6.3399493147em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.608782605em, 1.9521160766em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.382599597em, 8.8197241742em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0258686796em, 5.9868140603em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2723944324em, 6.9732272488em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8983271247em, 0.9283924333em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4757589931em, 0.3544995726em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1374623653em, 1.3291083609em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3781742685em, 3.4388066701em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0883355553em, 0.1426518953em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0547399135em, 2.8261750777em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5150444352em, 6.7825195007em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1332782091em, 2.920115937em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.472533536em, 9.3251740041em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3672759176em, 4.7593952499em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0993404971em, 1.9278180517em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6023522346em, 0.5381441371em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3438927103em, 1.8187058094em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6194073374em, 1.8023183505em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6258267713em, 1.9862701em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0515012814em, 4.5346763104em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6853484682em, 1.0164589497em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.604921005em, 7.2039331181em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5565421101em, 1.1070121112em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5783295486em, 8.3787776448em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1768062563em, 7.6149634609em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7662650277em, 1.9879780879em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2927549723em, 1.9340565023em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8709915108em, 7.5235091606em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6665063521em, 3.1577267065em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.495317042em, 6.8606105772em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0246454369em, 4.245880703em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4652789457em, 1.5720954704em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4504894133em, 9.422682858em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8133176916em, 1.1286921043em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.480666956em, 3.9981053637em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4842746847em, 8.9281489927em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6540360554em, 3.6788929046em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6528309738em, 3.0310100026em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3085754448em, 5.124557517em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4125001555em, 4.6868595016em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3172717781em, 4.2946103961em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.395241942em, 1.8386567359em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1104852906em, 2.4919882639em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2569714915em, 2.7846550703em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2842283267em, 0.6013038865em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8934253132em, 3.78193965em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.974606464em, 9.2914768526em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0395328778em, 1.8204675876em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2591374046em, 2.9382964425em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6624620461em, 8.953273988em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1761426783em, 3.6051444646em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8102552265em, 7.0849545753em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3993375152em, 9.3086220476em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9916487388em, 8.7893185146em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8128321487em, 5.360901694em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5364508158em, 2.3236700034em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8867242935em, 8.0837265126em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1052624772em, 2.182833152em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8168531918em, 5.8141819178em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1826639993em, 4.7367473241em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0014056635em, 5.6414685966em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2327402127em, 1.5364733776em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2127440329em, 4.6419996123em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.098992231em, 7.7519329188em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2999642896em, 3.7586332261em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.675664643em, 8.1410512976em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4527203495em, 2.5343306483em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3865401311em, 2.4762400276em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6641321038em, 1.8869026997em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8477920974em, -0.4532716039em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8074433115em, 1.6559508977em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3880960057em, -0.4015464343em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2654435103em, 6.7493284841em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0582981607em, 8.8570537431em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3849663265em, 1.0046131649em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4359393912em, 8.9720174868em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9475658294em, -0.4446831117em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2671326696em, 7.7950163814em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4607557391em, 8.7101574581em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4639153916em, 4.4574547277em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6992446662em, 5.8427143031em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2949239984em, 2.1422286074em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6985969003em, 9.0974245062em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7697611011em, 3.3568773472em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.460700338em, 3.2468745085em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3275019632em, 3.2158760832em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2337854916em, -0.0518940138em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2029111858em, 1.8059462697em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2916718503em, 5.9254989599em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5379605774em, 0.2928365661em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4365728106em, 8.6753028767em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2624018342em, 1.4290279905em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1283480507em, 2.2009259366em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5808564148em, 2.8606280685em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0857103211em, 5.9352333373em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3793721235em, 6.9897791963em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0934416408em, 7.0088973552em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6088451497em, 6.9573125749em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4887502882em, 6.5422852547em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8195717753em, 6.061452875em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9607327474em, 4.7781017645em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.961430306em, 5.4483086198em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7813830529em, 8.8471357851em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0516791106em, 2.9847145862em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2691888901em, 1.9209759083em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0302532766em, 8.3757544306em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6213460889em, 8.3629933799em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7911372227em, 2.7904337467em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6149544872em, 3.9621166333em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.973154775em, 4.8594206215em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2217229958em, 4.2675525589em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4767977114em, 8.4839951721em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5718029827em, 2.3466406014em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8558902196em, 1.0570496308em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3627005882em, 7.9050141244em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0186429443em, 5.0260872855em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5042182301em, 7.3691743207em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4053272903em, 9.4647152735em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2307084369em, 6.5129425221em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0170891415em, 1.4905863491em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5877078173em, -0.4726984947em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5182504167em, 1.9651074969em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1214818721em, 4.2211023491em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.317656131em, 1.6174294073em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.91243321em, 4.5099081656em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9955739839em, 6.0263503705em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4268287435em, 5.3031598373em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1741648338em, 9.4780234752em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3415832266em, 9.1494217557em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6628346855em, 0.5704514225em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9315671353em, 3.5110706853em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6637937297em, -0.3787778965em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.811576661em, 9.4401675025em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8786762798em, 4.9570899464em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2748396675em, 4.1479452003em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3196309415em, 6.438258689em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6477198415em, 4.1262138386em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.097913041em, 8.0589202019em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7748505484em, 1.8768520852em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2013672356em, 3.7795629261em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6514238852em, 0.1236052897em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0764048334em, 9.4538433547em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0987769933em, 7.303482497em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2978141088em, 8.051337166em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8942543816em, 0.2341315987em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0589639794em, 5.9319629294em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3686689133em, 2.4224491997em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3281283735em, 9.0157335479em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5192406974em, 8.580077396em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.535843585em, 9.1879536424em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9606473217em, 4.9380236115em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1677539925em, 3.3882850122em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2062725734em, -0.2323627638em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7781858744em, -0.4491674729em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6246574372em, 6.4456464029em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6076189212em, 4.2693395817em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.38163869em, 1.9754343361em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1519004271em, 6.9302705151em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8726599009em, 1.1763591542em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7503676354em, 3.2039903748em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2878219103em, 2.7979412311em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2961268767em, 6.8656848311em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9710967308em, 1.4957800994em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0213324626em, 7.5043337916em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7089979132em, 3.7762872548em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0084164168em, 1.0734338995em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4966345491em, 1.8251658192em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4498307366em, 5.5727253213em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.621480612em, 7.7746962648em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2621001463em, 7.7177519209em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7505411385em, 0.5254563615em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6889875019em, 2.3751807465em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1315283558em, 0.3296254862em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4978959323em, 4.7586083688em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5672776506em, 4.747945914em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3106613615em, 2.0314156075em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5088014577em, 1.6018793807em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4693588093em, 8.465115679em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9033668517em, 1.9562326875em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0810547281em, 3.719722195em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9279571493em, 3.8263475086em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9265413467em, 7.3807664103em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0519771469em, 7.0205477258em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7660975924em, 5.8415456559em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0277502082em, 5.8945761384em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1285749482em, -0.4762304624em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8003351658em, 0.7496917762em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3379332935em, 7.5235693227em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1422187636em, 7.8456566315em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7104478833em, 8.2098962731em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.294205081em, 6.313524026em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6951745865em, 2.2741199827em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5875525685em, 0.9117163091em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.045983786em, 2.9862789334em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0011590941em, 4.506848174em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6043932965em, 3.7804055618em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6347287251em, 6.5207181719em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1428934877em, 8.7473914188em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1556797524em, 6.7425338864em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0771311063em, 6.5249569436em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9753954354em, 7.2229643098em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8240161517em, 5.9947426527em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8951124405em, 6.8429363092em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9059555655em, 7.2160908713em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2291689164em, 3.3281588191em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6791074813em, 2.4772588834em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.274317124em, 6.1045959393em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7784685399em, 6.0209965224em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2051826583em, 8.0313835453em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0845443834em, 7.6499878365em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.941866429em, 0.1711990832em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3782484213em, 7.8136003741em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2357339048em, 3.9721918974em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1864727154em, 7.1045673273em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6100944589em, 7.7658903238em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3062154458em, 0.4609280509em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4566312347em, 3.7718997962em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0561202425em, 5.2284521528em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5332479829em, 1.4933866524em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7634159046em, 2.5919071272em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6910645288em, 6.6754851961em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.27292354em, 3.1267966836em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1683817931em, 0.7046426826em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5564595231em, 1.6272515068em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4596934481em, 2.3948951941em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6953256919em, 5.6289200075em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.055757255em, 7.2994708226em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7195576395em, 4.6451036404em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1020749046em, 6.532935884em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6627235983em, 1.1485466501em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8838253987em, 8.8903712347em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1367787639em, 0.0471821292em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0607496074em, 2.3338060194em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6233786166em, 3.2612818038em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1185623212em, 1.1718328444em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1055431484em, 1.914865629em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1335757441em, 4.734323718em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5621620974em, 8.5427867616em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5293001152em, 8.6798684092em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2203885807em, 7.468385876em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6555379368em, -0.251527532em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9444887809em, 4.1301114611em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4354641419em, 6.5124853316em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2557922952em, 6.3544890734em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1669331463em, 1.8983836316em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8606976816em, 9.1122172582em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7363644547em, 5.8066914448em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.246049291em, 8.861510536em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4184554351em, 7.2580611573em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7893631178em, 0.307974875em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3865122623em, -0.3907358967em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.996731825em, 7.284845803em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5952868036em, 3.577949263em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2317105232em, 3.7728262961em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7025578014em, 0.6700387067em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4955876279em, 6.7608366489em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1468917027em, 0.8533327268em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4903706324em, 9.4393189715em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6445215759em, 2.0429253982em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.030931249em, 8.3688171149em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6917853167em, 7.1817047135em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9345213103em, 1.2395583382em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9060293551em, 0.7613167677em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5835439266em, 6.2746544937em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9385531341em, 9.3936832332em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2285589902em, 5.5410371227em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8614649758em, 4.0734749165em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6818751038em, 7.6139833362em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2934587274em, 9.2637565531em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1201766537em, 1.9964204895em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6479794412em, 7.098261942em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7359014375em, 7.3109171814em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3247289904em, 1.882925742em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7729349291em, 3.3262980006em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9392313552em, 1.1768124455em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7851304766em, 8.8859516123em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1593149368em, 5.2033403512em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3549487179em, 5.0168239933em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4177104821em, 3.5233499842em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1660386604em, 5.4606492944em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4910024861em, 9.4495595695em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8258175439em, 9.3613960043em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6245259823em, 1.5513013553em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2407508418em, 1.3448911494em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5345633699em, 8.4951469666em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2120923607em, 6.1603939565em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3432688565em, 1.0857217219em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8621694565em, 1.5242168344em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1640769479em, 7.9823036005em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4094512572em, 8.430737675em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9804418687em, 0.5214586911em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4139634992em, 3.0150503514em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3338175693em, 5.5611471841em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0802195255em, 5.8887090274em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4665283638em, 2.4554844974em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0520713926em, 7.589408205em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2872540405em, 7.9177242354em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7131355692em, 0.5483388333em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8588577538em, 7.3399126885em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1562581793em, 0.0234326064em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2689273195em, 2.4090511891em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.694160587em, -0.2359577944em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0013638695em, 4.6320423363em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7740485243em, 5.1997236672em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9753173664em, -0.1732017564em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1537350779em, 6.1181177431em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8254877762em, 0.4722058693em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.819753526em, 0.1253872631em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2518234782em, 4.3738110661em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8460855227em, 2.7823581999em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2298762968em, 5.0401802374em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1701298599em, 7.2072005083em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9549573842em, 9.3741052091em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1456580192em, 0.0140628774em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6666884138em, 1.3451131386em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5619821984em, 2.0142021524em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4972280358em, 5.2601841795em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.461831982em, 3.2919088905em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3395913231em, 5.7124740118em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5196464368em, 1.875156956em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3525892201em, 2.9260793146em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4367563465em, 8.232715294em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9474574169em, 8.5666631158em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.036131536em, 4.3716031047em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6895440698em, 3.0486133322em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8096857684em, 2.3962494985em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4361507026em, 0.8102407777em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1953405821em, 3.2198416415em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4853433696em, 3.313539332em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0309410334em, 3.2791903432em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9600404909em, 9.047082541em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6512212584em, 8.8690690914em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2710985835em, 5.7542146873em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5161585019em, 5.8177766755em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1894335028em, 1.3332663716em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1134306313em, -0.4230788325em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9768715847em, 6.3357778098em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9104832217em, 6.5479946327em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9355407666em, 6.5939912148em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0955059738em, 5.128633698em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9936125545em, 4.4927855879em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5544825632em, 3.3503748539em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5101714375em, 7.3031596727em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3327517039em, 5.7514666148em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0196854944em, 2.9702510173em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4057757087em, 6.7288947874em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7737398052em, 3.9769514742em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9639089324em, 6.2269061586em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.824545949em, 1.0242449854em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0360618336em, 9.4808412884em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.445700206em, 0.524658898em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8691671247em, 0.132409708em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.145832093em, 3.1054180859em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.406647261em, 3.1289286484em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2308176671em, 1.3618848484em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1675821325em, 6.2842025453em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8530025623em, 0.6056868928em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7459717248em, 1.4350137661em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4232191114em, 6.1997726784em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9332044374em, 4.8085432812em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8404867564em, 6.1884227302em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7127654345em, 5.7095750739em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1275473863em, 3.888269776em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7069846948em, 0.9101424813em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4219096238em, 3.8198726936em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6217237883em, 0.7012568104em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9656038934em, 5.22753433em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1014089507em, 1.3842167145em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8132373578em, 5.4963972239em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0068572954em, 8.0982994878em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7038458089em, 9.3949413902em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1506201621em, 5.3700066604em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1251974974em, 6.8310839332em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.289965897em, 0.7677390123em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4200196199em, 6.5667569263em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6274483106em, 5.2096681717em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5413420338em, 6.7014339184em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4300169301em, 6.8469674844em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4317422678em, 7.3970867em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4187114392em, 9.3017606753em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8714434398em, 2.5488259717em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4464983666em, 0.8869340121em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9951154953em, 3.8686458434em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2854275622em, 0.1136963416em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0690105435em, 8.4254291321em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3480444243em, 9.0295893195em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2578066129em, 4.862389104em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1941498576em, 8.7855204644em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8670519415em, 0.9885872193em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6699235786em, 8.7298690585em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1062826864em, 9.1981469187em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9319126038em, 8.3143173523em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3320764256em, 1.3519882865em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7824213774em, 2.8565547014em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4645076549em, 8.3211027591em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8770972735em, 7.8640319625em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9494260621em, 2.1483153002em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.274820831em, 7.1997818599em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1714887287em, 3.2770687128em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2096405749em, 0.3509106092em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5399687614em, 1.8351590515em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0488550891em, 4.2468005395em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2713353597em, 3.5109245193em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.04586742em, -0.2842453326em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6953193623em, 1.0796466589em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3010640304em, 4.9232490656em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7710938702em, 2.2226250864em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8046174898em, 0.8248275158em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5942982218em, 3.5214102833em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.358043761em, 2.4708650663em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8020886028em, 1.7280333187em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9775281388em, 4.2017192758em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9550076521em, 8.7895241858em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0931546383em, 5.6822869278em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3834743757em, 3.7998968934em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0108754429em, 5.1095623067em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1616545585em, 6.086798094em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.942365917em, -0.0862727028em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2154829495em, 0.8760676184em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3498747887em, 5.2755967379em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7292159623em, -0.2751719022em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.933653595em, 4.621995967em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6518858722em, 2.1787855372em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.071379932em, 5.6547725701em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8323878728em, 3.64560747em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6380726414em, 1.8168188984em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4574648673em, 8.6914697983em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.822448145em, 8.2738027453em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6324464636em, 7.0939183813em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6101028518em, 2.5831185127em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2486173775em, 5.5709377196em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8154764311em, 2.2708125552em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2791760358em, 4.84683053em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3433270502em, 2.7558788372em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9282116748em, 2.8550801528em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2851679845em, 7.6751309536em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5051165691em, 4.937641845em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5271679659em, 3.9863834445em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3735738537em, 7.4462402321em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.26245447em, 4.3133056933em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0405564166em, 0.75567935em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2439678561em, 2.7608213526em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2514044349em, 1.6078367493em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3583759325em, 3.596068237em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5225567028em, -0.2637653864em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3370966823em, 2.9553578322em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0699305326em, 0.1129963233em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0744850169em, 1.9287169448em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8780380047em, 1.5008168902em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4413856647em, 0.5106868824em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0973442396em, -0.0711894027em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2897703884em, 9.3107539393em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7576284554em, 4.0196450411em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0547759612em, 6.4515016249em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4368179114em, 1.2785776198em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0072563762em, 9.1830576828em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7354067446em, 8.0984582583em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7718412544em, 8.1380603726em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9549874128em, 0.7918443151em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1619497239em, 3.9563811717em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0343079257em, 8.441981657em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9159956051em, 2.2774179346em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1966875861em, 5.595857784em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6409783652em, 2.8523505883em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0380558169em, 1.5519082833em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3400972781em, 9.1554617125em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2796026581em, 8.6944277126em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9318552747em, 5.1498213676em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9416049589em, 1.521907603em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2993390913em, 3.6168312706em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.917266466em, 7.9053368587em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0566591394em, 2.0316264491em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8286311576em, 2.5775557234em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1379314981em, -0.3382613234em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6030432444em, 6.8249199848em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3081848127em, -0.3296454773em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9408585384em, 5.7102481848em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9803968511em, 7.0430351217em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3333802096em, 6.5333342067em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9224008847em, 0.3626200077em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6444769744em, 8.6529228363em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2436154898em, 4.8790690277em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4926079655em, 5.1220570708em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2106090892em, 6.4309807815em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8008711648em, 2.2601215855em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2517714828em, 3.2786512095em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4137414236em, 5.9701147431em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.054221877em, 6.3029737516em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4516701471em, 7.5360821747em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3049027068em, 0.9158139384em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4707412246em, 7.6836479036em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2099091941em, 1.9200494071em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6424745943em, 6.298763448em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3572954872em, 4.4353530394em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.819750764em, 8.0747050548em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9764697454em, 4.751121742em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9853683997em, 3.0602527638em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8781081065em, -0.0608491294em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9471603067em, 8.8254444028em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7364538301em, 6.4543563107em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5968983046em, 7.376870722em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9932768599em, 8.1766402644em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3471403102em, 5.9555867936em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6280978427em, 7.3556571628em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4688342818em, 3.607093123em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1688317787em, 7.4710394869em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.028255163em, 2.327263199em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2204118225em, 7.6191152308em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2655884539em, 6.9561385933em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8813631344em, 7.5936302583em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8696805772em, 3.6025353717em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8753492971em, 9.4888004851em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3317767895em, 4.8746828361em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3824809131em, 5.8252307116em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7537022762em, 2.9194527123em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4324680283em, 5.6437336964em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4397400291em, 6.7513714289em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7262997614em, 5.0607057317em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1621448365em, 0.6988339797em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5173533387em, 0.6895029531em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6076198748em, -0.4958830969em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2972372652em, -0.4427629508em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0617983967em, 8.9138469552em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9401015747em, 8.0834843908em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3155996551em, 9.3526888321em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2019704791em, 8.9340614392em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6443376251em, 5.7160443378em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4288295955em, 4.9548768629em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9269804828em, 7.8558297621em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3265973231em, 5.8792656528em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.268854387em, 1.7609915952em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7460345854em, 1.4075684507em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0346298354em, 9.3002660779em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1486780653em, 7.7631634102em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.259586888em, 9.2176303594em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7031535813em, 1.7255079399em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.476301128em, 3.2729123261em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0598653235em, 7.370872086em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6625429593em, 5.5920534592em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0817120281em, 1.9154109432em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5787873178em, 5.0329861606em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5675525717em, 4.5780181795em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5447264496em, 1.5712345868em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8899525906em, 5.3104657728em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2902086044em, 8.6018408869em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.45782762em, 5.0029600737em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.552329932em, 6.0156765219em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2160829334em, 6.2690841325em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.291570424em, 7.9030353188em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0798536687em, 2.0787611299em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5060293492em, 6.3092673107em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9230577659em, 6.4680819454em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4141254796em, 4.9046398831em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4325040221em, 5.7776040417em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.673277056em, 7.2175014986em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9432286198em, 1.9812789364em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8781655964em, 0.8589403556em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0277583403em, 3.3807399379em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4882621272em, 5.0323751389em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3749592764em, 8.9860964841em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7906030606em, 1.0278809742em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7153928812em, 1.1937526547em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5407230474em, 0.4022306724em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7443052985em, 7.3358156074em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6963892226em, 8.0466844447em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8252517787em, 3.3726375593em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.498104509em, 0.6860448241em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1896005871em, 0.9594409012em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8634685264em, 1.8137455519em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4234717636em, 7.8897185063em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0218994591em, 8.858167897em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9827199323em, 0.1191220571em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6913869872em, 1.0870687934em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3885211292em, 5.0447600431em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5867120615em, 9.328963547em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4872548249em, 0.330523533em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2267119375em, 8.6674152941em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8028532926em, 1.5364407883em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5903375009em, 6.0452860142em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4410608389em, 4.7696526835em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4127951757em, 5.06506748em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9202932638em, 3.0582052974em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3588839918em, 9.0616154699em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0328340395em, 8.3009403716em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3195307616em, 3.7010485458em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5106830181em, 2.6061920273em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4845341686em, 8.7517356424em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3596339634em, 0.2218951117em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6976506105em, -0.3225274348em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4358689312em, 8.7203247522em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1598543148em, -0.1949255693em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0192216551em, 1.2967424984em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9559530309em, -0.0445841635em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1241347523em, 1.8091967085em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3053404376em, 3.7133882845em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0413400503em, 5.9393511548em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3537801805em, 2.8908180771em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2446139059em, 1.8171162539em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7059001657em, 4.9940866208em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6179941511em, -0.2901388716em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0147876454em, 2.6217301791em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4281626497em, 2.4215083264em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5809404941em, 9.0538492778em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1770407829em, 1.2992638818em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0539631457em, 6.8224351532em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6095399165em, 5.4112448718em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1298817291em, 1.2733835003em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9651221119em, 4.5289184728em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8315452528em, 3.0112553615em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0073831481em, 6.4520117132em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0729825705em, 3.2147590827em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3588288847em, 2.3350299711em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9566983453em, 6.619274686em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9122046243em, 3.19742012em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2178922253em, 3.5594607445em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6618142722em, 5.2727830857em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4618398068em, 7.5421812887em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7312181917em, 7.4707191211em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.776001989em, 0.1700395394em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5436961912em, 3.2307142977em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1261002018em, -0.4125377284em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6547973363em, 4.1060158197em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8435289162em, 4.6812223493em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8024548846em, 2.5328382438em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8781124485em, 6.5369857996em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2073855843em, 3.0364221493em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2209284432em, 6.246491983em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3224032321em, 3.9993497661em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4505229299em, 8.4860834405em, 7px, 7px, var(--primary-theme-accent-dim-1);
-  animation-duration: 22s;
-  animation-delay: -27s;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD {
-  filter: blur(0) !important;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD span::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD span::after {
-  opacity: 0;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-2);
-  border-radius: var(--global-border-radius);
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD {
-  background: transparent;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD {
-  color: var(--primary-theme-accent-dim-1);
-  opacity: 1;
-  filter: blur(3px);
-  transition: filter 0.3s ease;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD {
-  filter: blur(0) !important;
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0deg) scale(12) translateX(-5px);
-  }
-  to {
-    transform: rotate(360deg) scale(18) translateX(5px);
-  }
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockquoteContainer___XzQ5ZD {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-2);
-  border-left: 5px solid var(--primary-theme-accent);
-  border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
-  padding: 0.2rem;
-  padding-right: 0.5rem;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockquoteContainer___XzQ5ZD .Markup\.module__blockquoteDivider___XzQ5ZD {
-  background-color: transparent;
-  margin-left: -0.5rem;
-}
-
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD {
-  background-color: color-mix(in srgb, currentColor 10%, black);
-  border: 1px solid color-mix(in srgb, currentColor 85%, black);
-  border-left: 5px solid currentColor;
-  border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD::before {
-  background-color: transparent;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD .Markup\.module__alertTitle___XzQ5ZD {
-  font-size: 1.3rem;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD .Markup\.module__alertContent___XzQ5ZD {
-  color: currentColor;
-}
-
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD {
-  color: var(--primary-theme-accent) !important;
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-2);
-  border-radius: var(--global-border-radius);
-  padding: 0.1rem 0.5rem;
-  width: -moz-fit-content;
-  width: fit-content;
-  text-decoration: none !important;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD:hover {
-  background-color: var(--primary-theme-accent-dim-5);
-  border: 1px solid var(--primary-theme-accent-dim-1);
-  color: var(--primary-theme-accent) !important;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD::before {
-  content: "🔗 ";
-}
-
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-2);
-  border-radius: var(--global-border-radius);
-  color: var(--primary-theme-accent) !important;
-  padding: 0.05rem 0.5rem;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD:hover {
-  background-color: var(--primary-theme-accent-dim-5) !important;
-  border: 1px solid var(--primary-theme-accent-dim-1) !important;
-  color: var(--primary-theme-accent) !important;
-}
-.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD:hover span {
-  color: var(--primary-theme-accent) !important;
-}
-
 .GuildLayout\.module__guildMainContent___XzY3N2,
 .ChannelLayout\.module__channelLayoutContainer___ZDU4Mz,
 .ChannelIndexPage\.module__channelGrid___XzNmOW {
   background-color: var(--primary-theme-accent-dim-6);
 }
 
-#if-category {
-  display: none;
-}
-
-.SettingsModalHeader\.module__headerTransition___XzNkMG,
-.SettingsModalLayout\.module__desktopSidebarInner___XzBjZD {
-  background-color: var(--primary-theme-accent-dim-5);
-}
-
-.UserSettingsModal\.module__userProfile___XzFlZT {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-3);
-  border-radius: var(--global-border-radius);
-}
-
-.ChannelIndexPage\.module__searchPanel___XzNmOW .ChannelSearchResults\.module__container___XzFhMD {
-  background-color: var(--primary-theme-accent-dim-5);
-}
-.ChannelIndexPage\.module__searchPanel___XzNmOW .ChannelSearchResults\.module__container___XzFhMD .ChannelSearchResults\.module__messageItem___XzFhMD {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-3);
-  border-radius: var(--global-border-radius);
-}
-
-.ActiveNowSidebar\.module__sidebar___ZDQ4Yz {
-  background-color: var(--primary-theme-accent-dim-5);
-  border: 1px solid var(--primary-theme-accent-dim-3);
-}
-.ActiveNowSidebar\.module__sidebar___ZDQ4Yz .VoiceActivityCard\.module__card___YmUzND {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-3);
-  border-radius: var(--global-border-radius);
-}
-.ActiveNowSidebar\.module__sidebar___ZDQ4Yz .VoiceActivityCard\.module__card___YmUzND .Button\.module__button___ZDBiYz {
-  background-color: var(--primary-theme-accent-dim-4);
-  border: 1px solid var(--primary-theme-accent-dim-3);
-  border-radius: var(--global-border-radius);
-}
-
-.DMFriendsView\.module__content___XzFlMG,
-.DirectMessageList\.module__dmChannelList___YTlkYT {
-  background-color: var(--primary-theme-accent-dim-5);
-}
-.DMFriendsView\.module__content___XzFlMG .FormSurface\.module__surface___YzIwNT,
-.DirectMessageList\.module__dmChannelList___YTlkYT .FormSurface\.module__surface___YzIwNT {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-3);
-  border-radius: var(--global-border-radius);
-}
-
-.DirectMessageList\.module__dmListHeader___YTlkYT,
-.GuildHeader\.module__headerWrapper___YmVlOG:not(:has(.GuildHeader.module__bannerBackground___YmVlOG)) .GuildHeader\.module__headerContainer___YmVlOG {
-  background-color: var(--primary-theme-accent-dim-4);
-}
-
-.Button\.module__primary___ZDBiYz {
-  background-color: var(--primary-theme-accent-dim-4) !important;
-  border: 1px solid var(--primary-theme-accent-dim-3) !important;
-  border-radius: var(--global-border-radius);
-}
-
-.Button\.module__secondary___ZDBiYz {
-  background-color: var(--primary-theme-accent-dim-5) !important;
-  border: 1px solid var(--primary-theme-accent-dim-3) !important;
-  border-radius: var(--global-border-radius);
-}
-
-.PopoverPopout\.module__popout___YzY5YW .InboxPopout\.module__sidebar___YzAwYT,
-.InboxPopout\.module__container___YzAwYT .InboxPopout\.module__sidebar___YzAwYT,
-.InboxPopout\.module__containerWithSidebar___YzAwYT .InboxPopout\.module__sidebar___YzAwYT {
-  background-color: var(--primary-theme-accent-dim-5);
-  border: 1px solid var(--primary-theme-accent-dim-3);
-  border-radius: var(--global-border-radius);
-}
-.PopoverPopout\.module__popout___YzY5YW,
-.InboxPopout\.module__container___YzAwYT,
-.InboxPopout\.module__containerWithSidebar___YzAwYT {
-  background-color: var(--primary-theme-accent-dim-6);
-  border: 1px solid var(--primary-theme-accent-dim-3);
-  border-radius: var(--global-border-radius);
-}
-.PopoverPopout\.module__popout___YzY5YW .InboxMessageHeader\.module__header___ZmI4Nm,
-.InboxPopout\.module__container___YzAwYT .InboxMessageHeader\.module__header___ZmI4Nm,
-.InboxPopout\.module__containerWithSidebar___YzAwYT .InboxMessageHeader\.module__header___ZmI4Nm {
-  background-color: var(--primary-theme-accent-dim-5);
-  border: 1px solid var(--primary-theme-accent-dim-3);
-  border-radius: var(--global-border-radius);
-  padding: 0.5rem;
-}
-
-@property --overhauled-profiles {
-  syntax: "off | on";
-  inherits: false;
-  initial-value: on;
-}
-@container body style(--overhauled-profiles: on) {
-  .ProfileCardLayout\.module__profileCard___YWFiZW,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 {
-    background: var(--primary-theme-accent-dim-6);
-    border: 1px solid var(--primary-theme-accent-dim-3);
-    border-radius: var(--global-border-radius);
-  }
-  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD {
-    background: var(--primary-theme-accent-dim-5);
-    border: 1px solid var(--primary-theme-accent-dim-3);
-    border-radius: var(--global-border-radius);
-    display: flex;
-    justify-content: center;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 0 auto;
-  }
-  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD {
-    background: var(--primary-theme-accent-dim-5);
-    color: var(--text-normal);
-    box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
-    border: 1px solid var(--primary-theme-accent-dim-3);
-    border-radius: var(--global-border-radius);
-    transition: all ease 0.3s !important;
-  }
-  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD:hover,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD:hover {
-    background: var(--primary-theme-accent-dim-4);
-    color: var(--primary-theme-accent);
-    box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
-    border: 1px solid var(--primary-theme-accent-dim-2);
-    border-radius: var(--global-border-radius);
-  }
-  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD.Tabs\.module__selected___YzdlOD,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD.Tabs\.module__selected___YzdlOD {
-    background: var(--primary-theme-accent-dim-4);
-    color: var(--primary-theme-accent);
-    border: 1px solid var(--primary-theme-accent-dim-3);
-    border-radius: var(--global-border-radius);
-  }
-  .ProfileCardLayout\.module__profileCard___YWFiZW .Scroller\.module__scrollerChildren___ZmI2ND,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Scroller\.module__scrollerChildren___ZmI2ND {
-    background: var(--primary-theme-accent-dim-6);
-  }
-  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2,
-  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT {
-    background: var(--primary-theme-accent-dim-6);
-    border-radius: var(--global-border-radius);
-  }
-  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
-  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
-  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
-  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
-  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG {
-    background: var(--primary-theme-accent-dim-5);
-    border: 1px solid var(--primary-theme-accent-dim-3);
-    border-radius: var(--global-border-radius);
-  }
-  /* ---------------------------------------------------------------- */
-  /* discord-like user profiles by deer
-  /* ---------------------------------------------------------------- */
-  /* full user profile */
-  [class*="UserProfileModal.module__modalRoot_"] {
-    height: unset; /* shrink to only occupy necessary space */
-  }
-  /* pfp button */
-  [class*="ProfileCardBanner.module__avatarButton_"],
-  [class*="UserProfileModal.module__avatarContainer_"] {
-    anchor-name: --anchor-userstatus;
-  }
-  /* "display name, username, pronouns */
-  [class*="ProfileCardUserInfo.module__userInfoContainer_"],
-  [class*="UserProfileModal.module__userInfoContent_"] {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  /* display name */
-  [class*="ProfileCardUserInfo.module__nameRow_"],
-  [class*="UserProfileModal.module__nameRow_"] {
-    width: 100%;
-  }
-  /* username */
-  [class*="ProfileCardUserInfo.module__usernameRow_"],
-  [class*="UserProfileModal.module__usernameRow_"] {
-    gap: unset;
-    color: var(--text-tertiary);
-  }
-  /* username pronouns separator */
-  [class*="ProfileCardUserInfo.module__pronouns_"]::before,
-  [class*="UserProfileModal.module__pronouns_"]::before {
-    content: "";
-    width: 4px !important;
-    height: 4px !important;
-    margin: 0rem 0.5rem;
-    background-color: var(--text-tertiary);
-    border-radius: var(--radius-full);
-  }
-  /* pronouns */
-  [class*="ProfileCardUserInfo.module__pronouns_"],
-  [class*="UserProfileModal.module__pronouns_"] {
-    font-size: 14px;
-    margin-top: unset;
-    color: var(--text-tertiary);
-    display: inline-flex;
-    align-items: center;
-  }
-  /* custom profile status */
-  [class*="UserProfilePopout.module__profileCustomStatus_"],
-  [class*="UserAreaPopout.module__customStatusRow_"],
-  [class*="ProfilePreview.module__profileCustomStatus_"] {
-    align-items: flex-start;
-    position: absolute;
-    position-anchor: --anchor-userstatus;
-    translate: 0 1rem;
-    position-area: right span-all;
-    position-visibility: always;
-    margin-left: 0.75rem;
-    width: -moz-max-content;
-    width: max-content;
-    max-width: 175px;
-    max-height: 3.7rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background: var(--primary-theme-accent-dim-5);
-    border: 1px solid var(--primary-theme-accent-dim-3);
-    border-radius: var(--global-border-radius);
-    border-top-left-radius: 0 !important;
-    z-index: 11; /* display above plutonium/visionary badge */
-    transition: var(--transition-normal);
-  }
-  [class*="UserProfileModal.module__customStatusRow_"] {
-    align-items: flex-start;
-    position: absolute;
-    position-anchor: --anchor-userstatus;
-    position-area: right span-all;
-    position-visibility: always;
-    margin-left: 0.75rem;
-    width: -moz-max-content;
-    width: max-content;
-    max-width: 575px !important;
-    max-height: 3.7rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background: var(--primary-theme-accent-dim-5);
-    border: 1px solid var(--primary-theme-accent-dim-3);
-    border-radius: var(--global-border-radius);
-    border-top-left-radius: 0;
-    z-index: 11; /* display above plutonium/visionary badge */
-    transition: var(--transition-normal);
-  }
-  /* custom profile status */
-  [class*="UserProfilePopout.module__profileCustomStatus_"]:hover,
-  [class*="UserAreaPopout.module__customStatusRow_"]:hover,
-  [class*="UserProfileModal.module__customStatusRow_"]:hover,
-  [class*="ProfilePreview.module__profileCustomStatus_"]:hover {
-    max-height: 10rem;
-    translate: unset;
-  }
-  /* custom profile status inner */
-  [class*=CustomStatusDisplay] > [class*="CustomStatusDisplay.module__content_"],
-  [class*=UserProfilePopout] > [class*="CustomStatusDisplay.module__content_"],
-  [class*=UserProfileModal] > [class*="CustomStatusDisplay.module__content_"],
-  [class*=ProfilePreview] > [class*="CustomStatusDisplay.module__content_"],
-  [class*="UserAreaPopout.module__customStatusPlaceholder_"] {
-    margin: 0.25rem 0.5rem;
-  }
-  [class*="UserProfileModal.module__profileContentWrapper_"] {
-    background: var(--primary-theme-accent-dim-6);
-  }
-  /* profile popout bio background */
-  [class*="UserProfileShared.module__bioContainer_"] {
-    background: var(--primary-theme-accent-dim-5);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    border: 1px solid var(--primary-theme-accent-dim-3);
-  }
-  /* bio join date notes etc container */
-  [class*="UserProfileModal.module__profileContent_"] {
-    padding-top: 16px !important;
-  }
-  .ProfileCardUserInfo\.module__usernameButton___XzY3Zj:before {
-    content: "@";
-  }
-}
 body {
   container-name: body;
 }

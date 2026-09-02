@@ -1,0 +1,1381 @@
+/**
+                    ▄▄            
+  ▄▄▄▄▄▄      ▄▄▄▄▄███   ▄▄▄▄▄▄   
+▄█▓▓█▀▀█▄▄  ▄█▓▓▀▀▀███ ▄█▓▓▀▀▓█▄▄ 
+█▓▒▀▀  ░▒▄▄ █▓▒█ ▄▄ ▀▀ █▓▒█   ░▒▄▄
+▓▒██   ▒░▓█ ▓▒░▒▓██    ▓▒▌▌   ░░▓█
+▒░██   ░▒▓█ ▒░██ ▀▀    ▒░██   ▓▒▓█
+░███   ░░██ ░██▀▄  ▄░█ ░██▀▄▄▄░░█ 
+████   ░▒▓█  ▀████████  ▀█████▄▀  
+                   ▀██            
+        ▄▄                                            ▄▄            
+  ▄▄▄▄▄███   ▄▄         ▄▄   ▄     ▄▄▄   ▄▄▄    ▄▄▄▄▄███ ▄▄▄▄▄▄▄▄   
+▄█▓▓▀▀▀███ ▄█▓█       ▄█▓█   █▄▄  ██▓█   ████ ▄█▓▓▀▀▀███ ██▓▓▀█▓█▄▄ 
+█▓▒█ ▄▄ ▀▀ █▓▒█       █▓▒█   ██▄▄ ▀▓▒▄▄ ▄▓▒▀▀ █▓▒█ ▄▄ ▀▀ █▓▒█   ▓▒█ 
+▓▒░▒▓██    ▓▒░█       ▓▒░█   ▒▓▓█  ▄░░▒▓▓█▌▌  ▓▒░▒▓██    ▓▒▓▒▒▒▓██  
+▒░██ ▀▀    ▒░██       ▒░██   ▒▒██ ▒░█▀▀ ▀▓▒▌▌ ▒░██ ▀▀    ▒░██  ▀▓▒▄▄
+░███       ░██▀▄      ░░█▀▄▄▓▒▓▌▌ ░███   ▒▒▌▌ ░██▀▄  ▄░█ ░███   ░░▌▌
+▀███        ▀██████▄▀ ▀░░███░▒▀▀   ▀██   ░▒██  ▀████████ ████   █░█ 
+  ▀                                                  ▀██            
+*/
+/* General font import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* Code font import */
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+body {
+  /**
+   * Fluxer Overhaul is a massive overhaul of the visual appearance of the Fluxer Client.
+   * Some of its features are quite drastic, and may not be to everyone's taste.
+   * For this reason, Presented below is a configurator for some of the more dramatic changes,
+   * allowing you, the user, to pick and choose which features you don't and do want to use.
+   * If you're an InFlux user, Chances are you will have access to a graphical configurator for these settings.
+   * You may still need to manually open the Theme.css file to import a custom font, though.
+  */
+  /* Primary Theme Accent Color — Default: #ff0000; valid values: any valid CSS color */
+  /* This color is used throughout the theme for various UI elements. */
+  --primary-theme-accent: #ff0000;
+  /* Global Border Radius — Default: 12px; valid values: any valid CSS length */
+  /* This value is used to round the corners of various UI elements. */
+  --global-border-radius: 12px;
+  /* General Font — Default: "Montserrat"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for most of the entire application, such as messages and menu text.
+  To use remote fonts from repositories such as Google Fonts, you need to import them at the top of this file. */
+  --general-font: "Montserrat";
+  /* Code Font — Default: "Kode Mono"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for code blocks and inline code. */
+  --code-font: "Kode Mono";
+  /* Use Message Bubbles — Default: off; valid values: on, off */
+  /* Wraps messages in a bubble-like container, similar to other messaging apps like Signal or Telegram. */
+  --use-bubbles: off;
+  /* Replace Search Bar — Default: off; valid values: on, off */
+  /* Replaces the default search bar with an icon that optimizes space. Will expand on hover or focus. */
+  --replace-search-bar: off;
+  /* Compact Members List — Default: on; valid values: on, off */
+  /* Collapses the members list, and expands it on hover, allowing for more space for messages. */
+  --compact-members-list: on;
+  /* Overhaul User Profiles — Default: on; valid values: on, off */
+  /* Overhauls the user profile popout and modal to Appear more like Discord's user profile, with a more compact and modern design. */
+  /* All Credit for this feature goes to DeerUwU on Github, who made the original user profile overhaul. */
+  --overhauled-profiles: on;
+}
+
+body {
+  --primary-theme-accent-dim-1: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 90%,
+    black
+  );
+  --primary-theme-accent-dim-2: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 75%,
+    black
+  );
+  --primary-theme-accent-dim-3: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 50%,
+    black
+  );
+  --primary-theme-accent-dim-4: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 25%,
+    black
+  );
+  --primary-theme-accent-dim-5: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 10%,
+    black
+  );
+  --primary-theme-accent-dim-6: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 5%,
+    black
+  );
+  font-family: var(--general-font) !important;
+}
+body .Markup\.module__markup___XzQ5ZD pre,
+body .Markup\.module__inline___XzQ5ZD,
+body code {
+  font-family: var(--code-font) !important;
+}
+
+.TextareaInput\.module__textareaOuterRow___XzJmNz {
+  min-height: 0;
+}
+.TextareaInput\.module__textareaOuterRow___XzJmNz:before {
+  display: none;
+}
+
+.InputWrapper\.module__statusRail___ZWM3OW {
+  bottom: -30px;
+}
+
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .TextareaInput\.module__mainWrapperDense___XzJmNz {
+  min-height: 35px;
+  margin-top: 0.8rem;
+  margin-bottom: 5px;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 {
+  translate: 0px -1.4rem;
+  width: 98%;
+  margin: 10px auto;
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  max-height: 40rem;
+  min-height: 3.7rem;
+  background-color: var(--primary-theme-accent-dim-4);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW {
+  background-color: transparent !important;
+  padding: 0;
+  margin-left: -5px;
+  margin-right: -5px;
+  translate: 2px 0;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-height: 35rem !important;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .Scroller\.module__scrollerChildren___ZmI2ND {
+  overflow-y: scroll;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .TextareaInput\.module__mainWrapperDense___XzJmNz {
+  padding: var(--textarea-horizontal-padding);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .TextareaInput\.module__flexColumn___XzJmNz {
+  max-height: 35rem !important;
+  background-color: var(--primary-theme-accent-dim-6);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .LexicalMessageComposer\.module__paragraph___ZjY5OG {
+  max-height: 20rem !important;
+  overflow-y: auto;
+}
+
+.InputWrapper\.module__composerActionStack___ZWM3OW {
+  margin-top: -10px !important;
+  margin-right: -4px !important;
+  margin-left: 2px !important;
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-bottom-color: transparent;
+}
+
+.TextareaInput\.module__buttonContainerDense___XzJmNz {
+  transition: all 0.2s ease-in-out;
+  margin-right: 35px;
+  transition-property: opacity, margin-right;
+}
+.TextareaInput\.module__buttonContainerDense___XzJmNz .TextareaButton\.module__button___XzgyZD:last-child {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  right: 0;
+}
+.TextareaInput\.module__buttonContainerDense___XzJmNz .TextareaButton\.module__button___XzgyZD:last-child:disabled {
+  opacity: 0;
+  right: -25px;
+}
+.TextareaInput\.module__buttonContainerDense___XzJmNz:has(.TextareaButton\.module__button___XzgyZD:last-child:disabled) {
+  margin-right: -15px;
+}
+
+.ChannelChatLayout\.module__container___YjY1N2 {
+  background-color: var(--primary-theme-accent-dim-6);
+}
+.ChannelChatLayout\.module__container___YjY1N2 .ChannelMessages\.module__scrollerInner___XzlhYW {
+  margin: 0 50px;
+}
+
+.Scroller\.module__scroller___ZmI2ND {
+  background: linear-gradient(180deg, var(--primary-theme-accent-dim-5) 80%, var(--primary-theme-accent-dim-5) 95%, var(--primary-theme-accent-dim-6) 100%);
+}
+
+@property --replace-search-bar {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+
+@container body style(--replace-search-bar: on) {
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj {
+    transition: all ease 0.3s !important;
+    justify-content: flex-end !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT {
+    transition: all ease 0.3s !important;
+    justify-content: flex-start !important;
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent);
+    border-radius: var(--global-border-radius);
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__scopeButton___Y2RiYT {
+    transition: all ease 0.3s !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__scopeButton___Y2RiYT .MessageSearchBar\.module__scopeBadge___Y2RiYT {
+    transition: all ease 0.3s !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    transition: all ease 0.3s !important;
+    background: none;
+    border: transparent;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__input___Y2RiYT {
+    transition: all ease 0.3s !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) {
+    width: 30px !important;
+    min-width: 25px !important;
+    flex: 0 0 25px !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__scopeButton___Y2RiYT {
+    scale: 1.3;
+    translate: -2px 0;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__scopeButton___Y2RiYT .MessageSearchBar\.module__scopeBadge___Y2RiYT {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__input___Y2RiYT {
+    min-width: 0px !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__anchor___Y2RiYT {
+    width: 30px !important;
+    min-width: 30px !important;
+    flex: 0 0 30px !important;
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    flex: 0 0 30px !important;
+    width: 30px !important;
+    min-width: 30px !important;
+  }
+}
+@container body style(--replace-search-bar: off) {
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent);
+    border-radius: var(--global-border-radius);
+  }
+}
+.UserArea\.module__userAreaInnerWrapper___XzI2YW {
+  position: absolute;
+  bottom: 2rem;
+  left: 4.5rem;
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  width: calc(var(--layout-sidebar-width) - 0.5rem);
+  padding: 0px;
+}
+.UserArea\.module__userAreaInnerWrapper___XzI2YW .UserArea\.module__userAreaContainer___XzI2YW {
+  padding: 5px;
+}
+
+.Scroller\.module__scroller___ZmI2ND .ChannelListContent\.module__channelGroupsContainer___ZDI5M2 {
+  margin-bottom: 4rem;
+}
+
+.UserArea\.module__userAreaContainer___XzI2YW:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: color-mix(in srgb, black var(--darkening), transparent);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--layout-user-area-height);
+  border-top: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+}
+
+@property --compact-members-list {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+@container body style(--compact-members-list: on) {
+  .ChannelIndexPage\.module__memberListDivider___XzNmOW,
+  .MemberListContainer\.module__memberListContainer___XzJhOT {
+    transition: all ease 0.3s !important;
+  }
+  body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .ChannelIndexPage\.module__memberListDivider___XzNmOW,
+  body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .MemberListContainer\.module__memberListContainer___XzJhOT {
+    margin-right: -13rem;
+  }
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG:has([data-flx-user-id="1473358551264223281"]),
+.UserArea\.module__userAreaContainer___XzI2YW:has([data-flx-user-id="1473358551264223281"]) {
+  --user-background: url("https://fluxerusercontent.com/attachments/1473358551264223281/1544251896804409346/liz-furry-live-wallpaper.png");
+  --darkening: 60%;
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG:has([data-flx-user-id="1473358551264223281"]) .MemberListItem\.module__buttonOffline___XzM2MT,
+.UserArea\.module__userAreaContainer___XzI2YW:has([data-flx-user-id="1473358551264223281"]) .MemberListItem\.module__buttonOffline___XzM2MT {
+  backdrop-filter: grayscale(100%);
+  opacity: 1;
+}
+
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG,
+.UserArea\.module__userAreaContainer___XzI2YW {
+  background-image: var(--user-background);
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--global-border-radius);
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__button___XzM2MT,
+.UserArea\.module__userAreaContainer___XzI2YW .MemberListItem\.module__button___XzM2MT {
+  background-color: color-mix(in srgb, black var(--darkening), transparent);
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__buttonOffline___XzM2MT div,
+.UserArea\.module__userAreaContainer___XzI2YW .MemberListItem\.module__buttonOffline___XzM2MT div {
+  filter: grayscale(20%);
+  opacity: 90%;
+}
+
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=offline]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-offline) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-offline);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=online]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-online) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-online);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=idle]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-idle) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-idle);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=dnd]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-dnd) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-dnd);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-mobile-status=true]) .MemberListItem\.module__name___XzM2MT:before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 3px;
+  background-color: var(--status-online);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath d='M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath d='M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__animatedMaskShape___ZmRhMD,
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__statusContainer___ZmRhMD {
+  display: none;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__container___ZmRhMD foreignObject {
+  -webkit-mask: none !important;
+          mask: none !important;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__button___XzM2MT {
+  height: 100%;
+  border-radius: var(--global-border-radius);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+}
+
+@property --use-bubbles {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: off;
+}
+@container body style(--use-bubbles: on) {
+  [data-flx="channel.message-group.group"] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    width: 100% !important;
+    max-width: 100%;
+    padding: 5px;
+    border-radius: 0px 12px 12px 12px;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__message___YzRhZj {
+    grid-template-areas: "gutter-left avatar gutter-right reply" ". . . content" ". . . container";
+    padding-right: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"] {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    max-width: 100%;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:not([data-is-group-start=true]):has(.AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj, .Attachment\.module__attachmentWrapper___YTIxYT) .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:is([data-is-group-start=true]):not(:has([data-flx-reply=true])) .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+    margin-top: -2rem;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-right: auto !important;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+    background: none;
+    border: none;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-bottom: 2.5rem;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__repliedMessage___YzRhZj {
+    z-index: 1;
+  }
+  [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+    margin-top: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) div .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__twoImageGrid___XzliZD {
+    grid-template-columns: repeat(2, 15rem) !important;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__threeImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: 15rem 7.5rem;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__fourImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: 11.5rem 11.5rem;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__fiveImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(6, 3.7rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__sixImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__sevenImageContainer___XzliZD .AttachmentLayoutGrid\.module__sevenGrid___XzliZD {
+    grid-template-rows: repeat(2, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__eightImageContainer___XzliZD .AttachmentLayoutGrid\.module__eightBottomGrid___XzliZD {
+    grid-template-rows: repeat(2, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__nineImageGrid___XzliZD {
+    grid-template-rows: repeat(3, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__tenImageContainer___XzliZD .AttachmentLayoutGrid\.module__tenGrid___XzliZD {
+    grid-template-rows: repeat(3, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"]:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-bottom: 40px;
+  }
+  [data-flx="channel.message-group.group"] [data-is-group-start=true] .Message\.module__messageContent___YzRhZj {
+    margin-top: -2rem;
+  }
+  [data-flx="channel.message-group.group"] [data-is-group-start=true] .Message\.module__messageAvatar___YzRhZj {
+    translate: 0 -25px;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+    justify-self: left;
+    top: 2.5rem;
+    left: 5px;
+    display: grid;
+    height: 2.3rem !important;
+    padding: 5px;
+    border-left: 1px solid var(--message-mention-color);
+    border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+    margin-right: 15px;
+    background: var(--primary-theme-accent-dim-4);
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj::before {
+    display: none;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedTextPreview___YzRhZj {
+    grid-area: 2/1/3/3;
+    flex: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100% !important;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedUsername___YzRhZj {
+    grid-area: 1/2/2/4;
+    max-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedAvatar___YzRhZj {
+    grid-area: 1/1/2/2;
+    max-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:has([data-flx-author-self=true]) {
+    margin-left: auto !important;
+    padding-right: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] {
+    direction: rtl;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__container___YzRhZj {
+    border-radius: 12px 0px 12px 12px !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__repliedMessage___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .TextualAttachmentPreview\.module__textualPreview___YjI0OG,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageAttachments\.module__forwardedContainer___XzZiOT {
+    direction: ltr !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT {
+    direction: ltr !important;
+    rotate: 180deg;
+    right: unset !important;
+    left: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT .MessageActionBar\.module__actionBar___YTE3ZT {
+    rotate: 180deg;
+  }
+}
+.Message\.module__messageTimestampHover___YzRhZj.Message\.module__messageTimestampHover___YzRhZj {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+[data-flx-author-self=true] .Message\.module__messageTimestampHover___YzRhZj.Message\.module__messageTimestampHover___YzRhZj {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  direction: ltr !important;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__timestamp___XzQ5ZD {
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  background-color: var(--primary-theme-accent-dim-6);
+  border-radius: var(--global-border-radius);
+  font-family: var(--code-font);
+  font-size: 0.85rem;
+  padding: 0.15rem;
+  padding-right: 0.35rem;
+  color: var(--primary-theme-accent-dim-1);
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__timestamp___XzQ5ZD::before {
+  content: "🕔 ";
+  filter: grayscale(100%);
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__codeContainer___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__inline___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  padding: 0.2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  padding: 0.2rem;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD {
+  color: var(--primary-theme-accent-dim-1);
+  opacity: 1;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD span::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  content: "·";
+  mix-blend-mode: screen;
+  animation: 22s -27s move infinite ease-in-out alternate;
+  text-shadow: 0.88935802em, 8.9921207159em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5473655871em, 8.9113601413em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4865300469em, 4.6264339105em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.865432421em, 0.7222734574em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.101298257em, 8.7145007914em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.977634108em, 1.484574079em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3257729956em, 1.6029234781em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6853198329em, 0.2901846636em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.920009698em, 8.459065857em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3338770985em, 5.0157277296em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9739958187em, 4.8714373516em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3995677183em, 3.3144659005em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.805166792em, 7.3043085664em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3000432832em, 5.0009035738em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7605991318em, 6.8431854152em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7882497753em, 7.3369604994em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2436943217em, 5.0896690431em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2595633208em, 6.5058908276em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0176439016em, 1.9254965785em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4998830575em, -0.233757917em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3166809169em, 2.9334592033em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7012689237em, 7.7376299284em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8640605788em, 3.2494715378em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8281041946em, 8.2920433537em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6067983828em, 3.732536038em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9836384188em, 2.0852893139em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.652235599em, 7.734893979em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1320366345em, 3.3352391423em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6256082874em, 5.8943976984em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3708169043em, 2.6375736788em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1993914002em, 7.9918449424em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7319156333em, 6.4343396759em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8860686731em, 2.5793256271em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4613954759em, 3.6955473074em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7066080509em, 1.3422665447em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7433227981em, -0.1927472747em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8689316727em, -0.4887562902em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9775639967em, 7.9423844843em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6875021139em, 8.1998183697em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0998879758em, 1.2542981747em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4536154793em, 8.7926207178em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6142835159em, 4.5203503801em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2623234811em, 4.563021636em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7218382264em, -0.1951401048em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1464982914em, 0.9689775689em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1010497253em, 8.8694797137em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8440374717em, 1.8049174662em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9902352353em, 6.4405367478em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2226767497em, 1.1701345093em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2998626893em, 9.0621531461em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7261768238em, 1.9274460186em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6332698489em, 3.9845572948em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2500433781em, 1.1380152482em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5161825849em, 0.9834967234em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0665819662em, 4.8306573199em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2412093468em, 6.7359242659em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6968816875em, 2.9795588187em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0020680637em, 6.2461486721em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6006489598em, 1.081317216em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1038215342em, 8.1923794446em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4415409986em, 2.0229130712em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1332605923em, 3.347148418em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2202769279em, 0.512276992em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0103264783em, 0.5554973557em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2207233031em, 3.9869690342em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3509070028em, -0.0364466308em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6772496541em, 5.8099649011em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6409767094em, 9.1625730949em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8321276267em, 0.0551846891em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1587380442em, 4.9903218461em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8431878694em, 5.2553132072em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7669614229em, 7.7319897222em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4565540011em, 2.4555386136em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2332471828em, 5.4881384256em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3983647015em, 3.1087128879em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.714946875em, 7.4863446763em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9630418695em, 3.0384644439em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1208395391em, 6.2929267826em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1397838862em, 0.6435672939em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8314157882em, 9.1511266472em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3300602617em, 1.8048713417em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5575293996em, 5.0064379875em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5673603615em, 8.0646256788em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8752431442em, 8.0403831435em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3884046296em, 2.9573006585em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4211285653em, -0.1938236182em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2092457486em, 1.2358743647em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.025473993em, 2.3629264339em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.241446964em, 5.8984122372em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1462036656em, 3.4262227331em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4575136292em, 0.7063070472em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5778675545em, 3.4468068795em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.781398236em, 0.9824099325em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4009196413em, 6.8987900991em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.330968424em, 5.9002418361em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3890117927em, 4.613055191em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7930068152em, 7.9493039553em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4364984714em, 4.8091292864em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6405484102em, 5.1310315477em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8060574887em, 6.8497970953em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2885957425em, 6.2289965364em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6012152944em, 1.2851077441em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.759196277em, 0.9718987426em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.285795532em, 7.5709576569em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4127056043em, 3.5789358095em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.44500687em, 5.4386502999em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1601870504em, 5.3055837289em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9002730308em, 9.3242572545em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9803331985em, 8.2176984609em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0115426317em, 7.2360483984em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6693268891em, 5.4080389741em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4799327561em, 6.6439509726em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4952671659em, 2.3408863533em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3675118717em, 7.9772817457em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4730920006em, 4.428400105em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9429659263em, 6.0811604934em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8397461126em, 1.8962833676em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1699758251em, 2.657598006em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0128561631em, 9.4673771396em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9551353184em, 2.1228811949em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4076897788em, 0.3524307692em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1618604182em, 0.3556013898em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3611780418em, 3.9901839303em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7110701958em, 6.1807212784em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6751087503em, 4.4770496961em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4807202536em, 1.8960532613em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4912858539em, 6.5345031444em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4888575121em, 1.212716193em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0686751161em, 7.3133945788em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2974770493em, 1.3562891551em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6658247977em, 8.820794666em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8680592629em, 2.8226997805em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4941827481em, 5.198289115em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.972407079em, 0.4083729464em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2471816685em, 8.6839462792em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4087849415em, 6.1273553978em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9520768349em, 9.0580299804em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4685811735em, 2.9949072315em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0503600584em, 5.5240843482em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3769811013em, 1.1258394888em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8488743868em, 3.5820199147em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3673352172em, 4.4375121272em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5979370713em, 2.0748705154em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5151777956em, 4.1104475463em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1469254518em, 6.1371170403em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8168881273em, 2.5299862501em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0173262565em, 3.5598760259em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6238029697em, 1.4326580755em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6975997405em, 6.579764288em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0595173844em, 0.9683137144em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0824939821em, 8.2316786527em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.436408154em, 0.6580085181em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1176299335em, 2.8925766865em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2142932343em, 6.7956836146em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1082983647em, 3.3527784868em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1056605542em, 3.9910376041em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4826563721em, 9.4067845831em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4842834074em, 6.2408051572em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6414411525em, 2.1938527934em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.727258308em, 1.4054271592em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2359665696em, 8.2826978992em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7750541912em, -0.4396617737em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7556967687em, 6.9817294243em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8832333268em, 3.402092627em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6556201834em, 9.3360758382em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4968068966em, 7.5307510946em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4395552839em, 2.1066070114em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5060145195em, 7.6866801294em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1082614401em, -0.3831098564em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2136835563em, 8.0640721867em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.470731808em, 4.399446783em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2774048868em, 3.1752733764em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8068142201em, 5.5843378252em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3630220395em, 5.7061177556em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6094865742em, 1.2720057882em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5621706329em, 7.9247592754em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0472979847em, 1.4142719935em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5744405346em, 2.0066670758em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4877824883em, 0.0492289746em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4480260475em, 3.7628316697em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5111948524em, 4.2485012789em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9499175299em, 5.9893721095em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1858951277em, 8.9212618773em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1201130622em, 4.9890820325em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4096080019em, 4.0982026839em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.907748449em, 5.6049059982em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8421392613em, 6.1550255767em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5010923968em, 3.189245847em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4432566907em, 8.4618979392em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4644619158em, 6.9840958692em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3124298253em, 3.9773438118em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6106110632em, 5.5448806934em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5768356104em, 3.1207259111em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0267162473em, 3.6351939275em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1353434019em, 5.0592203939em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4877396884em, 7.5207867151em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1709572837em, 1.412962246em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1759367425em, 4.4288944882em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.535695953em, 1.5776984653em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9683292223em, 6.9370316584em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0766857312em, 6.6827885902em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4378348947em, 2.2934985253em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7129415309em, 8.47511912em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0954450624em, 7.422805461em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6345735147em, 8.633142173em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0801267619em, 2.0947980531em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9291984762em, 0.69802531em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0742524669em, 2.4630054002em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6474230936em, 8.1442569178em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0028050302em, 1.5602347719em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3153976795em, 3.0447705522em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3233747303em, 1.5170662165em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.933112851em, 8.9983119862em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1147195385em, 1.6376647972em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2682682624em, 2.4645399009em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0565611963em, 4.3704686578em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3017279964em, 1.9276943684em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.823046082em, 8.3847893316em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5426067826em, 4.9020162153em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7253639341em, 7.3006912853em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7106172458em, 7.6507712454em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5818079177em, 7.4183419763em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3489127339em, 4.6111376309em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2189704171em, 9.1424154565em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9214843452em, 9.4363645022em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.167683641em, 2.0877313273em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8718694598em, -0.3999080837em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5219391935em, 5.1708825527em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9443497712em, 7.9265945011em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4146021951em, 3.9691024348em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6192864198em, 3.587846222em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6945579292em, 7.8636930317em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6620856493em, 2.1041187529em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3297817446em, 7.1621128046em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4518838866em, 0.2249431655em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2578407083em, 4.2521049301em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0186846434em, 1.5063230085em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.200584558em, 2.4878785927em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6878334198em, 6.0512076942em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9477889312em, 1.1465223157em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3978417747em, 3.1998292991em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.199608921em, 1.724069795em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9130424875em, 0.3459459138em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1446445609em, 0.9060860403em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2223080946em, 8.0201447253em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2399911812em, 5.8159207588em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2934010297em, 2.6394649341em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8121387918em, 7.4312292469em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6218137288em, 6.7662157964em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6679382836em, 6.9472564501em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.884192824em, 1.0809425232em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8516562169em, 3.913677923em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2677043451em, 5.5486987578em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6668440144em, 6.4831187995em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4473435935em, 9.2294538936em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6103759177em, 2.1641579033em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3768325689em, 1.9757602204em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4711376919em, 3.4542350254em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2429843906em, 5.8096687298em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5197369045em, 2.6519958213em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8742960041em, 6.0487499206em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8838927969em, 0.2248998726em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.228111689em, 2.6852567514em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0213938927em, 8.8764329303em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7729690466em, 0.131982746em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9813649188em, 6.8858464637em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6480304245em, 2.0571878858em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1707056763em, 1.8423832047em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4217353352em, 7.6873434687em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8855629744em, -0.0917802432em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.936048679em, -0.2134496513em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3061381514em, 3.2482177774em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9573968827em, 4.9285021457em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3883125683em, 2.6697250259em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8312159044em, 1.2949763289em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8074392905em, 1.1247641024em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2042913572em, 7.0792314794em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5417597307em, 6.267632193em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2938765367em, 8.1817590842em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0731964815em, 3.0753806564em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5596935865em, 9.4208590266em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1824434215em, 1.0209300804em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2187000991em, 0.1881975022em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5506524799em, 4.5023086645em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1265950892em, 7.7943828505em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8568518971em, 8.0698584973em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4693247297em, 2.4712771761em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6299912344em, -0.1312991676em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0077981647em, 7.9922134437em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2334489411em, 0.1843883559em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0280042945em, 7.1592715387em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8666448381em, 0.2608068049em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5180293698em, 3.2059533638em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6106417737em, 8.8690538735em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5952267323em, 3.1619331615em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8933845616em, 0.657673585em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4530941485em, 0.9061134577em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9329532384em, 6.1858669206em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3623528807em, -0.1956487838em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6790008596em, 3.8208714957em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4027869221em, 5.2776469037em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1789492372em, 3.2769865774em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5346730489em, 8.9341218028em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5392493583em, 5.124860995em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6998774622em, 9.4662317392em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7751451515em, 3.1905289972em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.600301983em, 0.9699256108em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8643870452em, 5.4700852723em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9354031507em, 3.2313219479em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5138049348em, 4.6785799996em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0723731205em, 0.0327639834em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0757330005em, 8.718193781em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2678353363em, 2.9582699875em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2782297705em, 0.6272186194em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.36664298em, 8.1789025368em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.971361177em, 0.5544574055em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1824001757em, 6.2495323585em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1855724761em, 2.410559538em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.267890746em, 5.7337079958em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0355822311em, 7.1514625874em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5252605685em, 5.3963463722em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1060070293em, 7.2106089654em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.549210661em, 2.0417395681em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6306175145em, 0.1602349518em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6836338134em, 0.180675164em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9132205327em, 8.9024292943em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1803238738em, 3.4097081286em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1528409647em, 5.4045589163em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0761086737em, 3.5638677379em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9047926565em, 0.97742582em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.256676011em, -0.0413364858em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.486428683em, 4.8710496304em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1778011373em, 0.3529322381em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3482157198em, 2.6377681792em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5207446964em, 6.1339622608em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5153608265em, 8.3395393206em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1975033472em, 1.5733541072em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0200163931em, 2.8020952136em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8529902491em, 9.1539262532em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2937315394em, 8.648237531em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4779171007em, 2.1791031474em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1418836836em, 7.0218536615em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2088384687em, 8.8545823592em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0384245986em, 1.3303720968em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8392277618em, 0.6397922865em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1413775495em, -0.4493101176em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2030510198em, 7.650764897em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.497088185em, 2.5642110453em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5786445567em, 1.8201262536em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0442140351em, -0.4882255652em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7397119052em, 6.6423925886em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9153091816em, 4.6348696778em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1075526861em, 6.2837750284em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6869379199em, 0.9487320978em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7537144057em, 1.7027190252em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.165975527em, 1.6122628125em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8064000428em, 9.4550052311em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2368623455em, 6.4776456061em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1279443009em, 7.2493925772em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6591764575em, 5.9779212485em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3980786466em, 2.2623102998em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7633290357em, 4.0380590844em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1229284225em, 2.1640084094em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7891091884em, 0.455108287em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7168394155em, 7.822589577em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3752778274em, 3.9345576527em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8906148611em, 9.0527678236em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6654144893em, 0.6417865897em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4726078897em, 4.2079976352em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1647701823em, 2.281849125em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4339296983em, 2.9873996182em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.596642111em, 4.7130701622em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4681301815em, 6.503176431em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9092224323em, 6.8645204265em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4758290802em, 1.7821824399em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8431659812em, 8.8458708842em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3735421741em, 9.1196438104em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4624316034em, 4.3174581247em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6586862865em, 5.7625317232em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9029078862em, 2.0885570917em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0678960517em, 5.0699345579em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3562172482em, 2.0433437264em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5302028687em, 3.5532800646em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0227651022em, 7.7598244592em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.823233458em, 7.6265089959em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.052069598em, 3.1483335512em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1287077863em, 4.6548506219em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2621071639em, 4.0551650455em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9342392073em, 4.2261550379em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0227500302em, 6.2981730157em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6867264331em, 4.8467161258em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4505866234em, 1.9318766462em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7378502524em, 0.1819331545em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5863663731em, -0.0290849727em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2394254813em, 0.059964753em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0849117915em, 2.1165001292em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4634464363em, 1.5962124317em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9009545766em, 6.3269155011em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1759679616em, 5.7757624897em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6469834294em, 0.8785209743em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2823797731em, 3.5154272445em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7655817269em, 3.5315889418em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9429182807em, 7.7279011801em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1342437264em, 2.2045035718em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1993138516em, 3.7346475325em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9973142186em, 1.5216107656em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9563003884em, 2.2395490588em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5271395207em, 7.2531520144em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4019243834em, 2.3402184564em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1119510032em, 2.9333607093em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0096854503em, 4.178369016em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5764187708em, 1.0495512709em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3754460055em, 6.1523894876em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1363110346em, 7.1390756641em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1467164335em, 4.375385418em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9391911971em, 7.5065291012em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.396301592em, 4.6513988022em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0285853975em, 0.1371598445em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1167925316em, 2.2687255731em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2475036263em, 0.7187032385em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9489219857em, 3.7794284786em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7484881877em, 7.2388771828em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9023960737em, 7.8346667083em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1232803525em, 8.777501783em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2970089259em, 4.0430807909em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8302496176em, 2.6710856414em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2527283326em, -0.4810085773em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5948742802em, 4.7481881208em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7669253403em, 7.0856025135em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6463261246em, 4.0525320428em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4976675041em, 5.6932838537em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9786357071em, 7.7812405587em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4955824332em, 7.5651396744em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6973984485em, 8.8859204428em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3966981049em, 3.1497011588em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7972438631em, 2.5120852781em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0015465612em, 1.4060209294em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4628608045em, -0.2841133911em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5297631969em, 8.5241956379em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3348335148em, 3.7244908386em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4359892609em, 7.024924555em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.593732873em, 4.2737303047em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.639067884em, 1.5689699981em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5483341296em, 2.2498079333em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4460541326em, 8.761524916em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2366067755em, 1.6703719668em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.015761027em, 0.7264479909em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1652632245em, 7.2086807696em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.392365558em, 1.1288817639em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1553232781em, 1.912833875em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3803743801em, 3.8355115523em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.378651072em, 7.0182206864em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5824691895em, 3.0221942471em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6136406996em, 2.6693092209em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2285528166em, 1.4882241614em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4731144007em, 9.0756153724em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3659387146em, 7.3413032962em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6247897245em, 4.9943313334em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7108047188em, -0.0466323706em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4147333801em, 8.3911517086em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0804968451em, 0.1921114471em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8408031995em, 1.2830947929em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2153459976em, 0.9848593843em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5833455545em, 4.4033624931em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.155631182em, 5.0005244687em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1210084157em, 0.6509354044em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0026714831em, 6.431617808em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1199199808em, 6.3191127337em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9060050402em, 2.7173374358em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7281043714em, 0.805725123em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5498269478em, 2.1921520475em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2668362157em, 9.1199950173em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2510726179em, 7.1209934354em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0008678879em, 5.4550471991em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1339340928em, 9.234647612em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5307599153em, 6.4122320145em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2851289303em, 9.1415655854em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0026461016em, 9.1319977656em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2547272897em, 4.4040680502em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2173695044em, 2.0788265193em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0780847968em, 4.1446376532em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9671725058em, 6.1436591618em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1338503231em, 7.317366623em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1784234201em, 8.1302066114em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3678109458em, 5.7592277816em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0988511776em, 1.8318546182em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8860400315em, 7.2291539473em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7130511596em, 5.9152702114em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7400820318em, 0.2607964975em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3844232699em, -0.1665988313em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0819278799em, 5.7430123096em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2117047394em, 7.583034224em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4412655066em, -0.2446074621em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7742525525em, 0.755494113em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4619562934em, 3.5513808106em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9177796464em, 2.6505656753em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3726215133em, -0.4655320958em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2696836404em, -0.0064298759em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1625779136em, 8.4835972992em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6429872048em, 9.381939038em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0095920856em, 3.3289920928em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5601178688em, 9.431869293em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1014508277em, 5.5428741237em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0657437043em, 0.4925649714em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1339434632em, 4.9955596011em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0082050107em, 3.9257756967em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6668795442em, 9.4259448567em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6494124734em, 4.8456576465em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0909182326em, 1.9588586323em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7892417611em, -0.2600251329em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2450070217em, 2.9895250778em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.519055757em, -0.3016058605em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5224147831em, 7.8819745494em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.748270933em, 5.8367995123em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3247743507em, 9.3869755808em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3124680398em, 0.6566036991em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.881238547em, 0.8281173968em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5713987557em, 2.3325174585em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0911944287em, 2.3381597513em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5093204238em, 2.9611193707em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8233541051em, 8.1848631395em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2041470221em, 0.1452787668em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0238019917em, 2.4027558598em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1449238396em, 7.1235456927em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.80295668em, 0.466843938em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.268875358em, 0.4157029229em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0120616353em, 4.7238376379em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9437360392em, 2.0925167936em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2916019639em, 0.8893319979em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3203553497em, 9.4156395126em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8783319531em, -0.4580065407em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8514238129em, 3.8730465158em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.402970173em, 8.6704719088em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5974215707em, 4.2492172145em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3890824589em, 8.3916961279em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7228778279em, 6.8375646796em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9131148491em, 8.9374530687em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1684825041em, 3.0299226402em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4693705182em, 6.8546196992em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7813965257em, 4.5479341936em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1802264406em, 5.7712936344em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1973194011em, 9.4201901501em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5142303829em, 0.0488037041em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2805831022em, 1.2281803627em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0186506384em, 6.0797595604em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4454976209em, 1.0452048304em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8088043629em, 9.0787017496em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6140825385em, 2.9680034031em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8913196657em, 4.333316348em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2556895438em, 0.0818830711em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2370760374em, 1.7991309198em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3348230587em, 8.3953224394em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0085569429em, 7.3350808014em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.587604604em, 5.9534383567em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4614034299em, 7.7254581863em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0984267843em, -0.474460763em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3257478831em, 4.8454845099em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9022985604em, 2.2607845402em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5369021989em, 1.2576635491em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0836558889em, 6.611097498em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0948758302em, 0.0158837949em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5251581388em, 5.3498036861em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2071279027em, 2.4042611155em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4445881268em, 4.9607567146em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2013920193em, 9.2638382623em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2520362197em, -0.184513944em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0836084244em, 3.9313908192em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.954810417em, 6.4324195332em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.784370998em, 8.3162615774em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5094548287em, 1.2053953735em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1507376956em, 7.043837621em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6219475356em, 4.7282521494em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6444364645em, 6.1681678292em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7390667686em, 0.9157788552em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7900354217em, 6.1240092702em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6784712597em, 2.3634564164em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9201850418em, 5.1724429874em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8946802076em, 4.0927911037em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0643819288em, -0.281472273em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1857002406em, 0.2522359887em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7357465305em, 6.6029957813em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6618439602em, 2.6147236418em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6717967429em, 1.7912402645em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7696176989em, 0.7471206454em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9136457265em, 5.8270583214em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7671357138em, 3.2653497201em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1116837767em, 7.8507138093em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8985030245em, 3.6588455571em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2763216123em, 1.7075077946em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.316394353em, 6.2727079783em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3265183915em, 8.9791363973em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5006328357em, 0.697424438em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2028972005em, 5.9031798711em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2172509487em, 5.1836187462em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1166477604em, 1.2764173468em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3711286474em, -0.4706717645em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8547858664em, 4.0313702078em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1766432178em, 1.9633152017em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5450399062em, 2.4908362393em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9855274626em, 5.4800354853em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0710103237em, 2.9527465163em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2318660077em, 3.1463709615em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1232601356em, 8.9776143136em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7682616453em, 3.2712575878em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0316430364em, 8.5664711984em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5878449293em, 3.39620547em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2096295975em, 3.8108399204em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4101376615em, 1.9081365098em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.355132061em, -0.4966650326em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.055171655em, 7.9781782218em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.14202539em, 3.0084993425em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6177431644em, 1.4841154143em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4903764871em, 2.6414917872em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5702844163em, 1.9049949916em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9588611739em, 6.9261747069em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2145005495em, 4.0332317145em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.054098451em, 2.4239956022em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2348179604em, 5.8125153858em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4958351828em, 8.9697667624em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.458689154em, -0.0860817525em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4608931237em, 8.2722409748em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4306294179em, 6.0611050311em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8970334265em, -0.0945512581em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3108272924em, 6.0757549388em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6586648509em, 5.7425933682em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.65451808em, 2.462383494em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9793618394em, 3.7336545378em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.629349718em, 8.0006629204em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3876325154em, 4.6751849584em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7092115324em, 4.0371796307em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0548186982em, 1.2373327465em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0406142922em, 0.9869218987em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0224305072em, 3.9556880955em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5779668815em, 2.9785642499em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0449229646em, 8.200911459em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4274712725em, 2.7319973806em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9573476701em, 4.2149258226em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.30568952em, 5.4698677112em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6828802896em, 5.9284928239em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4260493142em, 7.2093988904em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6634199549em, 8.8143174133em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9921700064em, 0.6404161246em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1255025893em, 7.9307572406em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4862434057em, 5.1239215678em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7837728956em, 3.4401248061em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4436096021em, -0.0836418077em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6897902672em, 5.1569445322em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6016436301em, 6.2912393176em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4648244569em, 9.362324217em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3187122251em, 9.1571411179em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9862180483em, -0.1639886497em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5854178754em, 6.9145844178em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2657448929em, 0.8719467447em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6108022637em, 1.746641549em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3605805935em, 8.756338609em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5141132617em, 1.2954756681em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0503484846em, 7.341439151em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8203185521em, -0.3803661825em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6941972771em, 0.6021989664em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0241001389em, 3.2346861454em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1799783109em, 9.0680903894em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2302507468em, 7.1821054335em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0941052034em, 2.0189009622em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4810939915em, 3.2882803335em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2795891107em, 1.1782743351em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6099702821em, 2.6065438103em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8439311846em, 0.1565346592em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8252383083em, 4.085551462em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5896344179em, 7.3006675123em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8676826981em, 3.3102489954em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2233387567em, 0.092625841em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3041320464em, 5.3779509194em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0249674527em, 5.8811900854em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7272265879em, 8.0015742476em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4516792651em, 0.8824967071em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7760291809em, 1.7127319943em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6152592901em, 3.3542757602em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9795495556em, 5.9324553268em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9319257115em, 0.6410321165em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9730024446em, 4.1596847773em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5065545051em, 2.0683790189em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4764596779em, -0.27024468em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9271808584em, 0.2223680622em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8462540699em, 8.5497536704em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.09517184em, 5.4227452841em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.163871151em, -0.1771928571em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2784399688em, 6.980167918em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3693965826em, 1.6940930586em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7855662886em, 6.3837646956em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1079535122em, -0.4550780425em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1951124527em, 3.9362207702em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2718314048em, 8.8629379383em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4001612978em, 7.868644061em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1064703629em, -0.4448548131em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1565306359em, 3.5442960624em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0638934173em, 8.3310304481em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0743856066em, 5.1090768707em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9365952198em, 3.5695413214em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8112396232em, 4.8421430621em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7592297599em, 8.6078180675em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7270861943em, 3.6632478663em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7128445274em, 2.6606410828em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4610894818em, 5.8911796196em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1869577997em, 6.918238416em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1300358205em, 3.0528224298em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2103618293em, 7.9488111068em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3385410985em, 6.701759826em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7881212896em, 1.7790090281em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8727559083em, 4.8845511649em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.004833012em, 3.0795105052em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8274829684em, 8.6110980932em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.181734021em, -0.3976056442em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7701883245em, 2.867447527em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0344536472em, 6.4670121826em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3296871983em, 1.3675469152em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0784981612em, 0.213921528em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7939480242em, 6.8905945492em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8344624556em, 3.4383804602em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2041062441em, 1.0986954031em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5168621686em, 6.1235232402em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1056607481em, -0.1586001036em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2630911818em, 7.0951300252em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0538074662em, 8.0385472645em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3528067872em, -0.112361807em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0159213557em, 6.8374057792em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1083586332em, 5.6235288667em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.283071613em, 2.0939722062em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4681293707em, -0.3016062735em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.382135617em, 0.556226707em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8393740253em, 5.2916609959em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2291921868em, 3.2963839346em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0052466404em, 0.788597223em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0294983003em, 0.2118496266em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1612013671em, 0.7413503578em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7392297353em, 3.8863753549em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0877775929em, 0.6300984211em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5168205771em, 7.8150764504em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.424235746em, 3.2851746243em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8837006465em, 7.3435061503em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6278918467em, 0.0081182145em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4733949499em, 7.443126011em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.347473139em, 3.7024096972em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.447083265em, 6.744356535em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0825283014em, 8.0109523315em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6545851798em, 5.7498984016em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5508053474em, 8.3999497769em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0668269249em, 4.0921550816em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2267806176em, 3.3955188579em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0016450141em, 3.1070321793em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5721530846em, 1.840703202em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1618024028em, 6.4114271512em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.800531329em, 4.4223140318em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2885900882em, 5.1408114217em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8446600706em, 5.2662200032em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0036009993em, -0.1885403038em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4697675067em, 7.3696817278em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6290020942em, 5.4921280153em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5884529667em, 9.3449326204em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0070327549em, 6.252968473em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5799886398em, 1.028650844em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5195458563em, 9.0125316413em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.274157675em, 4.1026933026em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8675712361em, 3.9534346242em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6344427105em, 6.9875284618em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.241402582em, 5.0223792273em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5380694539em, 4.0222092875em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7606124602em, 6.4464653535em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.136331552em, -0.4485157392em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4656781407em, 6.8372049734em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1563836284em, 7.6373911029em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6750683375em, 6.7836331909em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.412024306em, 6.5246120976em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9144765684em, 5.5567874698em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2013179893em, 5.6761098974em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4511799971em, 0.859579982em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5973440811em, 4.4351550072em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3393003251em, 1.9307290701em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8903510046em, 7.0005824043em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9252796846em, 0.0478792641em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1204307375em, 8.7186394024em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9558373338em, 7.506372848em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.506770188em, 3.8541039698em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8848465939em, 6.3555360938em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6547352779em, 3.7972565501em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2047611181em, 6.8066133813em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3702124051em, 7.5796161137em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7498309976em, 5.7374055492em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0032428298em, 1.2733686203em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.448670684em, 7.4029502547em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7721350478em, 6.064142339em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6365513822em, 8.3095037108em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0341301363em, 0.820774799em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7514328483em, 1.1485907694em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5283129523em, 0.383140635em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2390752302em, 7.7838558315em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0315076795em, 4.1643897094em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8563476144em, 7.063890314em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6717792801em, 8.6167767935em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8926023407em, 1.7485362631em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4158793363em, 0.8628654493em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2070616499em, 2.494391305em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5918401351em, 7.5152747441em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1282655689em, 1.7005129006em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0951943051em, 8.8511289882em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6955120319em, 0.4754448058em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6760754533em, 2.2552500387em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0873684194em, -0.4988564405em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.050683982em, 8.9395162953em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8944405678em, 6.252501537em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.134035008em, 4.6914374465em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.564072493em, 4.9455481821em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1626033652em, 1.4888485368em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.484082228em, 6.0204167981em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8667700455em, 9.3731196491em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5720407588em, 9.0586592409em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1213230645em, 1.3899249161em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1449815437em, -0.4058410753em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8487809793em, 1.5846508088em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4693592137em, 9.4453445754em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9818953786em, 8.2000574156em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6215186617em, 7.1934542321em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2324031312em, 3.5453147746em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7834293807em, 0.2794282801em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0178245829em, 7.2029739112em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8244171773em, 3.0136498848em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.879735177em, 1.2360178698em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5887535223em, 0.6163347958em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0225514483em, 0.3201759852em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6643695597em, 5.5192383227em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3417609752em, 3.4218622703em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9133423988em, 1.3839712658em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7389603531em, 7.6578094345em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0576361241em, 7.564401252em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.701014732em, 5.561909045em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8309209387em, -0.1604734787em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2787137735em, 2.18390879em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5587722039em, 2.8496771717em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7072729113em, 1.9040078233em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4524483366em, 3.8180384384em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4782491163em, 0.0636689917em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4135186043em, -0.1421719929em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.77869683em, 2.8937436908em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1735989427em, 8.8623361686em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5198907505em, 8.6183503972em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4849770146em, 1.837746473em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.095112189em, 4.112843061em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1740828518em, 0.0502024128em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9897731792em, 9.1368611339em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3121244486em, 8.4878907742em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6369837483em, 8.4561301508em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5746043794em, 6.8863068401em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0825729237em, 0.5412633234em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9062132674em, 2.1926647307em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5456546792em, 7.8922880406em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0076173463em, 4.9459899438em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4790102512em, 7.8161377029em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7922746692em, 3.6413372956em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0540567272em, 3.5112546731em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2083447844em, 6.8522330916em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4963135293em, 3.789880732em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3203179296em, 2.2852904984em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1784360617em, 7.7882373251em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9718090518em, -0.0495752347em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6589366921em, 0.0856410677em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6077918067em, 6.3766308343em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0970111825em, 7.1817460781em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1329465861em, 3.4938553236em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9688995981em, 3.4382280757em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2258302275em, 2.0592137981em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3857124568em, 0.6777807329em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7965114433em, 6.1552681415em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6447156121em, 4.3150495268em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2852589029em, 4.4775612415em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1141493882em, 3.845909833em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5444143186em, 6.0586531408em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9816558769em, 9.1577738941em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8689114494em, 5.5300836795em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1449545774em, 8.1248936527em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6870595267em, 0.1083295366em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2832529783em, 1.1820423255em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2955354104em, 3.4088674907em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3371022197em, 0.833158084em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9925004277em, 0.9234076404em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.877381035em, 5.0569596166em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3813020117em, -0.2386160826em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1987230198em, 1.6360623326em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3323417085em, 1.0058421138em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7605336763em, 6.0799366121em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0755733463em, 3.0112699144em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2633853795em, 5.966402543em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.202123202em, 3.7694728232em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6661264583em, 5.6420120059em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3651973547em, 5.3038017199em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2510219114em, 3.1970539865em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7185130416em, 3.6015331645em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3774758273em, 3.9096271915em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9725362074em, 9.4041929195em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4983519032em, 4.9356930027em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3639267595em, 0.7089571095em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2293407387em, 2.5809159109em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3436986702em, 2.5882292715em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3588070673em, 6.7120165275em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1560610196em, 1.3728737006em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3755981661em, 6.3569965198em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5580211487em, 9.2633435652em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9496146253em, 1.5006719291em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.725983686em, 2.8947080127em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4951216131em, 3.8832753282em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9555284289em, 6.2565465193em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0812764921em, 5.1811077422em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5103776939em, 2.2249382802em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8673901436em, 0.9362619706em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4518631706em, 9.1190067206em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3286895182em, 2.9838091185em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6003972em, 5.0777105648em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4287393987em, 3.8897363em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9610484634em, 8.8062392193em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4719725618em, 1.2041604104em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7142362275em, 8.7915443769em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3312230164em, 9.2044086501em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1873749552em, 0.3755255955em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3103484512em, 0.2191917484em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8607977795em, 0.0275634391em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2268014973em, -0.3229621557em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1471427423em, 7.7760165556em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5635629875em, 8.8613700033em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3910966731em, 5.2215165117em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8610627054em, 1.1149563807em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4319223294em, 0.4420003303em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6183328975em, 0.8785323274em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6085519038em, 7.6233471892em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8741503242em, 4.9322952894em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0852540261em, 2.8470046062em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1319976234em, -0.1670413532em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1514521089em, 5.558418623em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1503826073em, 1.1070080922em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5260988462em, 6.1023172177em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4624762511em, 0.4725960395em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4585728966em, 2.9195691571em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1689104088em, 7.5303191283em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1750839837em, -0.1316008507em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1572091295em, 5.6617282817em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4008180425em, 4.4345834488em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2226581203em, 5.9561239331em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4346186234em, 3.4905305572em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.920336166em, 5.6622326875em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4477049655em, 6.5199558673em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6316109606em, 7.6236920265em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7842177894em, 7.5872866256em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1441566433em, 5.9145257625em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4720671093em, -0.0303122965em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1301331342em, 5.6108872881em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1010440737em, -0.0813559292em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5001592807em, 1.1068763315em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2515479052em, 4.8642061375em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9039436479em, 3.3817629683em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1955864644em, 7.4455571932em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2523893397em, 6.7822140057em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0602045027em, 8.9764063071em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3841197678em, 2.2723164985em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2214911688em, 9.4975417849em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1126279764em, 2.6795300312em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9439582556em, 4.0414632643em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1075092255em, 7.3525210376em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8962784578em, 4.9439775734em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6461629984em, 7.158124948em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9483435227em, 7.3157558418em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4239767003em, 7.8756853619em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9627577168em, 8.7114067203em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.742224491em, 5.8207764598em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0833786546em, 8.5734413611em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1537878051em, 5.3385711049em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1416834409em, 3.3816242212em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9282603377em, 8.8234413708em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7522298692em, 6.1171522954em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8817925438em, 4.3147098528em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9444640591em, 1.2108271826em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8314616807em, 3.3277767978em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9277374491em, 0.8057554854em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2055017447em, 3.4725006838em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3600148938em, 8.3881673368em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2296114431em, 5.9271164075em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2398126667em, 1.4351116323em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9548433019em, 2.5621877369em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9491686624em, 4.9801121788em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0172148411em, 7.4071941483em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8533985502em, 9.3489794101em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1528136833em, 6.5271911885em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2663528221em, 3.6248599155em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6937083815em, 1.9183526597em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7927106998em, 2.4115088029em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0367804668em, 4.6156509806em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7118789902em, 8.9148646899em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9278488287em, 6.7487454952em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0479131967em, 7.1156444058em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3383317475em, 3.2198210169em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5835962516em, 2.4835866283em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3420422962em, -0.1928552525em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0329433081em, 7.962144756em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.497274393em, 6.1324171531em, 7px, 7px, var(--primary-theme-accent-dim-1);
+  animation-duration: 22s;
+  animation-delay: -27s;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD {
+  filter: blur(0) !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD span::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD span::after {
+  opacity: 0;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD {
+  background: transparent;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD {
+  color: var(--primary-theme-accent-dim-1);
+  opacity: 1;
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD {
+  filter: blur(0) !important;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg) scale(12) translateX(-5px);
+  }
+  to {
+    transform: rotate(360deg) scale(18) translateX(5px);
+  }
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockquoteContainer___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-left: 5px solid var(--primary-theme-accent);
+  border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+  padding: 0.2rem;
+  padding-right: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockquoteContainer___XzQ5ZD .Markup\.module__blockquoteDivider___XzQ5ZD {
+  background-color: transparent;
+  margin-left: -0.5rem;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD {
+  background-color: color-mix(in srgb, currentColor 10%, black);
+  border: 1px solid color-mix(in srgb, currentColor 85%, black);
+  border-left: 5px solid currentColor;
+  border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD::before {
+  background-color: transparent;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD .Markup\.module__alertTitle___XzQ5ZD {
+  font-size: 1.3rem;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD .Markup\.module__alertContent___XzQ5ZD {
+  color: currentColor;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD {
+  color: var(--primary-theme-accent) !important;
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  padding: 0.1rem 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: none !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD:hover {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-1);
+  color: var(--primary-theme-accent) !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD::before {
+  content: "🔗 ";
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  color: var(--primary-theme-accent) !important;
+  padding: 0.05rem 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD:hover {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-1) !important;
+  color: var(--primary-theme-accent) !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD:hover span {
+  color: var(--primary-theme-accent) !important;
+}
+
+.GuildLayout\.module__guildMainContent___XzY3N2,
+.ChannelLayout\.module__channelLayoutContainer___ZDU4Mz,
+.ChannelIndexPage\.module__channelGrid___XzNmOW {
+  background-color: var(--primary-theme-accent-dim-6);
+}
+
+.SettingsModalHeader\.module__headerTransition___XzNkMG,
+.SettingsModalLayout\.module__desktopSidebarInner___XzBjZD {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+
+.UserSettingsModal\.module__userProfile___XzFlZT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.ChannelIndexPage\.module__searchPanel___XzNmOW .ChannelSearchResults\.module__container___XzFhMD {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+.ChannelIndexPage\.module__searchPanel___XzNmOW .ChannelSearchResults\.module__container___XzFhMD .ChannelSearchResults\.module__messageItem___XzFhMD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+}
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz .VoiceActivityCard\.module__card___YmUzND {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz .VoiceActivityCard\.module__card___YmUzND .Button\.module__button___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.DMFriendsView\.module__content___XzFlMG,
+.DirectMessageList\.module__dmChannelList___YTlkYT {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+.DMFriendsView\.module__content___XzFlMG .FormSurface\.module__surface___YzIwNT,
+.DirectMessageList\.module__dmChannelList___YTlkYT .FormSurface\.module__surface___YzIwNT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.DirectMessageList\.module__dmListHeader___YTlkYT,
+.GuildHeader\.module__headerWrapper___YmVlOG:not(:has(.GuildHeader.module__bannerBackground___YmVlOG)) .GuildHeader\.module__headerContainer___YmVlOG {
+  background-color: var(--primary-theme-accent-dim-4);
+}
+
+.PopoverPopout\.module__popout___YzY5YW .InboxPopout\.module__sidebar___YzAwYT,
+.InboxPopout\.module__container___YzAwYT .InboxPopout\.module__sidebar___YzAwYT,
+.InboxPopout\.module__containerWithSidebar___YzAwYT .InboxPopout\.module__sidebar___YzAwYT {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.PopoverPopout\.module__popout___YzY5YW,
+.InboxPopout\.module__container___YzAwYT,
+.InboxPopout\.module__containerWithSidebar___YzAwYT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.PopoverPopout\.module__popout___YzY5YW .InboxMessageHeader\.module__header___ZmI4Nm,
+.InboxPopout\.module__container___YzAwYT .InboxMessageHeader\.module__header___ZmI4Nm,
+.InboxPopout\.module__containerWithSidebar___YzAwYT .InboxMessageHeader\.module__header___ZmI4Nm {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  padding: 0.5rem;
+}
+
+.Button\.module__primary___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-4) !important;
+  border: 1px solid var(--primary-theme-accent-dim-3) !important;
+  border-radius: var(--global-border-radius);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__primary___ZDBiYz:not(:disabled):hover {
+  background-color: var(--primary-theme-accent-dim-3) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.Button\.module__secondary___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-3) !important;
+  border-radius: var(--global-border-radius);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__secondary___ZDBiYz:not(:disabled):hover {
+  background-color: var(--primary-theme-accent-dim-4) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.Button\.module__danger___ZDBiYz {
+  background-color: color-mix(in srgb, var(--status-danger) 50%, black) !important;
+  border: 1px solid var(--status-danger) !important;
+  border-radius: var(--global-border-radius);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__danger___ZDBiYz:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--status-danger) 70%, black) !important;
+  border: 1px solid var(--status-danger) !important;
+  color: var(--text-warning) !important;
+}
+
+.Button\.module__inverted___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-4) !important;
+  border: 1px solid var(--primary-theme-accent-dim-1) !important;
+  border-radius: var(--global-border-radius);
+  color: var(--text-primary) !important;
+  filter: invert(1);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__inverted___ZDBiYz:not(:disabled):hover {
+  background-color: var(--primary-theme-accent-dim-3) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.FormCombobox\.module__inputGroup___XzQ0Nm {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.FormCombobox\.module__inputGroup___XzQ0Nm:not(:disabled) {
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+.FormInput\.module__inputGroup___XzA0NG:not(:disabled, :has(.FormInput\.module__error___XzA0NG)) {
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.FormInput\.module__inputGroup___XzA0NG:has(.FormInput\.module__error___XzA0NG) {
+  filter: drop-shadow(0 0 1.5px var(--status-danger));
+}
+.FormInput\.module__inputGroup___XzA0NG .FormSurface\.module__surface___YzIwNT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.FormInput\.module__inputGroup___XzA0NG .FormSurface\.module__surface___YzIwNT:disabled {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-4);
+  color: color-mix(in srgb, currentColor 50%, black 50%) !important;
+  filter: drop-shadow(0 0 0px var(--primary-theme-accent-dim-4));
+}
+.FormInput\.module__inputGroup___XzA0NG .FormSurface\.module__surface___YzIwNT:has(.FormInput\.module__error___XzIwNT) {
+  border: 1px solid var(--status-danger) !important;
+}
+.FormInput\.module__inputGroup___XzA0NG .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__passwordToggle___XzA0NG) input[type=password] {
+  color: var(--primary-theme-accent-dim-1) !important;
+}
+.FormInput\.module__inputGroup___XzA0NG .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__passwordToggle___XzA0NG) input[type=text] {
+  color: var(--status-danger) !important;
+}
+.FormInput\.module__inputGroup___XzA0NG .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__error___XzA0NG) {
+  filter: drop-shadow(0 0 5px var(--status-danger));
+}
+
+.InlineEdit\.module__idleButton___YjI1OT {
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.InlineEdit\.module__idleButton___YjI1OT .InlineEdit\.module__wrapper___YjI1OT {
+  background-color: var(--primary-theme-accent-dim-4);
+  border-radius: var(--global-border-radius);
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.InlineEdit\.module__idleButton___YjI1OT:not(:disabled):hover .InlineEdit\.module__wrapper___YjI1OT {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.InlineEdit\.module__container___YjI1OT:has(.InlineEdit\.module__editable___YjI1OT) .InlineEdit\.module__wrapper___YjI1OT {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+  border-radius: var(--global-border-radius);
+}
+
+.ColorPickerField\.module__inputWrapper___Xzc5ZT {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+.FormSwitch\.module__switchRoot___XzcxYz {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.FormSwitch\.module__switchRoot___XzcxYz[data-state=checked] {
+  background-color: var(--primary-theme-accent);
+}
+
+.Checkbox\.module__checkbox___XzM4Zj,
+.ContextMenu\.module__checkbox___XzdkZj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.Checkbox\.module__checkbox___XzM4Zj[data-state=checked], .Checkbox\.module__checkbox___XzM4Zj.ContextMenu\.module__checkboxChecked___XzdkZj,
+.ContextMenu\.module__checkbox___XzdkZj[data-state=checked],
+.ContextMenu\.module__checkbox___XzdkZj.ContextMenu\.module__checkboxChecked___XzdkZj {
+  background-color: var(--primary-theme-accent-dim-2);
+}
+
+.RadioGroup\.module__radioGroupOption___XzM3Mj .RadioGroup\.module__radioIndicator___XzM3Mj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.RadioGroup\.module__radioGroupOption___XzM3Mj[data-state=checked] .RadioGroup\.module__outerRadioBase___XzM3Mj {
+  fill: var(--primary-theme-accent-dim-3) !important;
+  stroke: var(--primary-theme-accent-dim-2) !important;
+}
+.RadioGroup\.module__radioGroupOption___XzM3Mj[data-state=checked] .RadioGroup\.module__innerDotRadio___XzM3Mj {
+  fill: var(--primary-theme-accent) !important;
+}
+.RadioGroup\.module__radioGroupOption___XzM3Mj[data-state=unchecked] .RadioGroup\.module__outerRadioBase___XzM3Mj {
+  fill: var(--primary-theme-accent-dim-4) !important;
+  stroke: var(--primary-theme-accent-dim-3) !important;
+}
+
+.MenuItemRadio\.module__radioButton___XzRmNj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+}
+.MenuItemRadio\.module__radioButton___XzRmNj.MenuItemRadio\.module__radioButtonSelected___XzRmNj {
+  background-color: var(--primary-theme-accent-dim-2);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+}
+
+.Slider\.module__control___Xzk1Zj .Slider\.module__sliderControl___Xzk1Zj .Slider\.module__track___Xzk1Zj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__sliderControl___Xzk1Zj .Slider\.module__track___Xzk1Zj .Slider\.module__barFill___Xzk1Zj {
+  background: var(--primary-theme-accent-dim-3);
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__sliderControl___Xzk1Zj .Slider\.module__grabber___Xzk1Zj {
+  background: var(--primary-theme-accent-dim-2);
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__defaultValue___Xzk1Zj .Slider\.module__markValue___Xzk1Zj {
+  color: var(--primary-theme-accent);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__defaultValue___Xzk1Zj .Slider\.module__markDash___Xzk1Zj {
+  background-color: var(--primary-theme-accent);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+.ContextMenu\.module__contextMenu___XzdkZj,
+.ContextMenu\.module__submenuPopover___XzdkZj {
+  background-color: var(--primary-theme-accent-dim-4);
+}
+.ContextMenu\.module__contextMenu___XzdkZj .Scroller\.module__scroller___ZmI2ND,
+.ContextMenu\.module__submenuPopover___XzdkZj .Scroller\.module__scroller___ZmI2ND {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.ContextMenu\.module__contextMenu___XzdkZj .ContextMenu\.module__item___XzdkZj,
+.ContextMenu\.module__submenuPopover___XzdkZj .ContextMenu\.module__item___XzdkZj {
+  transition: all 0.3s ease;
+}
+.ContextMenu\.module__contextMenu___XzdkZj .ContextMenu\.module__item___XzdkZj:is(:hover,
+[data-hovered],
+[data-focus-visible],
+[data-highlighted]):not(.ContextMenu\.module__disabled___XzdkZj):not([data-disabled]),
+.ContextMenu\.module__submenuPopover___XzdkZj .ContextMenu\.module__item___XzdkZj:is(:hover,
+[data-hovered],
+[data-focus-visible],
+[data-highlighted]):not(.ContextMenu\.module__disabled___XzdkZj):not([data-disabled]) {
+  background-color: var(--primary-theme-accent-dim-3);
+  color: var(--primary-theme-accent);
+}
+
+.MentionBadge\.module__badge___Xzg2ZT {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  color: var(--primary-theme-accent);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+@property --overhauled-profiles {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+@container body style(--overhauled-profiles: on) {
+  .ProfileCardLayout\.module__profileCard___YWFiZW,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD {
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    display: flex;
+    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD {
+    background: var(--primary-theme-accent-dim-5);
+    color: var(--text-normal);
+    box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    transition: all ease 0.3s !important;
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD:hover,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD:hover {
+    background: var(--primary-theme-accent-dim-4);
+    color: var(--primary-theme-accent);
+    box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
+    border: 1px solid var(--primary-theme-accent-dim-2);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD.Tabs\.module__selected___YzdlOD,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD.Tabs\.module__selected___YzdlOD {
+    background: var(--primary-theme-accent-dim-4);
+    color: var(--primary-theme-accent);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Scroller\.module__scrollerChildren___ZmI2ND,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Scroller\.module__scrollerChildren___ZmI2ND {
+    background: var(--primary-theme-accent-dim-6);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT {
+    background: var(--primary-theme-accent-dim-6);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG {
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+  }
+  /* ---------------------------------------------------------------- */
+  /* discord-like user profiles by deer
+  /* ---------------------------------------------------------------- */
+  /* full user profile */
+  [class*="UserProfileModal.module__modalRoot_"] {
+    height: unset; /* shrink to only occupy necessary space */
+  }
+  /* pfp button */
+  [class*="ProfileCardBanner.module__avatarButton_"],
+  [class*="UserProfileModal.module__avatarContainer_"] {
+    anchor-name: --anchor-userstatus;
+  }
+  /* "display name, username, pronouns */
+  [class*="ProfileCardUserInfo.module__userInfoContainer_"],
+  [class*="UserProfileModal.module__userInfoContent_"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /* display name */
+  [class*="ProfileCardUserInfo.module__nameRow_"],
+  [class*="UserProfileModal.module__nameRow_"] {
+    width: 100%;
+  }
+  /* username */
+  [class*="ProfileCardUserInfo.module__usernameRow_"],
+  [class*="UserProfileModal.module__usernameRow_"] {
+    gap: unset;
+    color: var(--text-tertiary);
+  }
+  /* username pronouns separator */
+  [class*="ProfileCardUserInfo.module__pronouns_"]::before,
+  [class*="UserProfileModal.module__pronouns_"]::before {
+    content: "";
+    width: 4px !important;
+    height: 4px !important;
+    margin: 0rem 0.5rem;
+    background-color: var(--text-tertiary);
+    border-radius: var(--radius-full);
+  }
+  /* pronouns */
+  [class*="ProfileCardUserInfo.module__pronouns_"],
+  [class*="UserProfileModal.module__pronouns_"] {
+    font-size: 14px;
+    margin-top: unset;
+    color: var(--text-tertiary);
+    display: inline-flex;
+    align-items: center;
+  }
+  /* custom profile status */
+  [class*="UserProfilePopout.module__profileCustomStatus_"],
+  [class*="UserAreaPopout.module__customStatusRow_"],
+  [class*="ProfilePreview.module__profileCustomStatus_"] {
+    align-items: flex-start;
+    position: absolute;
+    position-anchor: --anchor-userstatus;
+    translate: 0 1rem;
+    position-area: right span-all;
+    position-visibility: always;
+    margin-left: 0.75rem;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 175px;
+    max-height: 3.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    border-top-left-radius: 0 !important;
+    z-index: 11; /* display above plutonium/visionary badge */
+    transition: var(--transition-normal);
+  }
+  [class*="UserProfileModal.module__customStatusRow_"] {
+    align-items: flex-start;
+    position: absolute;
+    position-anchor: --anchor-userstatus;
+    position-area: right span-all;
+    position-visibility: always;
+    margin-left: 0.75rem;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 575px !important;
+    max-height: 3.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    border-top-left-radius: 0;
+    z-index: 11; /* display above plutonium/visionary badge */
+    transition: var(--transition-normal);
+  }
+  /* custom profile status */
+  [class*="UserProfilePopout.module__profileCustomStatus_"]:hover,
+  [class*="UserAreaPopout.module__customStatusRow_"]:hover,
+  [class*="UserProfileModal.module__customStatusRow_"]:hover,
+  [class*="ProfilePreview.module__profileCustomStatus_"]:hover {
+    max-height: 10rem;
+    translate: unset;
+  }
+  /* custom profile status inner */
+  [class*=CustomStatusDisplay] > [class*="CustomStatusDisplay.module__content_"],
+  [class*=UserProfilePopout] > [class*="CustomStatusDisplay.module__content_"],
+  [class*=UserProfileModal] > [class*="CustomStatusDisplay.module__content_"],
+  [class*=ProfilePreview] > [class*="CustomStatusDisplay.module__content_"],
+  [class*="UserAreaPopout.module__customStatusPlaceholder_"] {
+    margin: 0.25rem 0.5rem;
+  }
+  [class*="UserProfileModal.module__profileContentWrapper_"] {
+    background: var(--primary-theme-accent-dim-6);
+  }
+  /* profile popout bio background */
+  [class*="UserProfileShared.module__bioContainer_"] {
+    background: var(--primary-theme-accent-dim-5);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--primary-theme-accent-dim-3);
+  }
+  /* bio join date notes etc container */
+  [class*="UserProfileModal.module__profileContent_"] {
+    padding-top: 16px !important;
+  }
+  .ProfileCardUserInfo\.module__usernameButton___XzY3Zj:before {
+    content: "@";
+  }
+}
+.SettingsModalLayout\.module__desktopSidebarInner___XzBjZD .ClientInfo\.module__button___Xzg2Zj [data-flx="app.client-info.span--2"]:after {
+  content: "NeoFluxer v1.0-pre-release";
+  display: block;
+}
+
+.theme-light .AppLayout\.module__appLayout___XzQ5NW::before {
+  content: '⚠️ WARNING ⚠️\aUnsupported Core Theme Detected.\aOnly Dark mode is Supported.\aPlease Switch to Dark Mode by opening the settings with "CTRL+," > Appearance > Theme > Dark';
+  white-space: pre-line;
+  color: white;
+  display: block;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  z-index: 9999;
+}
+
+.theme-coal .AppLayout\.module__appLayout___XzQ5NW::before {
+  content: '⚠️ WARNING ⚠️\aUnsupported Core Theme Detected.\aThe Coal theme is too dark for NeoFluxer to work Properly.\aPlease Switch to Dark Mode by opening the settings with "CTRL+," > Appearance > Theme > Dark';
+  white-space: pre-line;
+  color: white;
+  display: block;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  z-index: 9999;
+}
+
+.theme-light .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"], .theme-coal .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"] {
+  border: 2px solid yellow;
+  background-color: yellow;
+}
+.theme-light .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"] *, .theme-coal .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"] * {
+  fill: black !important;
+  stroke: black !important;
+  color: black !important;
+}
+.theme-light .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"]:after, .theme-coal .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"]:after {
+  z-index: 10000 !important;
+  content: "!";
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: -0.5rem !important;
+  animation: hover-n-glow 2s infinite;
+}
+@keyframes hover-n-glow {
+  0% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+  50% {
+    translate: 0 5px;
+    filter: drop-shadow(0 0 0px red);
+  }
+  100% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance {
+  border: 2px solid yellow;
+  background-color: yellow;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance *, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance * {
+  fill: black !important;
+  stroke: black !important;
+  color: black !important;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance:after, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance:after {
+  z-index: 10000 !important;
+  content: "!";
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  position: absolute !important;
+  right: 0.5rem !important;
+  animation: hover-n-glow 2s infinite;
+}
+@keyframes hover-n-glow {
+  0% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+  50% {
+    translate: 0 5px;
+    filter: drop-shadow(0 0 0px red);
+  }
+  100% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"], .theme-coal .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"] {
+  border: 2px solid yellow;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:before, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:before {
+  content: "CLICK ME";
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 0.8rem !important;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:after, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:after {
+  z-index: 10000 !important;
+  content: "!";
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: -0.5rem !important;
+  animation: hover-n-glow 2s infinite;
+}
+@keyframes hover-n-glow {
+  0% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+  50% {
+    translate: 0 5px;
+    filter: drop-shadow(0 0 0px red);
+  }
+  100% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+}
+
+body {
+  container-name: body;
+}

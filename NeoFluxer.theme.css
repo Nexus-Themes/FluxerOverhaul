@@ -1,0 +1,1391 @@
+/**
+ * @name NeoFluxer
+ * @author GH0STP4WZ#0001
+ * @version 1.0-pre-release
+ * @description Color-flexible Cyber-aesthetic UI theme
+ * @invite https://fluxer.gg/TqOzU3eN
+ * @source https://github.com/Nexus-Themes/NeoFluxer
+ * @tags Styling, Overhaul, UI, Theme
+ * @workswith Canary
+*/
+/**
+                    ▄▄            
+  ▄▄▄▄▄▄      ▄▄▄▄▄███   ▄▄▄▄▄▄   
+▄█▓▓█▀▀█▄▄  ▄█▓▓▀▀▀███ ▄█▓▓▀▀▓█▄▄ 
+█▓▒▀▀  ░▒▄▄ █▓▒█ ▄▄ ▀▀ █▓▒█   ░▒▄▄
+▓▒██   ▒░▓█ ▓▒░▒▓██    ▓▒▌▌   ░░▓█
+▒░██   ░▒▓█ ▒░██ ▀▀    ▒░██   ▓▒▓█
+░███   ░░██ ░██▀▄  ▄░█ ░██▀▄▄▄░░█ 
+████   ░▒▓█  ▀████████  ▀█████▄▀  
+                   ▀██            
+        ▄▄                                            ▄▄            
+  ▄▄▄▄▄███   ▄▄         ▄▄   ▄     ▄▄▄   ▄▄▄    ▄▄▄▄▄███ ▄▄▄▄▄▄▄▄   
+▄█▓▓▀▀▀███ ▄█▓█       ▄█▓█   █▄▄  ██▓█   ████ ▄█▓▓▀▀▀███ ██▓▓▀█▓█▄▄ 
+█▓▒█ ▄▄ ▀▀ █▓▒█       █▓▒█   ██▄▄ ▀▓▒▄▄ ▄▓▒▀▀ █▓▒█ ▄▄ ▀▀ █▓▒█   ▓▒█ 
+▓▒░▒▓██    ▓▒░█       ▓▒░█   ▒▓▓█  ▄░░▒▓▓█▌▌  ▓▒░▒▓██    ▓▒▓▒▒▒▓██  
+▒░██ ▀▀    ▒░██       ▒░██   ▒▒██ ▒░█▀▀ ▀▓▒▌▌ ▒░██ ▀▀    ▒░██  ▀▓▒▄▄
+░███       ░██▀▄      ░░█▀▄▄▓▒▓▌▌ ░███   ▒▒▌▌ ░██▀▄  ▄░█ ░███   ░░▌▌
+▀███        ▀██████▄▀ ▀░░███░▒▀▀   ▀██   ░▒██  ▀████████ ████   █░█ 
+  ▀                                                  ▀██            
+*/
+/* General font import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* Code font import */
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+body {
+  /**
+   * Fluxer Overhaul is a massive overhaul of the visual appearance of the Fluxer Client.
+   * Some of its features are quite drastic, and may not be to everyone's taste.
+   * For this reason, Presented below is a configurator for some of the more dramatic changes,
+   * allowing you, the user, to pick and choose which features you don't and do want to use.
+   * If you're an InFlux user, Chances are you will have access to a graphical configurator for these settings.
+   * You may still need to manually open the Theme.css file to import a custom font, though.
+  */
+  /* Primary Theme Accent Color — Default: #ff0000; valid values: any valid CSS color */
+  /* This color is used throughout the theme for various UI elements. */
+  --primary-theme-accent: #ff0000;
+  /* Global Border Radius — Default: 12px; valid values: any valid CSS length */
+  /* This value is used to round the corners of various UI elements. */
+  --global-border-radius: 12px;
+  /* General Font — Default: "Montserrat"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for most of the entire application, such as messages and menu text.
+  To use remote fonts from repositories such as Google Fonts, you need to import them at the top of this file. */
+  --general-font: "Montserrat";
+  /* Code Font — Default: "Kode Mono"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for code blocks and inline code. */
+  --code-font: "Kode Mono";
+  /* Use Message Bubbles — Default: off; valid values: on, off */
+  /* Wraps messages in a bubble-like container, similar to other messaging apps like Signal or Telegram. */
+  --use-bubbles: off;
+  /* Replace Search Bar — Default: off; valid values: on, off */
+  /* Replaces the default search bar with an icon that optimizes space. Will expand on hover or focus. */
+  --replace-search-bar: off;
+  /* Compact Members List — Default: on; valid values: on, off */
+  /* Collapses the members list, and expands it on hover, allowing for more space for messages. */
+  --compact-members-list: on;
+  /* Overhaul User Profiles — Default: on; valid values: on, off */
+  /* Overhauls the user profile popout and modal to Appear more like Discord's user profile, with a more compact and modern design. */
+  /* All Credit for this feature goes to DeerUwU on Github, who made the original user profile overhaul. */
+  --overhauled-profiles: on;
+}
+
+body {
+  --primary-theme-accent-dim-1: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 90%,
+    black
+  );
+  --primary-theme-accent-dim-2: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 75%,
+    black
+  );
+  --primary-theme-accent-dim-3: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 50%,
+    black
+  );
+  --primary-theme-accent-dim-4: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 25%,
+    black
+  );
+  --primary-theme-accent-dim-5: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 10%,
+    black
+  );
+  --primary-theme-accent-dim-6: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 5%,
+    black
+  );
+  font-family: var(--general-font) !important;
+}
+body .Markup\.module__markup___XzQ5ZD pre,
+body .Markup\.module__inline___XzQ5ZD,
+body code {
+  font-family: var(--code-font) !important;
+}
+
+.TextareaInput\.module__textareaOuterRow___XzJmNz {
+  min-height: 0;
+}
+.TextareaInput\.module__textareaOuterRow___XzJmNz:before {
+  display: none;
+}
+
+.InputWrapper\.module__statusRail___ZWM3OW {
+  bottom: -30px;
+}
+
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .TextareaInput\.module__mainWrapperDense___XzJmNz {
+  min-height: 35px;
+  margin-top: 0.8rem;
+  margin-bottom: 5px;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 {
+  translate: 0px -1.4rem;
+  width: 98%;
+  margin: 10px auto;
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  max-height: 40rem;
+  min-height: 3.7rem;
+  background-color: var(--primary-theme-accent-dim-4);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW {
+  background-color: transparent !important;
+  padding: 0;
+  margin-left: -5px;
+  margin-right: -5px;
+  translate: 2px 0;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-height: 35rem !important;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .Scroller\.module__scrollerChildren___ZmI2ND {
+  overflow-y: scroll;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .TextareaInput\.module__mainWrapperDense___XzJmNz {
+  padding: var(--textarea-horizontal-padding);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .TextareaInput\.module__flexColumn___XzJmNz {
+  max-height: 35rem !important;
+  background-color: var(--primary-theme-accent-dim-6);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .LexicalMessageComposer\.module__paragraph___ZjY5OG {
+  max-height: 20rem !important;
+  overflow-y: auto;
+}
+
+.InputWrapper\.module__composerActionStack___ZWM3OW {
+  margin-top: -10px !important;
+  margin-right: -4px !important;
+  margin-left: 2px !important;
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-bottom-color: transparent;
+}
+
+.TextareaInput\.module__buttonContainerDense___XzJmNz {
+  transition: all 0.2s ease-in-out;
+  margin-right: 35px;
+  transition-property: opacity, margin-right;
+}
+.TextareaInput\.module__buttonContainerDense___XzJmNz .TextareaButton\.module__button___XzgyZD:last-child {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  right: 0;
+}
+.TextareaInput\.module__buttonContainerDense___XzJmNz .TextareaButton\.module__button___XzgyZD:last-child:disabled {
+  opacity: 0;
+  right: -25px;
+}
+.TextareaInput\.module__buttonContainerDense___XzJmNz:has(.TextareaButton\.module__button___XzgyZD:last-child:disabled) {
+  margin-right: -15px;
+}
+
+.ChannelChatLayout\.module__container___YjY1N2 {
+  background-color: var(--primary-theme-accent-dim-6);
+}
+.ChannelChatLayout\.module__container___YjY1N2 .ChannelMessages\.module__scrollerInner___XzlhYW {
+  margin: 0 50px;
+}
+
+.Scroller\.module__scroller___ZmI2ND {
+  background: linear-gradient(180deg, var(--primary-theme-accent-dim-5) 80%, var(--primary-theme-accent-dim-5) 95%, var(--primary-theme-accent-dim-6) 100%);
+}
+
+@property --replace-search-bar {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+
+@container body style(--replace-search-bar: on) {
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj {
+    transition: all ease 0.3s !important;
+    justify-content: flex-end !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT {
+    transition: all ease 0.3s !important;
+    justify-content: flex-start !important;
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent);
+    border-radius: var(--global-border-radius);
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__scopeButton___Y2RiYT {
+    transition: all ease 0.3s !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__scopeButton___Y2RiYT .MessageSearchBar\.module__scopeBadge___Y2RiYT {
+    transition: all ease 0.3s !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    transition: all ease 0.3s !important;
+    background: none;
+    border: transparent;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__input___Y2RiYT {
+    transition: all ease 0.3s !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) {
+    width: 30px !important;
+    min-width: 25px !important;
+    flex: 0 0 25px !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__scopeButton___Y2RiYT {
+    scale: 1.3;
+    translate: -2px 0;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__scopeButton___Y2RiYT .MessageSearchBar\.module__scopeBadge___Y2RiYT {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__input___Y2RiYT {
+    min-width: 0px !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__anchor___Y2RiYT {
+    width: 30px !important;
+    min-width: 30px !important;
+    flex: 0 0 30px !important;
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    flex: 0 0 30px !important;
+    width: 30px !important;
+    min-width: 30px !important;
+  }
+}
+@container body style(--replace-search-bar: off) {
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent);
+    border-radius: var(--global-border-radius);
+  }
+}
+.UserArea\.module__userAreaInnerWrapper___XzI2YW {
+  position: absolute;
+  bottom: 2rem;
+  left: 4.5rem;
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  width: calc(var(--layout-sidebar-width) - 0.5rem);
+  padding: 0px;
+}
+.UserArea\.module__userAreaInnerWrapper___XzI2YW .UserArea\.module__userAreaContainer___XzI2YW {
+  padding: 5px;
+}
+
+.Scroller\.module__scroller___ZmI2ND .ChannelListContent\.module__channelGroupsContainer___ZDI5M2 {
+  margin-bottom: 4rem;
+}
+
+.UserArea\.module__userAreaContainer___XzI2YW:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: color-mix(in srgb, black var(--darkening), transparent);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--layout-user-area-height);
+  border-top: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+}
+
+@property --compact-members-list {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+@container body style(--compact-members-list: on) {
+  .ChannelIndexPage\.module__memberListDivider___XzNmOW,
+  .MemberListContainer\.module__memberListContainer___XzJhOT {
+    transition: all ease 0.3s !important;
+  }
+  body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .ChannelIndexPage\.module__memberListDivider___XzNmOW,
+  body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .MemberListContainer\.module__memberListContainer___XzJhOT {
+    margin-right: -13rem;
+  }
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG:has([data-flx-user-id="1473358551264223281"]),
+.UserArea\.module__userAreaContainer___XzI2YW:has([data-flx-user-id="1473358551264223281"]) {
+  --user-background: url("https://fluxerusercontent.com/attachments/1473358551264223281/1544251896804409346/liz-furry-live-wallpaper.png");
+  --darkening: 60%;
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG:has([data-flx-user-id="1473358551264223281"]) .MemberListItem\.module__buttonOffline___XzM2MT,
+.UserArea\.module__userAreaContainer___XzI2YW:has([data-flx-user-id="1473358551264223281"]) .MemberListItem\.module__buttonOffline___XzM2MT {
+  backdrop-filter: grayscale(100%);
+  opacity: 1;
+}
+
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG,
+.UserArea\.module__userAreaContainer___XzI2YW {
+  background-image: var(--user-background);
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--global-border-radius);
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__button___XzM2MT,
+.UserArea\.module__userAreaContainer___XzI2YW .MemberListItem\.module__button___XzM2MT {
+  background-color: color-mix(in srgb, black var(--darkening), transparent);
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__buttonOffline___XzM2MT div,
+.UserArea\.module__userAreaContainer___XzI2YW .MemberListItem\.module__buttonOffline___XzM2MT div {
+  filter: grayscale(20%);
+  opacity: 90%;
+}
+
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=offline]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-offline) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-offline);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=online]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-online) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-online);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=idle]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-idle) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-idle);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=dnd]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-dnd) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-dnd);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-mobile-status=true]) .MemberListItem\.module__name___XzM2MT:before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 3px;
+  background-color: var(--status-online);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath d='M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath d='M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__animatedMaskShape___ZmRhMD,
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__statusContainer___ZmRhMD {
+  display: none;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__container___ZmRhMD foreignObject {
+  -webkit-mask: none !important;
+          mask: none !important;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__button___XzM2MT {
+  height: 100%;
+  border-radius: var(--global-border-radius);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+}
+
+@property --use-bubbles {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: off;
+}
+@container body style(--use-bubbles: on) {
+  [data-flx="channel.message-group.group"] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    width: 100% !important;
+    max-width: 100%;
+    padding: 5px;
+    border-radius: 0px 12px 12px 12px;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__message___YzRhZj {
+    grid-template-areas: "gutter-left avatar gutter-right reply" ". . . content" ". . . container";
+    padding-right: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"] {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    max-width: 100%;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:not([data-is-group-start=true]):has(.AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj, .Attachment\.module__attachmentWrapper___YTIxYT) .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:is([data-is-group-start=true]):not(:has([data-flx-reply=true])) .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+    margin-top: -2rem;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-right: auto !important;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+    background: none;
+    border: none;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-bottom: 2.5rem;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__repliedMessage___YzRhZj {
+    z-index: 1;
+  }
+  [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+    margin-top: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) div .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__twoImageGrid___XzliZD {
+    grid-template-columns: repeat(2, 15rem) !important;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__threeImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: 15rem 7.5rem;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__fourImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: 11.5rem 11.5rem;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__fiveImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(6, 3.7rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__sixImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__sevenImageContainer___XzliZD .AttachmentLayoutGrid\.module__sevenGrid___XzliZD {
+    grid-template-rows: repeat(2, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__eightImageContainer___XzliZD .AttachmentLayoutGrid\.module__eightBottomGrid___XzliZD {
+    grid-template-rows: repeat(2, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__nineImageGrid___XzliZD {
+    grid-template-rows: repeat(3, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__tenImageContainer___XzliZD .AttachmentLayoutGrid\.module__tenGrid___XzliZD {
+    grid-template-rows: repeat(3, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"]:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-bottom: 40px;
+  }
+  [data-flx="channel.message-group.group"] [data-is-group-start=true] .Message\.module__messageContent___YzRhZj {
+    margin-top: -2rem;
+  }
+  [data-flx="channel.message-group.group"] [data-is-group-start=true] .Message\.module__messageAvatar___YzRhZj {
+    translate: 0 -25px;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+    justify-self: left;
+    top: 2.5rem;
+    left: 5px;
+    display: grid;
+    height: 2.3rem !important;
+    padding: 5px;
+    border-left: 1px solid var(--message-mention-color);
+    border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+    margin-right: 15px;
+    background: var(--primary-theme-accent-dim-4);
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj::before {
+    display: none;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedTextPreview___YzRhZj {
+    grid-area: 2/1/3/3;
+    flex: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100% !important;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedUsername___YzRhZj {
+    grid-area: 1/2/2/4;
+    max-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedAvatar___YzRhZj {
+    grid-area: 1/1/2/2;
+    max-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:has([data-flx-author-self=true]) {
+    margin-left: auto !important;
+    padding-right: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] {
+    direction: rtl;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__container___YzRhZj {
+    border-radius: 12px 0px 12px 12px !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__repliedMessage___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .TextualAttachmentPreview\.module__textualPreview___YjI0OG,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageAttachments\.module__forwardedContainer___XzZiOT {
+    direction: ltr !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT {
+    direction: ltr !important;
+    rotate: 180deg;
+    right: unset !important;
+    left: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT .MessageActionBar\.module__actionBar___YTE3ZT {
+    rotate: 180deg;
+  }
+}
+.Message\.module__messageTimestampHover___YzRhZj.Message\.module__messageTimestampHover___YzRhZj {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+[data-flx-author-self=true] .Message\.module__messageTimestampHover___YzRhZj.Message\.module__messageTimestampHover___YzRhZj {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  direction: ltr !important;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__timestamp___XzQ5ZD {
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  background-color: var(--primary-theme-accent-dim-6);
+  border-radius: var(--global-border-radius);
+  font-family: var(--code-font);
+  font-size: 0.85rem;
+  padding: 0.15rem;
+  padding-right: 0.35rem;
+  color: var(--primary-theme-accent-dim-1);
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__timestamp___XzQ5ZD::before {
+  content: "🕔 ";
+  filter: grayscale(100%);
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__codeContainer___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__inline___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  padding: 0.2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  padding: 0.2rem;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD {
+  color: var(--primary-theme-accent-dim-1);
+  opacity: 1;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD span::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  content: "·";
+  mix-blend-mode: screen;
+  animation: 22s -27s move infinite ease-in-out alternate;
+  text-shadow: 9.0465255122em, 7.8508867898em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3798680384em, 7.1062037881em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.726206617em, 5.7263366707em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4749155015em, 5.0399371694em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0634189786em, -0.3676913715em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1357023664em, 5.5821478743em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8173885513em, 1.5796975495em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4876848597em, 4.7077913403em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5116718759em, 2.4861337143em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8195096573em, 4.57532652em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8501617026em, 0.3360232815em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3103659653em, 9.3456901211em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1338428467em, -0.4874346936em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0329851051em, 7.8189393612em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.224970816em, 9.0323753342em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1677407786em, 2.1185910912em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.111501586em, 6.8568290906em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8363331817em, 0.3624559602em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5814320483em, 1.9924199619em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3746365956em, 7.9705354081em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5169378648em, 9.0570538998em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0599702615em, -0.1376269621em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9296674309em, 4.1804842383em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.316684489em, 9.4631919263em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6959681617em, -0.3936433943em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1982766584em, 0.5656752555em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3226917023em, 4.7936687432em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8111823595em, 7.1401099744em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3815413964em, 5.1855352918em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1983686184em, 9.2067066137em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2057889526em, 3.9170070975em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8168850165em, 1.6355710162em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3233661326em, 8.1326319779em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7501061313em, -0.1323301503em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3552238365em, 2.8768994643em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2583251014em, 5.4267661343em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7386859519em, 5.6334251158em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5378926661em, 2.7911610484em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8134260831em, 0.5728050831em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.925838232em, 2.9992108122em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4150302197em, 4.8988251907em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9509787282em, 1.6558548143em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3356431169em, 0.8374166079em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3184598328em, 5.0723736796em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7505555133em, 5.3699776302em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5424399171em, 9.344857358em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6542209279em, 2.610935511em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7507514785em, 2.8191334807em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5779448026em, 0.6445561898em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3654771572em, 8.0438315953em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.648265489em, 0.0143681679em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0510972961em, 5.1093724306em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3701862456em, 1.354542064em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9666977816em, 1.2798665063em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2158243698em, 6.1397828899em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8704059472em, 8.5202720154em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0839860672em, 9.403923574em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4776798675em, 2.0762140018em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.629773339em, 1.7900461021em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7507717508em, 5.4665689562em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4467094221em, 3.4700846613em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1863020922em, 5.0687963717em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0744142163em, 4.0007669321em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1777050964em, 8.8805269768em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8648489385em, -0.2143366374em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0401070261em, 7.4381030677em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5322446432em, 4.2032930866em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0590587434em, 7.3352835716em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5291986005em, 5.2014218123em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8171217614em, 1.281460291em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2017787297em, 6.5451174752em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.074395006em, 5.5231124589em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4256668287em, 1.8269826962em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1440503645em, 1.9368877222em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4040527397em, 9.2731359659em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1968784709em, 6.6370397384em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5249981652em, 5.9715118743em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.486853542em, 3.3231403009em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.516483686em, 2.081793146em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1083706827em, 1.5227819875em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0431696312em, 1.3626746853em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2561207429em, 0.5595012841em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1567502211em, 2.0001120871em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.185014622em, 0.0813621252em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9662843956em, 2.7057565147em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6353969034em, 8.9179440552em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5189570827em, 1.4126504019em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3455505311em, 1.7144487529em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.378062398em, 9.2761488489em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7793308572em, 7.3907510237em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8803213932em, 3.6155766967em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2241626706em, 8.6559673181em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9591535925em, 0.8169506196em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0400643583em, 6.8240284427em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9626681462em, 8.1963914094em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0010705952em, 1.4322762346em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4167578424em, 2.0750983379em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5342569942em, 6.8380055748em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.406154006em, 2.2988181109em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2996448119em, 2.4548256718em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0440209161em, 0.0524349428em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4479612041em, 8.0908518201em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9938825207em, 2.4314091375em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6500717884em, 3.7344957207em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0998418081em, 4.3640390862em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3309525096em, 5.4686858947em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6688148908em, 1.4039996974em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5364030469em, 3.6741230953em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.466081122em, 2.8167131549em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4912705439em, 5.5058770192em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9755417751em, 0.6859129341em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8813040412em, 7.8119210356em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0707217692em, 6.6855718932em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2794647489em, 6.3408505616em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4873025923em, 3.9206849081em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8563183455em, 5.8393717345em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4283629603em, 3.8103846267em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1437989482em, 9.2478620764em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5924227006em, 3.2666225529em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.643935922em, 4.8503774035em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.812331108em, 0.6257376787em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4152242518em, 8.7458078331em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3251408765em, 5.7788500538em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1781356608em, 3.568168458em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3581402589em, 7.959354813em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5449240716em, 3.7388703618em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7700989724em, 6.2895320414em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8809142031em, 6.7548874119em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0162090458em, 1.7586012509em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.106065073em, 8.6570764955em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3027191992em, 6.8927358638em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3430076414em, 7.3282005287em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.110108059em, 0.0423489684em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6006014558em, 5.5323979067em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4699173149em, 0.6214512871em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.439010073em, 5.8173973104em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7307925457em, 4.3106360816em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2656215297em, 3.6958855845em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4355214338em, 2.9296515444em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8905747811em, 7.3785396717em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7392577826em, 8.4107802565em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.330780287em, 8.7763327596em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0402883365em, 5.6883761832em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.001562325em, 0.9027782589em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1809051605em, 2.662352465em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0555250174em, 3.0884398458em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.672524832em, -0.4066044491em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8343592181em, -0.333803009em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8088677905em, 5.4552716579em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1546424654em, 5.7408591409em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9287327433em, 1.9233718211em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2954860687em, 4.8630383458em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6816015225em, 9.1006240602em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9853882045em, 2.0869849566em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0881503758em, 2.0345881769em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5203165352em, 0.5127980465em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5826520148em, 5.6875521348em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9368178em, 1.0096816855em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7976049341em, 4.4676639488em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2848875469em, 9.1798561887em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1765902344em, 7.8226653354em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.810748416em, 3.7193597809em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6280275546em, 8.1645136861em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8142597549em, 1.0608561984em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5074954288em, 1.505488688em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.173031606em, 1.2018378554em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7589554071em, 2.0029655962em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4744954647em, 8.2667646657em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5037146564em, 9.0716077687em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1091569647em, 7.6930784196em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.221334911em, 1.2806311112em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2022316679em, 6.9044964705em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4613348256em, 6.297209197em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.117346229em, 3.5905607012em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8806277009em, 9.0700644535em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1892705965em, 9.0386488057em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6438607837em, 0.6262183901em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1741746343em, 4.581597989em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9718953413em, 1.5015576636em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3882581401em, 1.928012215em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9166879525em, 0.0150062537em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5031245764em, 8.750984402em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6961678801em, 3.3966779353em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8733450076em, 5.5021611128em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1056964719em, 3.898954049em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.157999973em, 0.0240748428em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3390192227em, 0.6063639521em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8448518076em, 6.4510740778em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1537604478em, 3.124388564em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4763094135em, 4.3594636574em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5168060742em, 7.0189165528em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2786544123em, 8.8769326334em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7732118498em, 6.0554296129em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5476615759em, 9.344456115em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1985120928em, 3.5917003404em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5423555586em, 5.0623620825em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3553208656em, 6.3174710978em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3090018587em, 7.4726113633em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0771485514em, 4.1311255557em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7946152411em, 4.421068781em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4164148914em, 8.534992342em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7742051205em, 7.0844776909em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9192536794em, 8.7507130405em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3086637976em, 4.2034281494em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1644671852em, 2.4718865402em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0139194514em, 2.7361345611em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2473889618em, 4.5344360826em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7495891437em, 1.5011051565em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2564045574em, 4.5316176294em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4461096878em, 2.8279534215em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9203796236em, -0.3634410848em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.64684062em, -0.3008965177em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6378036541em, 1.7669774744em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8654451232em, 4.3219466115em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9297908107em, -0.2697524291em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3715454247em, 2.5583002078em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5002180413em, 8.3364031441em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6983310763em, 1.2369049323em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9069219688em, 0.8346829002em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2682673569em, 5.6936182616em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.392694169em, 4.7846986759em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1033413451em, 4.1789230997em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3585474325em, 5.1645479049em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9946219545em, 9.0129180772em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2745117851em, 3.5243929965em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0649137247em, 8.4009513799em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2218857886em, 7.0282957457em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3091437382em, 8.4759324418em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6608620949em, 4.5935902785em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4464571678em, 4.8468155093em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2636515837em, 2.1162300077em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.93754007em, 7.0783542961em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3274490646em, 0.4678998368em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5856974104em, 9.2935245516em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.714084913em, 5.6431766119em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.570880209em, 4.2424250809em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.242171296em, -0.3601400685em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2107236872em, 3.8851955848em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7101207812em, 8.567762244em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4404762188em, 2.45296816em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2524174284em, 7.039573074em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8307058963em, 0.983421969em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1552942857em, 5.4577153667em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.171107336em, 4.0634463735em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4401726523em, 7.9882138989em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8378225615em, 3.7562201485em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0265413652em, 8.2609750116em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.085840809em, 3.6385656935em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3645920843em, 6.4685925875em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.571162026em, 8.0090696107em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3724989021em, 7.7856614988em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9071364104em, 0.2290083987em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4895889311em, 8.1467156869em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.376053002em, 6.366910524em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.559624889em, 6.7956407731em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2536599049em, 3.9618354929em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3248404216em, 6.2723009478em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3310509507em, 2.3786711956em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.039609224em, -0.2023537569em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4901273531em, 8.6067505283em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.911330396em, 2.5365967182em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8050014454em, 6.4670415755em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2952761756em, -0.0839673306em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3340786958em, 4.0470967437em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9453786814em, 6.7699991107em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8506106061em, 9.0159669046em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1342841169em, 9.4169723098em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.759967508em, -0.0766012161em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8254624247em, 5.3782407514em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.225116861em, -0.4555749461em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.019032168em, 7.3372801262em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4651971329em, 2.6730943973em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4804290707em, 2.7318735264em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.190969216em, 2.3848169722em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.179860621em, 5.821290388em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7053147305em, 5.0318744902em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.047940763em, 5.6041499668em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.979294559em, 2.3789465882em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.215078091em, 9.1908063919em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3092991079em, 4.8232539531em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8997818771em, 8.2957218215em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0327580746em, 1.7405959324em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1338232922em, 6.5724357922em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0380837615em, 4.853132368em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4827337167em, 1.7443964022em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1816771558em, 1.998291347em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9724266535em, 5.4347323813em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.554001535em, 1.3370031881em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0256341386em, 5.157747742em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0407393371em, 2.9118741108em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5709893439em, 7.1907040493em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8424855976em, 3.4129280548em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3142186297em, 1.3233706882em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4346825969em, 8.2256464376em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1714724295em, 4.10292892em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7065337755em, 1.6812723432em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6788658153em, 8.2640444948em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8604904672em, 3.0510433039em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2394998363em, 7.1520524935em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7199266513em, 6.2280798447em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6988422707em, 3.7667496991em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.764233722em, 2.7952840311em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1596619937em, 1.0578302353em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1945521266em, -0.0594288019em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3097413547em, 4.1580649819em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3394770924em, 4.0845665664em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2669875945em, 2.2164415304em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0100662533em, 1.5764013075em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8978037946em, 2.234005838em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6791177391em, 8.2086283506em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9830875635em, 0.8484828927em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8576162425em, 1.4250663419em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3718272857em, 3.6687096994em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0247959357em, 0.1616618993em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4795516542em, 2.5090741696em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7245328212em, 0.4064398683em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2006778925em, 2.7230106095em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.438512646em, 6.1716956806em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5966995849em, 5.2348113845em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8489816173em, 8.5235359715em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3154329652em, 8.5481996345em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0829397095em, 3.6379716209em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5590754931em, 2.1601179524em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7211761027em, 2.2181564901em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6760501528em, 4.9832668254em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7258076198em, 8.3195219592em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5997386996em, 2.8867879739em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0368549167em, 2.1239322207em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2240911085em, 6.7182546995em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8757065393em, 4.6698845637em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9591723684em, 0.7020171497em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1160234639em, 0.486056545em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2200325537em, 3.6974533099em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.385026161em, 3.0677236038em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9560415659em, 7.9902338426em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0487507096em, 5.6780412386em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4325345267em, 0.1381568267em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4847380757em, 7.584040439em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.832527963em, 0.0890806721em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3322513843em, 7.8217001828em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2060757243em, 9.4395119317em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1016978873em, 9.1107037435em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.333133267em, 3.588245614em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4935981329em, 6.1565884882em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3324262867em, 2.4815155461em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1408043453em, 7.5031328951em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7860740477em, 3.7832869369em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.633092335em, 0.4764815708em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3859257755em, 1.4484713659em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2197907061em, 7.9905528782em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1103285446em, 1.5120337173em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9024788403em, 5.9514400585em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2152893251em, -0.4928571391em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9554159243em, 1.6227798519em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3402177953em, 3.5810556979em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3817199941em, 7.517236094em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9118911674em, 4.947668688em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2385182857em, 3.4349463735em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5898199405em, 8.7863284131em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2743672095em, 8.5098429418em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0610816387em, 4.8524316632em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4949716419em, 3.5486634192em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3970088842em, 7.3889271275em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1358869173em, 0.8749459005em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5437540925em, 7.5832606153em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4752521439em, -0.310747281em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8651378342em, 5.7906836903em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7110909377em, 8.2471730503em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.651294671em, 7.5361419547em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3848486308em, 8.2273536391em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7363402431em, 6.9832569387em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1274731902em, 9.0527170368em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7543739296em, 4.1219471915em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4158709014em, 7.8384218269em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.037615909em, 1.6058119852em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8463809525em, 9.3086293121em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4223315351em, 0.9846397556em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6914050954em, 4.9293222208em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8916135099em, 7.5435941232em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5186043133em, 7.2513896553em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.117808269em, 8.5754477309em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6269692856em, 7.1321776084em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1652737761em, 2.7063893476em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9758156078em, 0.2532149471em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9995777267em, 6.4973216362em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1046939024em, 3.7942689272em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8351181317em, 2.6013603197em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2539294375em, 9.385715599em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3059019596em, 7.8567210862em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7670724146em, 1.4260522947em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1687616109em, 1.0897622895em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2827646107em, 5.5251100323em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2597014949em, 0.9561338092em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5997611021em, 6.2409114593em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3214938025em, 3.6351795824em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7553237688em, 6.5374598406em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6486003387em, 1.7791956564em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8353656766em, 2.7267972717em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4651167658em, 8.6335053928em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4615056681em, 2.3183737091em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5083545326em, 5.8126359639em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.578747605em, 2.4366278782em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8605640626em, 9.2868828831em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9925638142em, 2.986089243em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7086863149em, 5.3692657573em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0312635358em, 7.2597399284em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0161468369em, 6.0644105466em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.359957926em, 3.8962935289em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2386481633em, 0.9072459566em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.475090774em, 3.4018862947em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3544662814em, 3.1422898388em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4444612416em, 9.1056838785em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9699532114em, 4.8911853467em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.445032033em, 7.2088632518em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6583328832em, 3.6405798898em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.398402172em, 8.2351105131em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6381719684em, 7.5170259017em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5872237162em, 0.0299179215em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3545200039em, 5.8722149421em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3448656069em, 4.3214327892em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2550775689em, 2.3370737531em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5502636579em, 5.4939005528em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1836963117em, 2.8701162235em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1387345139em, 0.947123315em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3498799647em, 0.9117985825em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9595567017em, 7.404706257em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8891967449em, 1.7930721356em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1748917874em, -0.1962446298em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0225625037em, 9.3625649585em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3476122055em, 3.257950811em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9361603304em, 4.7269455141em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9757968992em, 6.5075067623em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1835356705em, 5.4851074278em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0484018135em, 0.9096112296em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5559983213em, 3.8944928766em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8933976957em, -0.4648827273em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9748186563em, 3.1565441151em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6142953543em, 2.4683409346em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0976906361em, 3.6284928843em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7218457612em, 1.4284227847em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4524960705em, 0.6298408197em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9480774265em, 5.9025404512em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3524431356em, 2.8017093472em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2916073654em, 6.2200542689em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8817409743em, 7.2928681455em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3029857868em, 6.0706935589em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6020840433em, 8.1281203147em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8678415841em, 2.3074248491em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8582349808em, 4.0903562365em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2465479365em, 8.3334944673em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7393251875em, 7.1007856144em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5867060495em, 2.4988321724em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0365306813em, 5.8745538997em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2185491577em, 9.3045956446em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7756191625em, 8.2898883602em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0850994713em, 5.4907104244em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0489047703em, 6.6426295739em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1739019251em, 4.3544522991em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.253605608em, 0.9901394961em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1074951105em, 4.6342993652em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8124507028em, 9.1688641618em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.929024166em, 6.7249938209em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9755894983em, 8.0234736601em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1294005244em, 6.4796221046em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2992606805em, 8.5335323879em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4579865975em, 5.0100760997em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5838585403em, 0.6239987298em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6431678755em, 7.3718045322em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5346482623em, 4.928831746em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3737379123em, 8.9384514412em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8290688231em, 4.6698815714em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0184124322em, 3.3170579224em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0925372628em, 8.7857539801em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4491325183em, 3.0567659036em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3361119585em, 6.1863126404em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6912135379em, 6.5949560448em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6823229541em, 1.8455099429em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4714873249em, 4.8970734195em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0050151499em, 0.0651336491em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.022108744em, 0.1566008567em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1818152158em, 1.2136833667em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2434897973em, 5.1184195062em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7034005091em, 8.3148018554em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0020544355em, 3.1181224662em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1610618278em, 5.8787770668em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4983843226em, 7.1541452142em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3866762394em, -0.0342224745em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0958934036em, 3.2663737096em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6270588596em, 8.880978049em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5047433091em, -0.0822098396em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6012488989em, 3.6216801184em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.278886647em, 8.0435248853em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1489031372em, 3.8922611808em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2964496638em, 3.7792319097em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8036118323em, 0.426548233em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3468082231em, 4.098863861em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7868207584em, 8.5134632528em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7419234477em, 3.9579418645em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8440807661em, 4.683137407em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8452145082em, 0.7705249723em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7749616517em, 0.8332011951em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2430117191em, 1.3296732028em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0154948929em, 9.3036921668em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2154233274em, 8.8898902346em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2794614227em, 3.6974241971em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6189002364em, 7.017976301em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0260023738em, 9.1718560795em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4981320155em, 0.4373406472em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7554018281em, 3.7876316179em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4699776193em, 5.4139516516em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4217088827em, 5.2042324199em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0298213773em, 5.0505896432em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6069952402em, 0.5650892587em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2035581111em, 4.8008007878em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7588499315em, 2.8923553737em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1368227107em, 3.7651813869em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.455439346em, 1.1909662232em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3466461289em, 6.7917455635em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0634953484em, 5.0595681079em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8135656683em, 9.4781977811em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4562563107em, 4.5596665151em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6193739014em, 5.2741697323em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3203496587em, 2.2196665721em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6738733487em, 2.5611215276em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3596327741em, 4.6073760066em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0573660691em, 0.8650224586em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.441796062em, 8.3246007634em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.36182893em, 5.8537336959em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0866265384em, -0.0437856187em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.719789126em, 4.5626421701em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5902500439em, 7.524869134em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3920409051em, 3.5940920665em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0457457084em, 1.8845721856em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5263692335em, -0.326285895em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4238134263em, 9.1883832469em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3968920072em, 5.1482418007em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5203464154em, 8.2190908011em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2740952338em, 3.5801916637em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6110421163em, 8.5412816435em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0177075251em, 6.1735638291em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7746942484em, 0.5167573533em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4816401262em, 2.781013992em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2660070052em, 5.2324386013em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1161709899em, 7.5069630938em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6060362773em, 1.3199151672em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0372683359em, 2.3216090569em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4661879863em, 6.5676429261em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3071344684em, 8.0873855099em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5968783899em, 3.5626597706em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3270273009em, 0.3257501202em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3282981904em, 5.8630510543em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2815764327em, 1.0346266712em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8298687633em, 0.2223747672em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1846599764em, 4.3818786919em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.818670168em, 7.6779892322em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1047611976em, 5.3145104935em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1068033955em, 4.6169194105em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3195793757em, 8.3573557209em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5696818881em, -0.0999096051em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.48541025em, 4.1096652577em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4397740826em, 5.8676460006em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7244259897em, 2.8985339634em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5437085444em, 3.3870173731em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6326767575em, 8.8799877948em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0990997878em, 3.3202495672em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4501933486em, 5.8845138016em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0630801672em, 4.7699057945em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6834801015em, 9.0250868124em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.292146389em, 3.7102273833em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6809527766em, 0.4823520645em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4600633545em, 1.9220470799em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9584808316em, 4.4082093264em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5556135733em, 6.4518299937em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8916972274em, 8.5416588212em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4168396575em, 5.7749295997em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7070702099em, 2.9533876065em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5716435606em, -0.4522802129em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3347930683em, 9.2805196664em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3148021961em, 4.327829102em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.630205569em, 6.2469096512em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7788410011em, 0.6975573091em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5426073109em, 5.6103723158em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1027918363em, 2.5375357181em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4590449808em, -0.2635633037em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9759495784em, 7.0068926497em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2247668812em, 7.4150863302em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2853620165em, 1.1846491164em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6152372378em, 6.1602165865em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9137586903em, 6.4231523873em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9689524108em, 6.3561821284em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.874944443em, 9.3608308325em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5953006947em, 6.9517222237em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6414489671em, 0.8148963559em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6080148658em, 0.2418388437em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9049527692em, -0.0104287383em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.20287839em, 4.1207242237em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2385903523em, 5.2314011848em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1769200388em, 3.201417284em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8369762045em, 2.2408990023em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6208897486em, 1.3746923907em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9340874567em, 9.0011220993em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5956113447em, 3.7711774321em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2799509316em, 0.1878922198em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4462372855em, 7.259156955em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9825602259em, 2.0730760514em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4978407511em, 7.6895286308em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1110749em, 3.6892024373em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8917419101em, 0.5327887316em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8759724788em, 9.4253622848em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0166540294em, 2.8768421906em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.834860146em, 3.0105270485em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8361715687em, 3.5215338632em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6364935053em, 7.9116210637em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2348056856em, 0.808012799em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9663040124em, 6.6489252586em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2330294896em, 9.3393989033em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7907188263em, 8.9475524497em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4803176835em, 1.548131378em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1137406537em, 7.9958466141em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5719677601em, 3.7506378658em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.84101856em, 8.9290559859em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6380678573em, 4.9921291808em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8615180166em, 5.8474467455em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5855623145em, 7.3180323505em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0857117747em, 8.1813072309em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5753167326em, 9.3710141092em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8671041502em, 5.5043883826em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.736572317em, 3.7612453107em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9137133454em, 4.3195858846em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3422835018em, 2.2002985096em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3623688074em, -0.0673165364em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6314758299em, 2.8704867429em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6179094785em, 7.331725438em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.995510374em, 3.5846962046em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.799653573em, 3.9432237391em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6260162638em, 4.541201267em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4336101826em, 6.8774591257em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2938267416em, 7.9020296026em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6427776875em, 1.2175738592em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7956837253em, 9.0691127114em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4842036067em, -0.2321900806em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9342645781em, -0.2631378296em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2323573422em, 7.4155604584em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6573928825em, 8.1408616634em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4504377207em, 7.0452602109em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6274086677em, 7.1695291206em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9650579628em, 5.6687165324em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1500376583em, 1.5208891045em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9829560744em, 6.1808809674em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8183477016em, 2.0549528553em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7177785582em, 0.2473001995em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9072251319em, 2.8386167442em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6704050692em, 3.5260323427em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2748842736em, 1.9333740693em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8394465294em, 1.8878716514em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2096704846em, 6.4206662389em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3744051148em, 5.5000230909em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2155297664em, 9.0459135757em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0026956137em, 5.1267016046em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.520699174em, 0.8736077072em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3553709692em, 4.6785024366em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5322756092em, 4.4428151569em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8687027676em, 0.1078060308em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9165170101em, -0.2942784843em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2394007189em, 5.0701817915em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7357035947em, 3.2104057212em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4134102786em, 6.6675624097em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2726143961em, 6.4898838843em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7501101549em, 0.5103658209em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.722906608em, 5.3950389199em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2220532859em, 5.8838874557em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.348777777em, 5.9363026411em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4265237696em, 0.0773805124em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7094664407em, 1.5331759484em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7194663622em, 8.0168191622em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5637819487em, 7.572214111em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3040084794em, 3.6407772163em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1036140146em, 1.1832405501em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8614792049em, 4.0483540142em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9984505547em, 5.9243071822em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1163400055em, 5.0891906841em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0073021329em, 0.5488737802em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9364677729em, 9.2441882744em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4120358938em, 5.2896544402em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0786701013em, 5.9765794276em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2365175433em, 8.4381790491em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3326891845em, 7.1363270691em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3026363825em, 2.8741150174em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2034036076em, 8.2358086634em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4686944302em, 5.1984841644em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5733692597em, 4.4694001981em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6578001736em, -0.084805792em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9556164661em, 0.854042398em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.213758168em, 2.594785404em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7335879627em, 7.4873587043em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4935853603em, 1.3884356046em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9940777375em, 6.8864847342em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9991996755em, 6.1861169279em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1058347276em, 5.57661658em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5188536041em, 4.446671146em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4892734363em, 0.5250361038em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6636670338em, 1.4364687857em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6905493433em, 3.724551736em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9743086132em, 5.571063307em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4763050648em, 3.4798357464em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4918917851em, 6.599088364em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4803162433em, 6.4813108794em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3821867515em, 8.26824928em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4915283861em, 5.4481200047em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7884803139em, 1.8302449496em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.725143571em, 6.1329032102em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6100787856em, 1.0179610893em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.412065149em, 2.4860120916em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.34822652em, 1.0607686501em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4631268534em, 2.7508588385em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7336560508em, 4.4095460075em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6479586734em, 1.9526392929em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1349281006em, 6.1102297542em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3966662457em, 2.9114897401em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6614551754em, 1.9669491769em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7292710634em, 7.8679357919em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4709418265em, 4.3115532152em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4951218141em, 7.5632563505em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7581979816em, 2.4521341892em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0321419231em, 8.0508718635em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0441068867em, 6.8066281342em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9590174878em, 6.6992416964em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5553422269em, 1.6311810657em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2367168851em, 1.7528196778em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6364694983em, 7.3921299367em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3182334578em, 3.7552171543em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3857605082em, 7.8639954918em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1093345452em, 3.3235073332em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2561095751em, 0.5707538288em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7273167279em, 6.6384705083em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2571942042em, 3.9107987288em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8688500849em, 8.5968934363em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2602034456em, 2.4477658566em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1709633753em, 1.714685543em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5596165822em, 6.3028910559em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7075828603em, 5.12907187em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0757020803em, 6.7518175198em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5409432302em, 9.2087441177em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4401052126em, 0.4677149273em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.306924636em, 1.2383106096em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3954432415em, 3.2002954015em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6543958806em, 0.4461508461em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5391789508em, 1.0486864419em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4517257741em, -0.4505574375em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0334267367em, 1.280901707em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0252250156em, 0.2304050882em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7885785645em, 1.6643856544em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8053402965em, 0.1078426112em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6518115265em, 7.2358782225em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9633173501em, 3.16793187em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2867020338em, 4.9831346184em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6024208333em, 3.3299155576em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2035701692em, 3.1711995362em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2030450905em, 5.0622894192em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2314145123em, 1.8748103329em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1039213987em, 9.3259248706em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1328784532em, 3.5051993728em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7279557497em, 5.5667116287em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3063990952em, 0.6656823813em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3608793621em, 5.7152642071em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4285599521em, 8.3088648456em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7270000593em, 8.5528351234em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9360274206em, 4.9614922213em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2096856826em, 0.7376532756em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0811364714em, 8.8348156934em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4356005442em, -0.2151415914em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3799510272em, 9.4123955071em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.721786649em, 1.9274068839em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5283084055em, 0.7242582213em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2490682071em, 2.928440203em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9249308979em, 7.9157730863em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1064815451em, 2.7710239592em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.377297576em, 5.9996327023em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4718816709em, 2.4282946908em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8562345645em, 5.2740267675em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2363173252em, 4.9243848038em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.636713365em, 2.0533471564em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9613927457em, 2.3105529848em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6872845993em, 5.6692004553em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5077457416em, 3.7655564392em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0714081711em, 6.0029979504em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.597530944em, 1.3847536977em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4816584083em, 0.8733870267em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8279115332em, 5.3252076468em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4973692707em, 1.4872284907em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.574535266em, 5.9006972001em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2572507819em, 6.1925013752em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0304416897em, 7.2842811273em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6040568767em, 9.3897350566em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7310747404em, 6.5043072937em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8538792904em, 2.3066811377em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.285436397em, 0.1723632497em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7097562572em, 5.1737201465em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1068418728em, 3.6403371709em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0378218974em, 5.3694171366em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5650848274em, 4.1522466883em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2688413256em, 1.1810992772em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7951238209em, 2.496922464em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7244212012em, 8.6500994278em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.607607639em, 3.5067365912em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9553419864em, 5.7638278247em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4354185911em, 5.2089734262em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3301820929em, 6.9888965153em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8760929766em, 9.1856996057em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2294448119em, 0.8273615568em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1943208317em, 3.1538079034em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3798838405em, 1.1090075776em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2344087096em, 8.7998151012em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1392339939em, 3.8551069886em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9798714487em, 7.2430825695em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3484809273em, 5.7072139585em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3964296024em, -0.149991389em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9229581654em, 0.457336046em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8187144773em, 2.2621110563em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6950316591em, 1.569826037em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0119106177em, 6.4022078951em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3316206005em, 9.3503105458em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0923669979em, 7.2579215873em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3927544518em, 0.7120794221em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2543980006em, 2.0131347743em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3629723313em, 6.1537224199em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3649852574em, 9.1200167559em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4748877522em, 5.5399113518em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9622169014em, 0.8666632199em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5945848915em, 2.5605614393em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0698677987em, 4.8403358854em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8581770215em, 3.9228070259em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1414394475em, 5.2915061203em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1014341642em, 9.4114214345em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6433089021em, 2.9301383638em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9782286509em, 4.8189532486em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6255716922em, 6.0363028966em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.333513469em, -0.4914833659em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1926176985em, 1.289268197em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9223647641em, 6.9213239908em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3855981256em, 3.6551714013em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2369354776em, 5.9835147442em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6546202901em, 9.3446332609em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5833605457em, 8.9803693699em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5461650658em, -0.2344876141em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.197715779em, 3.2763515724em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3742613687em, 3.6004087389em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4127196519em, -0.2561156241em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0592917066em, -0.4737090517em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.99785101em, 7.1369547698em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6273382635em, 4.8476230415em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9967952623em, 7.4512554244em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6996149031em, 0.9131795665em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6642203573em, 1.5711806424em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2736032223em, 1.3084277144em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4868816126em, 0.6310100573em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7813270785em, 2.7304637811em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5920727027em, 2.9990152655em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0708413102em, 1.4109274283em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1832405423em, 8.7917341157em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2413245354em, 2.5863885383em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4276474504em, 6.3487800586em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2828209059em, 5.4777768066em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7630978456em, -0.2073920912em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4731534688em, 4.0017777973em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1613206641em, 5.3982632882em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5004002403em, 0.5822567274em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2375557655em, 1.99819295em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0181987198em, 2.8637623756em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5572979934em, 8.0703920324em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2957083885em, 5.8008856817em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.619317173em, 3.171510917em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9580623818em, 7.7409471141em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.031826114em, 6.0756322481em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3464844585em, 3.9562555226em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9768147645em, 0.1190513911em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1609121037em, 1.4763078814em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8741015613em, 9.3207886797em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.736459103em, 8.2248275069em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1034780469em, 8.6643515234em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4974692742em, 5.1288329215em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2944932181em, 8.9603311568em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8764020057em, 7.9843460987em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3042130869em, 0.9872923163em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4150393283em, 5.0602864013em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9162637457em, 4.8000317447em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4395104435em, 8.5181226982em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1374123455em, 1.1241642553em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.036776147em, 0.9849877558em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5448166326em, 4.7224996362em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3046677669em, -0.0608910487em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0300602381em, 0.6494053702em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8409402029em, 3.6051800641em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.859848027em, 3.6371723851em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5327679884em, 2.5044383604em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9412135229em, -0.2538535914em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8660723994em, 0.0770679754em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5388835185em, 5.9333236851em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3762626435em, 4.5655977139em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8550292905em, 8.8286196292em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3395296361em, 1.7961856269em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8138183471em, 1.7995721478em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3590629757em, 5.1114400947em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.668975686em, 7.6490372528em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1609574903em, 2.9373490273em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9381761358em, 3.6244212536em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3728548507em, 1.8501933934em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7349841019em, 4.5120582916em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1241246917em, 4.583224829em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0456199543em, 7.1786518451em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3595669319em, 0.1490280794em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.708461763em, 1.1796640394em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1962582165em, 0.960695644em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4440108791em, 8.1911506948em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4553504787em, 3.6624001142em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6046754em, 0.9262650006em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0240097101em, 1.6730979724em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0636357013em, 6.7328929123em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7286013243em, 1.4757957235em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0858225365em, 7.9613087111em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5020806917em, 2.6744113798em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1654596914em, 0.3379743491em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8167943331em, 6.2570544418em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0929533799em, 4.6150894482em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.480014696em, 4.7745495741em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.945346087em, 9.2289652367em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9240399273em, 9.2797153376em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7135182309em, 8.828637716em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6514257142em, 6.6860831147em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3936289439em, 3.2492413255em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1296090326em, 1.5197071839em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3974935708em, 5.4499064467em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0557414618em, 4.5079193869em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2189334817em, 1.4960414438em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5570880499em, 8.4507524264em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7219947349em, 3.3165123567em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7463299982em, 1.3550435508em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6216278941em, -0.447058323em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0383049002em, 1.35240025em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6220877938em, 8.3464838045em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9363709061em, 5.3684581789em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.316037758em, 7.3308839646em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6298097508em, 2.1704246587em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5323794428em, 3.8704994554em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7092924627em, 3.8369391207em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0152787476em, 7.4572212811em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0200091795em, 7.9090122903em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3098755323em, 8.6805941709em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.223156382em, 5.6374598046em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8237693418em, 3.5933735704em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1904006871em, 6.5495017091em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6621883535em, 0.9382910457em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3728555174em, 4.9526058416em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2828634618em, 5.5006764516em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6628987947em, 4.907515339em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3235124071em, 3.7850026928em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1235987044em, 7.6437042895em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6931828466em, 6.6246401883em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7907477435em, 8.1789039208em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6119946091em, 1.351798408em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.471630658em, 8.4175997113em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5229016485em, 8.4928142829em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1487075193em, 7.6720967461em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.437471495em, 8.4866292292em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2068922825em, 5.734645034em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9175463254em, 6.8881502824em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8154160395em, 7.4550887318em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4476135411em, 3.3130918853em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2651026129em, 7.6088301428em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2509169691em, -0.4170972468em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2024436143em, 4.4567921562em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0455661775em, 4.7122618319em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4498746761em, 7.291712824em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3614696854em, 0.7679000863em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4063761006em, 7.0098012496em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5702344947em, -0.0297418326em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9057387108em, 7.1981373048em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7250514659em, 7.3921376056em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1756578396em, 5.2018208778em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3420538944em, 4.1848763429em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2124927711em, 1.9367395734em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4466142413em, 2.4828601488em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3124309918em, 2.0980616085em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2214697573em, 4.6785738456em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6701569247em, 2.560092736em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9432139712em, 5.6366569147em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4608111472em, 5.6069533719em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3007520171em, 7.2653734363em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7957347233em, 4.2918358257em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2825846989em, 7.2540784845em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5173040676em, 9.260377228em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1450220509em, 4.6127904009em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1372737163em, 1.976788017em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0105255442em, 8.3991835069em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8391372711em, 6.3337988423em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9523573976em, 6.8071666845em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5310895119em, 2.0386489782em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7949756545em, 9.1440804604em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1180730646em, 1.3352208649em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7986539107em, 4.1050894978em, 7px, 7px, var(--primary-theme-accent-dim-1);
+  animation-duration: 22s;
+  animation-delay: -27s;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD {
+  filter: blur(0) !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD span::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD span::after {
+  opacity: 0;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD {
+  background: transparent;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD {
+  color: var(--primary-theme-accent-dim-1);
+  opacity: 1;
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD {
+  filter: blur(0) !important;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg) scale(12) translateX(-5px);
+  }
+  to {
+    transform: rotate(360deg) scale(18) translateX(5px);
+  }
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockquoteContainer___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-left: 5px solid var(--primary-theme-accent);
+  border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+  padding: 0.2rem;
+  padding-right: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockquoteContainer___XzQ5ZD .Markup\.module__blockquoteDivider___XzQ5ZD {
+  background-color: transparent;
+  margin-left: -0.5rem;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD {
+  background-color: color-mix(in srgb, currentColor 10%, black);
+  border: 1px solid color-mix(in srgb, currentColor 85%, black);
+  border-left: 5px solid currentColor;
+  border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD::before {
+  background-color: transparent;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD .Markup\.module__alertTitle___XzQ5ZD {
+  font-size: 1.3rem;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD .Markup\.module__alertContent___XzQ5ZD {
+  color: currentColor;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD {
+  color: var(--primary-theme-accent) !important;
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  padding: 0.1rem 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: none !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD:hover {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-1);
+  color: var(--primary-theme-accent) !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD::before {
+  content: "🔗 ";
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  color: var(--primary-theme-accent) !important;
+  padding: 0.05rem 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD:hover {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-1) !important;
+  color: var(--primary-theme-accent) !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD:hover span {
+  color: var(--primary-theme-accent) !important;
+}
+
+.GuildLayout\.module__guildMainContent___XzY3N2,
+.ChannelLayout\.module__channelLayoutContainer___ZDU4Mz,
+.ChannelIndexPage\.module__channelGrid___XzNmOW {
+  background-color: var(--primary-theme-accent-dim-6);
+}
+
+.SettingsModalHeader\.module__headerTransition___XzNkMG,
+.SettingsModalLayout\.module__desktopSidebarInner___XzBjZD {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+
+.UserSettingsModal\.module__userProfile___XzFlZT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.ChannelIndexPage\.module__searchPanel___XzNmOW .ChannelSearchResults\.module__container___XzFhMD {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+.ChannelIndexPage\.module__searchPanel___XzNmOW .ChannelSearchResults\.module__container___XzFhMD .ChannelSearchResults\.module__messageItem___XzFhMD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+}
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz .VoiceActivityCard\.module__card___YmUzND {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz .VoiceActivityCard\.module__card___YmUzND .Button\.module__button___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.DMFriendsView\.module__content___XzFlMG,
+.DirectMessageList\.module__dmChannelList___YTlkYT {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+.DMFriendsView\.module__content___XzFlMG .FormSurface\.module__surface___YzIwNT,
+.DirectMessageList\.module__dmChannelList___YTlkYT .FormSurface\.module__surface___YzIwNT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.DirectMessageList\.module__dmListHeader___YTlkYT,
+.GuildHeader\.module__headerWrapper___YmVlOG:not(:has(.GuildHeader.module__bannerBackground___YmVlOG)) .GuildHeader\.module__headerContainer___YmVlOG {
+  background-color: var(--primary-theme-accent-dim-4);
+}
+
+.PopoverPopout\.module__popout___YzY5YW .InboxPopout\.module__sidebar___YzAwYT,
+.InboxPopout\.module__container___YzAwYT .InboxPopout\.module__sidebar___YzAwYT,
+.InboxPopout\.module__containerWithSidebar___YzAwYT .InboxPopout\.module__sidebar___YzAwYT {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.PopoverPopout\.module__popout___YzY5YW,
+.InboxPopout\.module__container___YzAwYT,
+.InboxPopout\.module__containerWithSidebar___YzAwYT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.PopoverPopout\.module__popout___YzY5YW .InboxMessageHeader\.module__header___ZmI4Nm,
+.InboxPopout\.module__container___YzAwYT .InboxMessageHeader\.module__header___ZmI4Nm,
+.InboxPopout\.module__containerWithSidebar___YzAwYT .InboxMessageHeader\.module__header___ZmI4Nm {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  padding: 0.5rem;
+}
+
+.Button\.module__primary___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-4) !important;
+  border: 1px solid var(--primary-theme-accent-dim-3) !important;
+  border-radius: var(--global-border-radius);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__primary___ZDBiYz:not(:disabled):hover {
+  background-color: var(--primary-theme-accent-dim-3) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.Button\.module__secondary___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-3) !important;
+  border-radius: var(--global-border-radius);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__secondary___ZDBiYz:not(:disabled):hover {
+  background-color: var(--primary-theme-accent-dim-4) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.Button\.module__danger___ZDBiYz {
+  background-color: color-mix(in srgb, var(--status-danger) 50%, black) !important;
+  border: 1px solid var(--status-danger) !important;
+  border-radius: var(--global-border-radius);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__danger___ZDBiYz:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--status-danger) 70%, black) !important;
+  border: 1px solid var(--status-danger) !important;
+  color: var(--text-warning) !important;
+}
+
+.Button\.module__inverted___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-4) !important;
+  border: 1px solid var(--primary-theme-accent-dim-1) !important;
+  border-radius: var(--global-border-radius);
+  color: var(--text-primary) !important;
+  filter: invert(1);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__inverted___ZDBiYz:not(:disabled):hover {
+  background-color: var(--primary-theme-accent-dim-3) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.FormCombobox\.module__inputGroup___XzQ0Nm {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.FormCombobox\.module__inputGroup___XzQ0Nm:not(:disabled) {
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+.FormInput\.module__inputGroup___XzA0NG:not(:disabled, :has(.FormInput\.module__error___XzA0NG)) {
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.FormInput\.module__inputGroup___XzA0NG:has(.FormInput\.module__error___XzA0NG) {
+  filter: drop-shadow(0 0 1.5px var(--status-danger));
+}
+.FormInput\.module__inputGroup___XzA0NG .FormSurface\.module__surface___YzIwNT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.FormInput\.module__inputGroup___XzA0NG .FormSurface\.module__surface___YzIwNT:disabled {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-4);
+  color: color-mix(in srgb, currentColor 50%, black 50%) !important;
+  filter: drop-shadow(0 0 0px var(--primary-theme-accent-dim-4));
+}
+.FormInput\.module__inputGroup___XzA0NG .FormSurface\.module__surface___YzIwNT:has(.FormInput\.module__error___XzIwNT) {
+  border: 1px solid var(--status-danger) !important;
+}
+.FormInput\.module__inputGroup___XzA0NG .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__passwordToggle___XzA0NG) input[type=password] {
+  color: var(--primary-theme-accent-dim-1) !important;
+}
+.FormInput\.module__inputGroup___XzA0NG .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__passwordToggle___XzA0NG) input[type=text] {
+  color: var(--status-danger) !important;
+}
+.FormInput\.module__inputGroup___XzA0NG .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__error___XzA0NG) {
+  filter: drop-shadow(0 0 5px var(--status-danger));
+}
+
+.InlineEdit\.module__idleButton___YjI1OT {
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.InlineEdit\.module__idleButton___YjI1OT .InlineEdit\.module__wrapper___YjI1OT {
+  background-color: var(--primary-theme-accent-dim-4);
+  border-radius: var(--global-border-radius);
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.InlineEdit\.module__idleButton___YjI1OT:not(:disabled):hover .InlineEdit\.module__wrapper___YjI1OT {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.InlineEdit\.module__container___YjI1OT:has(.InlineEdit\.module__editable___YjI1OT) .InlineEdit\.module__wrapper___YjI1OT {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+  border-radius: var(--global-border-radius);
+}
+
+.ColorPickerField\.module__inputWrapper___Xzc5ZT {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+.FormSwitch\.module__switchRoot___XzcxYz {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.FormSwitch\.module__switchRoot___XzcxYz[data-state=checked] {
+  background-color: var(--primary-theme-accent);
+}
+
+.Checkbox\.module__checkbox___XzM4Zj,
+.ContextMenu\.module__checkbox___XzdkZj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.Checkbox\.module__checkbox___XzM4Zj[data-state=checked], .Checkbox\.module__checkbox___XzM4Zj.ContextMenu\.module__checkboxChecked___XzdkZj,
+.ContextMenu\.module__checkbox___XzdkZj[data-state=checked],
+.ContextMenu\.module__checkbox___XzdkZj.ContextMenu\.module__checkboxChecked___XzdkZj {
+  background-color: var(--primary-theme-accent-dim-2);
+}
+
+.RadioGroup\.module__radioGroupOption___XzM3Mj .RadioGroup\.module__radioIndicator___XzM3Mj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.RadioGroup\.module__radioGroupOption___XzM3Mj[data-state=checked] .RadioGroup\.module__outerRadioBase___XzM3Mj {
+  fill: var(--primary-theme-accent-dim-3) !important;
+  stroke: var(--primary-theme-accent-dim-2) !important;
+}
+.RadioGroup\.module__radioGroupOption___XzM3Mj[data-state=checked] .RadioGroup\.module__innerDotRadio___XzM3Mj {
+  fill: var(--primary-theme-accent) !important;
+}
+.RadioGroup\.module__radioGroupOption___XzM3Mj[data-state=unchecked] .RadioGroup\.module__outerRadioBase___XzM3Mj {
+  fill: var(--primary-theme-accent-dim-4) !important;
+  stroke: var(--primary-theme-accent-dim-3) !important;
+}
+
+.MenuItemRadio\.module__radioButton___XzRmNj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+}
+.MenuItemRadio\.module__radioButton___XzRmNj.MenuItemRadio\.module__radioButtonSelected___XzRmNj {
+  background-color: var(--primary-theme-accent-dim-2);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+}
+
+.Slider\.module__control___Xzk1Zj .Slider\.module__sliderControl___Xzk1Zj .Slider\.module__track___Xzk1Zj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__sliderControl___Xzk1Zj .Slider\.module__track___Xzk1Zj .Slider\.module__barFill___Xzk1Zj {
+  background: var(--primary-theme-accent-dim-3);
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__sliderControl___Xzk1Zj .Slider\.module__grabber___Xzk1Zj {
+  background: var(--primary-theme-accent-dim-2);
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__defaultValue___Xzk1Zj .Slider\.module__markValue___Xzk1Zj {
+  color: var(--primary-theme-accent);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__defaultValue___Xzk1Zj .Slider\.module__markDash___Xzk1Zj {
+  background-color: var(--primary-theme-accent);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+.ContextMenu\.module__contextMenu___XzdkZj,
+.ContextMenu\.module__submenuPopover___XzdkZj {
+  background-color: var(--primary-theme-accent-dim-4);
+}
+.ContextMenu\.module__contextMenu___XzdkZj .Scroller\.module__scroller___ZmI2ND,
+.ContextMenu\.module__submenuPopover___XzdkZj .Scroller\.module__scroller___ZmI2ND {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.ContextMenu\.module__contextMenu___XzdkZj .ContextMenu\.module__item___XzdkZj,
+.ContextMenu\.module__submenuPopover___XzdkZj .ContextMenu\.module__item___XzdkZj {
+  transition: all 0.3s ease;
+}
+.ContextMenu\.module__contextMenu___XzdkZj .ContextMenu\.module__item___XzdkZj:is(:hover,
+[data-hovered],
+[data-focus-visible],
+[data-highlighted]):not(.ContextMenu\.module__disabled___XzdkZj):not([data-disabled]),
+.ContextMenu\.module__submenuPopover___XzdkZj .ContextMenu\.module__item___XzdkZj:is(:hover,
+[data-hovered],
+[data-focus-visible],
+[data-highlighted]):not(.ContextMenu\.module__disabled___XzdkZj):not([data-disabled]) {
+  background-color: var(--primary-theme-accent-dim-3);
+  color: var(--primary-theme-accent);
+}
+
+.MentionBadge\.module__badge___Xzg2ZT {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  color: var(--primary-theme-accent);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+@property --overhauled-profiles {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+@container body style(--overhauled-profiles: on) {
+  .ProfileCardLayout\.module__profileCard___YWFiZW,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD {
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    display: flex;
+    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD {
+    background: var(--primary-theme-accent-dim-5);
+    color: var(--text-normal);
+    box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    transition: all ease 0.3s !important;
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD:hover,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD:hover {
+    background: var(--primary-theme-accent-dim-4);
+    color: var(--primary-theme-accent);
+    box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
+    border: 1px solid var(--primary-theme-accent-dim-2);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD.Tabs\.module__selected___YzdlOD,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD.Tabs\.module__selected___YzdlOD {
+    background: var(--primary-theme-accent-dim-4);
+    color: var(--primary-theme-accent);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Scroller\.module__scrollerChildren___ZmI2ND,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Scroller\.module__scrollerChildren___ZmI2ND {
+    background: var(--primary-theme-accent-dim-6);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT {
+    background: var(--primary-theme-accent-dim-6);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG {
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+  }
+  /* ---------------------------------------------------------------- */
+  /* discord-like user profiles by deer
+  /* ---------------------------------------------------------------- */
+  /* full user profile */
+  [class*="UserProfileModal.module__modalRoot_"] {
+    height: unset; /* shrink to only occupy necessary space */
+  }
+  /* pfp button */
+  [class*="ProfileCardBanner.module__avatarButton_"],
+  [class*="UserProfileModal.module__avatarContainer_"] {
+    anchor-name: --anchor-userstatus;
+  }
+  /* "display name, username, pronouns */
+  [class*="ProfileCardUserInfo.module__userInfoContainer_"],
+  [class*="UserProfileModal.module__userInfoContent_"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /* display name */
+  [class*="ProfileCardUserInfo.module__nameRow_"],
+  [class*="UserProfileModal.module__nameRow_"] {
+    width: 100%;
+  }
+  /* username */
+  [class*="ProfileCardUserInfo.module__usernameRow_"],
+  [class*="UserProfileModal.module__usernameRow_"] {
+    gap: unset;
+    color: var(--text-tertiary);
+  }
+  /* username pronouns separator */
+  [class*="ProfileCardUserInfo.module__pronouns_"]::before,
+  [class*="UserProfileModal.module__pronouns_"]::before {
+    content: "";
+    width: 4px !important;
+    height: 4px !important;
+    margin: 0rem 0.5rem;
+    background-color: var(--text-tertiary);
+    border-radius: var(--radius-full);
+  }
+  /* pronouns */
+  [class*="ProfileCardUserInfo.module__pronouns_"],
+  [class*="UserProfileModal.module__pronouns_"] {
+    font-size: 14px;
+    margin-top: unset;
+    color: var(--text-tertiary);
+    display: inline-flex;
+    align-items: center;
+  }
+  /* custom profile status */
+  [class*="UserProfilePopout.module__profileCustomStatus_"],
+  [class*="UserAreaPopout.module__customStatusRow_"],
+  [class*="ProfilePreview.module__profileCustomStatus_"] {
+    align-items: flex-start;
+    position: absolute;
+    position-anchor: --anchor-userstatus;
+    translate: 0 1rem;
+    position-area: right span-all;
+    position-visibility: always;
+    margin-left: 0.75rem;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 175px;
+    max-height: 3.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    border-top-left-radius: 0 !important;
+    z-index: 11; /* display above plutonium/visionary badge */
+    transition: var(--transition-normal);
+  }
+  [class*="UserProfileModal.module__customStatusRow_"] {
+    align-items: flex-start;
+    position: absolute;
+    position-anchor: --anchor-userstatus;
+    position-area: right span-all;
+    position-visibility: always;
+    margin-left: 0.75rem;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 575px !important;
+    max-height: 3.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    border-top-left-radius: 0;
+    z-index: 11; /* display above plutonium/visionary badge */
+    transition: var(--transition-normal);
+  }
+  /* custom profile status */
+  [class*="UserProfilePopout.module__profileCustomStatus_"]:hover,
+  [class*="UserAreaPopout.module__customStatusRow_"]:hover,
+  [class*="UserProfileModal.module__customStatusRow_"]:hover,
+  [class*="ProfilePreview.module__profileCustomStatus_"]:hover {
+    max-height: 10rem;
+    translate: unset;
+  }
+  /* custom profile status inner */
+  [class*=CustomStatusDisplay] > [class*="CustomStatusDisplay.module__content_"],
+  [class*=UserProfilePopout] > [class*="CustomStatusDisplay.module__content_"],
+  [class*=UserProfileModal] > [class*="CustomStatusDisplay.module__content_"],
+  [class*=ProfilePreview] > [class*="CustomStatusDisplay.module__content_"],
+  [class*="UserAreaPopout.module__customStatusPlaceholder_"] {
+    margin: 0.25rem 0.5rem;
+  }
+  [class*="UserProfileModal.module__profileContentWrapper_"] {
+    background: var(--primary-theme-accent-dim-6);
+  }
+  /* profile popout bio background */
+  [class*="UserProfileShared.module__bioContainer_"] {
+    background: var(--primary-theme-accent-dim-5);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--primary-theme-accent-dim-3);
+  }
+  /* bio join date notes etc container */
+  [class*="UserProfileModal.module__profileContent_"] {
+    padding-top: 16px !important;
+  }
+  .ProfileCardUserInfo\.module__usernameButton___XzY3Zj:before {
+    content: "@";
+  }
+}
+.SettingsModalLayout\.module__desktopSidebarInner___XzBjZD .ClientInfo\.module__button___Xzg2Zj [data-flx="app.client-info.span--2"]:after {
+  content: "NeoFluxer v1.0-pre-release";
+  display: block;
+}
+
+.theme-light .AppLayout\.module__appLayout___XzQ5NW::before {
+  content: '⚠️ WARNING ⚠️\aUnsupported Core Theme Detected.\aOnly Dark mode is Supported.\aPlease Switch to Dark Mode by opening the settings with "CTRL+," > Appearance > Theme > Dark';
+  white-space: pre-line;
+  color: white;
+  display: block;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  z-index: 9999;
+}
+
+.theme-coal .AppLayout\.module__appLayout___XzQ5NW::before {
+  content: '⚠️ WARNING ⚠️\aUnsupported Core Theme Detected.\aThe Coal theme is too dark for NeoFluxer to work Properly.\aPlease Switch to Dark Mode by opening the settings with "CTRL+," > Appearance > Theme > Dark';
+  white-space: pre-line;
+  color: white;
+  display: block;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  z-index: 9999;
+}
+
+.theme-light .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"], .theme-coal .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"] {
+  border: 2px solid yellow;
+  background-color: yellow;
+}
+.theme-light .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"] *, .theme-coal .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"] * {
+  fill: black !important;
+  stroke: black !important;
+  color: black !important;
+}
+.theme-light .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"]:after, .theme-coal .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"]:after {
+  z-index: 10000 !important;
+  content: "!";
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: -0.5rem !important;
+  animation: hover-n-glow 2s infinite;
+}
+@keyframes hover-n-glow {
+  0% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+  50% {
+    translate: 0 5px;
+    filter: drop-shadow(0 0 0px red);
+  }
+  100% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance {
+  border: 2px solid yellow;
+  background-color: yellow;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance *, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance * {
+  fill: black !important;
+  stroke: black !important;
+  color: black !important;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance:after, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance:after {
+  z-index: 10000 !important;
+  content: "!";
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  position: absolute !important;
+  right: 0.5rem !important;
+  animation: hover-n-glow 2s infinite;
+}
+@keyframes hover-n-glow {
+  0% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+  50% {
+    translate: 0 5px;
+    filter: drop-shadow(0 0 0px red);
+  }
+  100% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"], .theme-coal .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"] {
+  border: 2px solid yellow;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:before, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:before {
+  content: "CLICK ME";
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 0.8rem !important;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:after, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:after {
+  z-index: 10000 !important;
+  content: "!";
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: -0.5rem !important;
+  animation: hover-n-glow 2s infinite;
+}
+@keyframes hover-n-glow {
+  0% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+  50% {
+    translate: 0 5px;
+    filter: drop-shadow(0 0 0px red);
+  }
+  100% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+}
+
+body {
+  container-name: body;
+}
