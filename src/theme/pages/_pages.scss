@@ -1,6 +1,7 @@
 // unthemed areas of certain pages go here
 #if-category {
-    display: none;
+    // This is the InFlux category section in the Settings. InFlux's category is a little bugged, so for testing purposes, it is hidden.
+    // display: none;
 }
 
 // Settings page
@@ -60,17 +61,6 @@
 }
 
 
-.Button\.module__primary___ZDBiYz {
-    background-color: var(--primary-theme-accent-dim-4)!important;
-    border: 1px solid var(--primary-theme-accent-dim-3)!important;
-    border-radius: var(--global-border-radius);
-}
-.Button\.module__secondary___ZDBiYz {
-    background-color: var(--primary-theme-accent-dim-5)!important;
-    border: 1px solid var(--primary-theme-accent-dim-3)!important;
-    border-radius: var(--global-border-radius);
-}
-
 
 //inbox page
 .PopoverPopout\.module__popout___YzY5YW,
@@ -90,4 +80,231 @@
         border-radius: var(--global-border-radius);
         padding: 0.5rem;
     }
+}
+
+
+
+
+// Any and all Buttons and Inputs
+.Button\.module__primary___ZDBiYz { // The Blue button
+    background-color: var(--primary-theme-accent-dim-4)!important;
+    border: 1px solid var(--primary-theme-accent-dim-3)!important;
+    border-radius: var(--global-border-radius);
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+    &:not(:disabled):hover {
+        background-color: var(--primary-theme-accent-dim-3)!important;
+        border: 1px solid var(--primary-theme-accent-dim-2)!important;
+    }
+}
+.Button\.module__secondary___ZDBiYz { // The Grey button
+    background-color: var(--primary-theme-accent-dim-5)!important;
+    border: 1px solid var(--primary-theme-accent-dim-3)!important;
+    border-radius: var(--global-border-radius);
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+    &:not(:disabled):hover {
+        background-color: var(--primary-theme-accent-dim-4)!important;
+        border: 1px solid var(--primary-theme-accent-dim-2)!important;
+    }
+}
+.Button\.module__danger___ZDBiYz { // The Red button
+    background-color: color-mix(in srgb, var(--status-danger) 50%, black)!important;
+    border: 1px solid var(--status-danger)!important;
+    border-radius: var(--global-border-radius);
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+    &:not(:disabled):hover {
+        background-color: color-mix(in srgb, var(--status-danger) 70%, black)!important;
+        border: 1px solid var(--status-danger)!important;
+        color: var(--text-warning)!important;
+    }
+}
+.Button\.module__inverted___ZDBiYz { // The Inverted button
+    background-color: var(--primary-theme-accent-dim-4)!important;
+    border: 1px solid var(--primary-theme-accent-dim-1)!important;
+    border-radius: var(--global-border-radius);
+    color: var(--text-primary)!important;
+    filter: invert(1);
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+    &:not(:disabled):hover {
+        background-color: var(--primary-theme-accent-dim-3)!important;
+        border: 1px solid var(--primary-theme-accent-dim-2)!important;
+    }
+}
+
+
+.FormCombobox\.module__inputGroup___XzQ0Nm { // dropdown selectors
+    background-color: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    &:not(:disabled) {
+        filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+    }
+}
+.FormInput\.module__inputGroup___XzA0NG { // Plaintext input
+    &:not(:disabled,:has(.FormInput\.module__error___XzA0NG)) {
+        filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+    }
+    &:has(.FormInput\.module__error___XzA0NG) {
+        filter: drop-shadow(0 0 1.5px var(--status-danger));
+    }
+    .FormSurface\.module__surface___YzIwNT {
+        background-color: var(--primary-theme-accent-dim-6);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+        &:disabled {
+            background-color: var(--primary-theme-accent-dim-5);
+            border: 1px solid var(--primary-theme-accent-dim-4);
+            color: color-mix(in srgb, currentColor 50%, black 50%)!important;
+            filter: drop-shadow(0 0 0px var(--primary-theme-accent-dim-4));
+        }
+        &:has(.FormInput\.module__error___XzIwNT) {
+            border: 1px solid var(--status-danger)!important;
+        }
+    }
+    .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__passwordToggle___XzA0NG) { // Password input
+        input[type="password"] {
+            color: var(--primary-theme-accent-dim-1)!important;
+        }
+        input[type="text"] {
+            color: var(--status-danger)!important;
+        }
+    }
+    .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__error___XzA0NG) { // Error state for form input
+        filter: drop-shadow(0 0 5px var(--status-danger));
+    }
+}
+.InlineEdit\.module__idleButton___YjI1OT { // Inline Editable text
+    filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+    .InlineEdit\.module__wrapper___YjI1OT {
+        background-color: var(--primary-theme-accent-dim-4);
+        border-radius: var(--global-border-radius);
+        color: var(--text-primary)!important;
+        transition: background-color 0.3s, border 0.3s, color 0.3s;
+    }
+    &:not(:disabled):hover {
+        .InlineEdit\.module__wrapper___YjI1OT {
+            background-color: var(--primary-theme-accent-dim-5)!important;
+            border: 1px solid var(--primary-theme-accent-dim-2)!important;
+        }
+    }
+}
+.InlineEdit\.module__container___YjI1OT:has(.InlineEdit\.module__editable___YjI1OT) .InlineEdit\.module__wrapper___YjI1OT {
+    background-color: var(--primary-theme-accent-dim-5)!important;
+    border: 1px solid var(--primary-theme-accent-dim-2)!important;
+    border-radius: var(--global-border-radius);
+}
+.ColorPickerField\.module__inputWrapper___Xzc5ZT { // Color Picker
+    background-color: var(--primary-theme-accent-dim-4);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+// Selections
+.FormSwitch\.module__switchRoot___XzcxYz { // Form switch (fancy checkboxes lol)
+    background-color: var(--primary-theme-accent-dim-4);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+    &[data-state=checked] {
+        background-color: var(--primary-theme-accent);
+    }
+}
+
+.Checkbox\.module__checkbox___XzM4Zj,
+.ContextMenu\.module__checkbox___XzdkZj { // Checkbox
+    background-color: var(--primary-theme-accent-dim-4);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    // border-radius: var(--global-border-radius);
+    filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+    &[data-state=checked], &.ContextMenu\.module__checkboxChecked___XzdkZj {
+        background-color: var(--primary-theme-accent-dim-2);
+    }
+}
+
+.RadioGroup\.module__radioGroupOption___XzM3Mj { // Radio selector
+    .RadioGroup\.module__radioIndicator___XzM3Mj {
+        background-color: var(--primary-theme-accent-dim-4);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+        filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+    }
+    &[data-state="checked"] {
+        .RadioGroup\.module__outerRadioBase___XzM3Mj {
+            fill: var(--primary-theme-accent-dim-3)!important;
+            stroke: var(--primary-theme-accent-dim-2)!important;
+        }
+        .RadioGroup\.module__innerDotRadio___XzM3Mj {
+            fill: var(--primary-theme-accent)!important;
+        }
+    }
+    &[data-state="unchecked"] {
+        .RadioGroup\.module__outerRadioBase___XzM3Mj {
+            fill: var(--primary-theme-accent-dim-4)!important;
+            stroke: var(--primary-theme-accent-dim-3)!important;
+        }
+    }
+}
+.MenuItemRadio\.module__radioButton___XzRmNj { // Menu item radio button
+    background-color: var(--primary-theme-accent-dim-4);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    &.MenuItemRadio\.module__radioButtonSelected___XzRmNj {
+        background-color: var(--primary-theme-accent-dim-2);
+        border: 1px solid var(--primary-theme-accent-dim-2);
+    }
+}
+.Slider\.module__control___Xzk1Zj { // Slider control
+    .Slider\.module__sliderControl___Xzk1Zj {
+        .Slider\.module__track___Xzk1Zj {
+            background-color: var(--primary-theme-accent-dim-4);
+            border: 1px solid var(--primary-theme-accent-dim-3);
+            border-radius: var(--global-border-radius);
+            filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+            .Slider\.module__barFill___Xzk1Zj {
+                background: var(--primary-theme-accent-dim-3);
+            }
+        }
+       .Slider\.module__grabber___Xzk1Zj {
+            background: var(--primary-theme-accent-dim-2);
+        }
+    }
+    .Slider\.module__defaultValue___Xzk1Zj  {
+        .Slider\.module__markValue___Xzk1Zj {
+            color: var(--primary-theme-accent);
+            filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+        }
+        .Slider\.module__markDash___Xzk1Zj {
+            background-color: var(--primary-theme-accent);
+            filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+        }
+    }
+}
+
+
+.ContextMenu\.module__contextMenu___XzdkZj,
+.ContextMenu\.module__submenuPopover___XzdkZj { // Context Menu Root
+    background-color: var(--primary-theme-accent-dim-4);
+    .Scroller\.module__scroller___ZmI2ND {
+        background-color: var(--primary-theme-accent-dim-4);
+        border: 1px solid var(--primary-theme-accent-dim-3);
+        border-radius: var(--global-border-radius);
+    }
+    .ContextMenu\.module__item___XzdkZj {
+        transition: all 0.3s ease;
+    }
+    .ContextMenu\.module__item___XzdkZj:is(
+            :hover,
+            [data-hovered],
+            [data-focus-visible],
+            [data-highlighted]
+        ):not(.ContextMenu\.module__disabled___XzdkZj):not([data-disabled]) {
+        background-color: var(--primary-theme-accent-dim-3);
+        color: var(--primary-theme-accent);
+    }
+}
+
+.MentionBadge\.module__badge___Xzg2ZT { // Mention Badge
+    background-color: var(--primary-theme-accent-dim-4);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    color: var(--primary-theme-accent);
+    filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
 }
