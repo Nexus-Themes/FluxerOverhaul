@@ -1,12 +1,12 @@
 /** @type {import('bd-scss/lib/config').Config} */
 export default {
 	meta: {
-		name: 'Fluxer Overhaul',
+		name: 'NeoFluxer',
 		author: 'GH0STP4WZ#0001',
-		version: '1.0.0',
-		description: 'An overhaul of the Fluxer UI',
+		version: '1.0-pre-release',
+		description: 'Color-flexible Cyber-aesthetic UI theme',
 		source: 'https://github.com/Nexus-Themes/FluxerOverhaul',
 		tags: ['Styling', ' Overhaul', ' UI', ' Theme'],
-		workswith: ['Stable', ' Canary']
+		workswith: ['Canary']
 	}
 };
