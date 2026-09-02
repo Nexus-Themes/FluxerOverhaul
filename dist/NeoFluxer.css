@@ -1,0 +1,1381 @@
+/**
+                    ▄▄            
+  ▄▄▄▄▄▄      ▄▄▄▄▄███   ▄▄▄▄▄▄   
+▄█▓▓█▀▀█▄▄  ▄█▓▓▀▀▀███ ▄█▓▓▀▀▓█▄▄ 
+█▓▒▀▀  ░▒▄▄ █▓▒█ ▄▄ ▀▀ █▓▒█   ░▒▄▄
+▓▒██   ▒░▓█ ▓▒░▒▓██    ▓▒▌▌   ░░▓█
+▒░██   ░▒▓█ ▒░██ ▀▀    ▒░██   ▓▒▓█
+░███   ░░██ ░██▀▄  ▄░█ ░██▀▄▄▄░░█ 
+████   ░▒▓█  ▀████████  ▀█████▄▀  
+                   ▀██            
+        ▄▄                                            ▄▄            
+  ▄▄▄▄▄███   ▄▄         ▄▄   ▄     ▄▄▄   ▄▄▄    ▄▄▄▄▄███ ▄▄▄▄▄▄▄▄   
+▄█▓▓▀▀▀███ ▄█▓█       ▄█▓█   █▄▄  ██▓█   ████ ▄█▓▓▀▀▀███ ██▓▓▀█▓█▄▄ 
+█▓▒█ ▄▄ ▀▀ █▓▒█       █▓▒█   ██▄▄ ▀▓▒▄▄ ▄▓▒▀▀ █▓▒█ ▄▄ ▀▀ █▓▒█   ▓▒█ 
+▓▒░▒▓██    ▓▒░█       ▓▒░█   ▒▓▓█  ▄░░▒▓▓█▌▌  ▓▒░▒▓██    ▓▒▓▒▒▒▓██  
+▒░██ ▀▀    ▒░██       ▒░██   ▒▒██ ▒░█▀▀ ▀▓▒▌▌ ▒░██ ▀▀    ▒░██  ▀▓▒▄▄
+░███       ░██▀▄      ░░█▀▄▄▓▒▓▌▌ ░███   ▒▒▌▌ ░██▀▄  ▄░█ ░███   ░░▌▌
+▀███        ▀██████▄▀ ▀░░███░▒▀▀   ▀██   ░▒██  ▀████████ ████   █░█ 
+  ▀                                                  ▀██            
+*/
+/* General font import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* Code font import */
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+body {
+  /**
+   * Fluxer Overhaul is a massive overhaul of the visual appearance of the Fluxer Client.
+   * Some of its features are quite drastic, and may not be to everyone's taste.
+   * For this reason, Presented below is a configurator for some of the more dramatic changes,
+   * allowing you, the user, to pick and choose which features you don't and do want to use.
+   * If you're an InFlux user, Chances are you will have access to a graphical configurator for these settings.
+   * You may still need to manually open the Theme.css file to import a custom font, though.
+  */
+  /* Primary Theme Accent Color — Default: #ff0000; valid values: any valid CSS color */
+  /* This color is used throughout the theme for various UI elements. */
+  --primary-theme-accent: #ff0000;
+  /* Global Border Radius — Default: 12px; valid values: any valid CSS length */
+  /* This value is used to round the corners of various UI elements. */
+  --global-border-radius: 12px;
+  /* General Font — Default: "Montserrat"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for most of the entire application, such as messages and menu text.
+  To use remote fonts from repositories such as Google Fonts, you need to import them at the top of this file. */
+  --general-font: "Montserrat";
+  /* Code Font — Default: "Kode Mono"; valid values: any valid CSS font-family */
+  /* This value is used to define the font for code blocks and inline code. */
+  --code-font: "Kode Mono";
+  /* Use Message Bubbles — Default: off; valid values: on, off */
+  /* Wraps messages in a bubble-like container, similar to other messaging apps like Signal or Telegram. */
+  --use-bubbles: off;
+  /* Replace Search Bar — Default: off; valid values: on, off */
+  /* Replaces the default search bar with an icon that optimizes space. Will expand on hover or focus. */
+  --replace-search-bar: off;
+  /* Compact Members List — Default: on; valid values: on, off */
+  /* Collapses the members list, and expands it on hover, allowing for more space for messages. */
+  --compact-members-list: on;
+  /* Overhaul User Profiles — Default: on; valid values: on, off */
+  /* Overhauls the user profile popout and modal to Appear more like Discord's user profile, with a more compact and modern design. */
+  /* All Credit for this feature goes to DeerUwU on Github, who made the original user profile overhaul. */
+  --overhauled-profiles: on;
+}
+
+body {
+  --primary-theme-accent-dim-1: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 90%,
+    black
+  );
+  --primary-theme-accent-dim-2: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 75%,
+    black
+  );
+  --primary-theme-accent-dim-3: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 50%,
+    black
+  );
+  --primary-theme-accent-dim-4: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 25%,
+    black
+  );
+  --primary-theme-accent-dim-5: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 10%,
+    black
+  );
+  --primary-theme-accent-dim-6: color-mix(
+    in srgb,
+    var(--primary-theme-accent) 5%,
+    black
+  );
+  font-family: var(--general-font) !important;
+}
+body .Markup\.module__markup___XzQ5ZD pre,
+body .Markup\.module__inline___XzQ5ZD,
+body code {
+  font-family: var(--code-font) !important;
+}
+
+.TextareaInput\.module__textareaOuterRow___XzJmNz {
+  min-height: 0;
+}
+.TextareaInput\.module__textareaOuterRow___XzJmNz:before {
+  display: none;
+}
+
+.InputWrapper\.module__statusRail___ZWM3OW {
+  bottom: -30px;
+}
+
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .TextareaInput\.module__mainWrapperDense___XzJmNz {
+  min-height: 35px;
+  margin-top: 0.8rem;
+  margin-bottom: 5px;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 {
+  translate: 0px -1.4rem;
+  width: 98%;
+  margin: 10px auto;
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  max-height: 40rem;
+  min-height: 3.7rem;
+  background-color: var(--primary-theme-accent-dim-4);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW {
+  background-color: transparent !important;
+  padding: 0;
+  margin-left: -5px;
+  margin-right: -5px;
+  translate: 2px 0;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-height: 35rem !important;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .Scroller\.module__scrollerChildren___ZmI2ND {
+  overflow-y: scroll;
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .TextareaInput\.module__mainWrapperDense___XzJmNz {
+  padding: var(--textarea-horizontal-padding);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .TextareaInput\.module__flexColumn___XzJmNz {
+  max-height: 35rem !important;
+  background-color: var(--primary-theme-accent-dim-6);
+}
+.ChannelChatLayout\.module__textareaArea___YjY1N2 .InputWrapper\.module__box___ZWM3OW .InputWrapper\.module__stackSection___ZWM3OW .LexicalMessageComposer\.module__paragraph___ZjY5OG {
+  max-height: 20rem !important;
+  overflow-y: auto;
+}
+
+.InputWrapper\.module__composerActionStack___ZWM3OW {
+  margin-top: -10px !important;
+  margin-right: -4px !important;
+  margin-left: 2px !important;
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-bottom-color: transparent;
+}
+
+.TextareaInput\.module__buttonContainerDense___XzJmNz {
+  transition: all 0.2s ease-in-out;
+  margin-right: 35px;
+  transition-property: opacity, margin-right;
+}
+.TextareaInput\.module__buttonContainerDense___XzJmNz .TextareaButton\.module__button___XzgyZD:last-child {
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  right: 0;
+}
+.TextareaInput\.module__buttonContainerDense___XzJmNz .TextareaButton\.module__button___XzgyZD:last-child:disabled {
+  opacity: 0;
+  right: -25px;
+}
+.TextareaInput\.module__buttonContainerDense___XzJmNz:has(.TextareaButton\.module__button___XzgyZD:last-child:disabled) {
+  margin-right: -15px;
+}
+
+.ChannelChatLayout\.module__container___YjY1N2 {
+  background-color: var(--primary-theme-accent-dim-6);
+}
+.ChannelChatLayout\.module__container___YjY1N2 .ChannelMessages\.module__scrollerInner___XzlhYW {
+  margin: 0 50px;
+}
+
+.Scroller\.module__scroller___ZmI2ND {
+  background: linear-gradient(180deg, var(--primary-theme-accent-dim-5) 80%, var(--primary-theme-accent-dim-5) 95%, var(--primary-theme-accent-dim-6) 100%);
+}
+
+@property --replace-search-bar {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+.ChannelHeader\.module__headerWrapper___XzU4Mj .ChannelHeader\.module__headerContainer___XzU4Mj {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+
+@container body style(--replace-search-bar: on) {
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj {
+    transition: all ease 0.3s !important;
+    justify-content: flex-end !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT {
+    transition: all ease 0.3s !important;
+    justify-content: flex-start !important;
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent);
+    border-radius: var(--global-border-radius);
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__scopeButton___Y2RiYT {
+    transition: all ease 0.3s !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__scopeButton___Y2RiYT .MessageSearchBar\.module__scopeBadge___Y2RiYT {
+    transition: all ease 0.3s !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    transition: all ease 0.3s !important;
+    background: none;
+    border: transparent;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__input___Y2RiYT {
+    transition: all ease 0.3s !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) {
+    width: 30px !important;
+    min-width: 25px !important;
+    flex: 0 0 25px !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__scopeButton___Y2RiYT {
+    scale: 1.3;
+    translate: -2px 0;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__scopeButton___Y2RiYT .MessageSearchBar\.module__scopeBadge___Y2RiYT {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__input___Y2RiYT {
+    min-width: 0px !important;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__anchor___Y2RiYT {
+    width: 30px !important;
+    min-width: 30px !important;
+    flex: 0 0 30px !important;
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj:not(:has(.MessageSearchBar\.module__anchor___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:hover, .MessageSearchBar\.module__inputContainer___Y2RiYT:active, .MessageSearchBar\.module__inputContainer___Y2RiYT:focus-within, .MessageSearchBar\.module__inputContainer___Y2RiYT .MessageSearchBar\.module__clearButton___Y2RiYT)) .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    flex: 0 0 30px !important;
+    width: 30px !important;
+    min-width: 30px !important;
+  }
+}
+@container body style(--replace-search-bar: off) {
+  .ChannelHeader\.module__messageSearchFocusWrapper___XzU4Mj .MessageSearchBar\.module__anchor___Y2RiYT .MessageSearchBar\.module__inputContainer___Y2RiYT {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent);
+    border-radius: var(--global-border-radius);
+  }
+}
+.UserArea\.module__userAreaInnerWrapper___XzI2YW {
+  position: absolute;
+  bottom: 2rem;
+  left: 4.5rem;
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  width: calc(var(--layout-sidebar-width) - 0.5rem);
+  padding: 0px;
+}
+.UserArea\.module__userAreaInnerWrapper___XzI2YW .UserArea\.module__userAreaContainer___XzI2YW {
+  padding: 5px;
+}
+
+.Scroller\.module__scroller___ZmI2ND .ChannelListContent\.module__channelGroupsContainer___ZDI5M2 {
+  margin-bottom: 4rem;
+}
+
+.UserArea\.module__userAreaContainer___XzI2YW:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: color-mix(in srgb, black var(--darkening), transparent);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--layout-user-area-height);
+  border-top: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+}
+
+@property --compact-members-list {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+@container body style(--compact-members-list: on) {
+  .ChannelIndexPage\.module__memberListDivider___XzNmOW,
+  .MemberListContainer\.module__memberListContainer___XzJhOT {
+    transition: all ease 0.3s !important;
+  }
+  body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .ChannelIndexPage\.module__memberListDivider___XzNmOW,
+  body:not(:has(.MemberListContainer\.module__memberListContainer___XzJhOT:hover)) .MemberListContainer\.module__memberListContainer___XzJhOT {
+    margin-right: -13rem;
+  }
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG:has([data-flx-user-id="1473358551264223281"]),
+.UserArea\.module__userAreaContainer___XzI2YW:has([data-flx-user-id="1473358551264223281"]) {
+  --user-background: url("https://fluxerusercontent.com/attachments/1473358551264223281/1544251896804409346/liz-furry-live-wallpaper.png");
+  --darkening: 60%;
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG:has([data-flx-user-id="1473358551264223281"]) .MemberListItem\.module__buttonOffline___XzM2MT,
+.UserArea\.module__userAreaContainer___XzI2YW:has([data-flx-user-id="1473358551264223281"]) .MemberListItem\.module__buttonOffline___XzM2MT {
+  backdrop-filter: grayscale(100%);
+  opacity: 1;
+}
+
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG,
+.UserArea\.module__userAreaContainer___XzI2YW {
+  background-image: var(--user-background);
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--global-border-radius);
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__button___XzM2MT,
+.UserArea\.module__userAreaContainer___XzI2YW .MemberListItem\.module__button___XzM2MT {
+  background-color: color-mix(in srgb, black var(--darkening), transparent);
+}
+.ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__buttonOffline___XzM2MT div,
+.UserArea\.module__userAreaContainer___XzI2YW .MemberListItem\.module__buttonOffline___XzM2MT div {
+  filter: grayscale(20%);
+  opacity: 90%;
+}
+
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=offline]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-offline) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-offline);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=online]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-online) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-online);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=idle]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-idle) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-idle);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-status=dnd]) {
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--status-dnd) 40%, transparent) 10%, transparent 20%, transparent) !important;
+  margin-top: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.25rem;
+  padding-bottom: 0.25rem;
+  border-radius: var(--global-border-radius);
+  border-left: 0.35rem solid var(--status-dnd);
+  margin-left: -0.1rem;
+  padding-left: 0.1rem;
+  margin-right: -0.1rem;
+  padding-right: 0.1rem;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT:has([data-flx-mobile-status=true]) .MemberListItem\.module__name___XzM2MT:before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 3px;
+  background-color: var(--status-online);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath d='M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath d='M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__animatedMaskShape___ZmRhMD,
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__statusContainer___ZmRhMD {
+  display: none;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__grid___XzM2MT .MemberListItem\.module__avatarContainer___XzM2MT .BaseAvatar\.module__container___ZmRhMD foreignObject {
+  -webkit-mask: none !important;
+          mask: none !important;
+}
+.MemberListContainer\.module__memberListContainer___XzJhOT .ChannelMembers\.module__virtualListContent___Xzc5ZG .ChannelMembers\.module__virtualMemberRow___Xzc5ZG .MemberListItem\.module__button___XzM2MT {
+  height: 100%;
+  border-radius: var(--global-border-radius);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+}
+
+@property --use-bubbles {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: off;
+}
+@container body style(--use-bubbles: on) {
+  [data-flx="channel.message-group.group"] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    width: 100% !important;
+    max-width: 100%;
+    padding: 5px;
+    border-radius: 0px 12px 12px 12px;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__message___YzRhZj {
+    grid-template-areas: "gutter-left avatar gutter-right reply" ". . . content" ". . . container";
+    padding-right: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"] {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    max-width: 100%;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:not([data-is-group-start=true]):has(.AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj, .Attachment\.module__attachmentWrapper___YTIxYT) .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:is([data-is-group-start=true]):not(:has([data-flx-reply=true])) .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+    margin-top: -2rem;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-right: auto !important;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj {
+    background: none;
+    border: none;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-bottom: 2.5rem;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__messageNoText___YzRhZj:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__repliedMessage___YzRhZj {
+    z-index: 1;
+  }
+  [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) .Message\.module__messageNoText___YzRhZj .Message\.module__container___YzRhZj {
+    margin-top: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] :not([data-is-group-start=true]) div .Message\.module__messageContent___YzRhZj {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__twoImageGrid___XzliZD {
+    grid-template-columns: repeat(2, 15rem) !important;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__threeImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: 15rem 7.5rem;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__fourImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: 11.5rem 11.5rem;
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__fiveImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(6, 3.7rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__sixImageGrid___XzliZD {
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__sevenImageContainer___XzliZD .AttachmentLayoutGrid\.module__sevenGrid___XzliZD {
+    grid-template-rows: repeat(2, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__eightImageContainer___XzliZD .AttachmentLayoutGrid\.module__eightBottomGrid___XzliZD {
+    grid-template-rows: repeat(2, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__nineImageGrid___XzliZD {
+    grid-template-rows: repeat(3, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj .AttachmentLayoutGrid\.module__tenImageContainer___XzliZD .AttachmentLayoutGrid\.module__tenGrid___XzliZD {
+    grid-template-rows: repeat(3, 7.5rem);
+    grid-template-columns: repeat(3, 7.5rem);
+  }
+  [data-flx="channel.message-group.group"]:has(.Message\.module__repliedMessage___YzRhZj) .Message\.module__messageAuthorInfo___YzRhZj {
+    margin-bottom: 40px;
+  }
+  [data-flx="channel.message-group.group"] [data-is-group-start=true] .Message\.module__messageContent___YzRhZj {
+    margin-top: -2rem;
+  }
+  [data-flx="channel.message-group.group"] [data-is-group-start=true] .Message\.module__messageAvatar___YzRhZj {
+    translate: 0 -25px;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+    justify-self: left;
+    top: 2.5rem;
+    left: 5px;
+    display: grid;
+    height: 2.3rem !important;
+    padding: 5px;
+    border-left: 1px solid var(--message-mention-color);
+    border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+    margin-right: 15px;
+    background: var(--primary-theme-accent-dim-4);
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj::before {
+    display: none;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedTextPreview___YzRhZj {
+    grid-area: 2/1/3/3;
+    flex: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100% !important;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedUsername___YzRhZj {
+    grid-area: 1/2/2/4;
+    max-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  [data-flx="channel.message-group.group"] .Message\.module__repliedMessage___YzRhZj .Message\.module__repliedAvatar___YzRhZj {
+    grid-area: 1/1/2/2;
+    max-width: 100%;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  [data-flx="channel.message-group.group"] [data-flx*="channel.message-group.rendered-messages.div"]:has([data-flx-author-self=true]) {
+    margin-left: auto !important;
+    padding-right: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] {
+    direction: rtl;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .AttachmentMosaic\.module__mosaicContainerWrapper___Xzk3Yj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__container___YzRhZj {
+    border-radius: 12px 0px 12px 12px !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__messageContent___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .Message\.module__repliedMessage___YzRhZj,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .TextualAttachmentPreview\.module__textualPreview___YjI0OG,
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageAttachments\.module__forwardedContainer___XzZiOT {
+    direction: ltr !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT {
+    direction: ltr !important;
+    rotate: 180deg;
+    right: unset !important;
+    left: 0 !important;
+  }
+  [data-flx="channel.message-group.group"] [data-flx-author-self=true] .MessageActionBar\.module__actionBarContainer___YTE3ZT .MessageActionBar\.module__actionBar___YTE3ZT {
+    rotate: 180deg;
+  }
+}
+.Message\.module__messageTimestampHover___YzRhZj.Message\.module__messageTimestampHover___YzRhZj {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+[data-flx-author-self=true] .Message\.module__messageTimestampHover___YzRhZj.Message\.module__messageTimestampHover___YzRhZj {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  direction: ltr !important;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__timestamp___XzQ5ZD {
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  background-color: var(--primary-theme-accent-dim-6);
+  border-radius: var(--global-border-radius);
+  font-family: var(--code-font);
+  font-size: 0.85rem;
+  padding: 0.15rem;
+  padding-right: 0.35rem;
+  color: var(--primary-theme-accent-dim-1);
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__timestamp___XzQ5ZD::before {
+  content: "🕔 ";
+  filter: grayscale(100%);
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__codeContainer___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__inline___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  padding: 0.2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  padding: 0.2rem;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD {
+  color: var(--primary-theme-accent-dim-1);
+  opacity: 1;
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD span::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  content: "·";
+  mix-blend-mode: screen;
+  animation: 22s -27s move infinite ease-in-out alternate;
+  text-shadow: 6.882009107em, 7.4224484117em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1013942123em, 8.9522296197em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6685912415em, 7.2942015395em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1129034473em, 5.2731994186em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8956010809em, 8.6785882925em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0279009686em, 0.0198602108em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7601359255em, 8.7484091534em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3727782829em, 5.0098026872em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7107854619em, -0.2886554468em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8396605182em, 5.4474803183em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.96719176em, 8.7629759807em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4712037768em, 3.9347947509em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0177230522em, 7.5844604971em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7469257579em, 5.6854423492em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2804096392em, -0.1173311709em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2003250291em, 5.5244257095em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2802022298em, 2.9960909796em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7061193541em, 3.2356893383em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9666838756em, 8.6921048695em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3162689308em, 7.5308230407em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7827907877em, 5.7970536295em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9799791113em, 7.868922882em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4617353689em, 4.569584158em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9845665407em, 1.2903942614em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.218442136em, 1.3279131473em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0066811269em, -0.424386357em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3663699974em, 9.0151140396em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3033775872em, 1.1504102185em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1049142573em, 7.5894165774em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3674820792em, 8.2301926892em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4649721542em, 9.2856022656em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.621644531em, 2.2200059846em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.137951292em, -0.1146971172em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5455479038em, 3.0753448566em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0093994856em, 3.1922137449em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9767866196em, 5.5428227041em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7187133318em, 6.2596162558em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7770486965em, 3.3915035875em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9811081088em, 4.5927245867em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0430779527em, 0.987149702em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2369981091em, 3.7677358423em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1122051586em, 1.839034278em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0477984985em, 2.0706404716em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1346214304em, 6.1859439763em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9096364208em, 8.4267115258em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9529528163em, 6.6365117561em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2399715344em, 3.971874372em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1570149721em, 5.1337905137em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8055182304em, 7.4009060492em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1782943121em, 4.3157004085em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3572529066em, 8.8179482029em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4067198568em, 2.6540485102em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3948831185em, 8.9075687376em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9187338961em, 2.1470258994em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9787641459em, 1.0506307222em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2490967854em, 0.6542565956em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2880862085em, 2.0068006597em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3704420159em, 2.5572138793em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0116048827em, 0.2417397152em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0253081656em, -0.3806829469em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8257373885em, 4.0634765701em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7896472547em, 1.9247210879em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5533817167em, 0.7603664092em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8142963777em, 1.0033136844em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.640152421em, -0.1372620791em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0749953917em, 4.4480042451em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9557888359em, 2.2962652393em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7187730704em, 4.6499031511em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6856020408em, 3.6366633504em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8834129058em, 1.2337362378em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8755110536em, -0.2173038291em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9122380071em, 2.1160096589em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0144484049em, 6.5199482892em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8171449725em, 8.6411472553em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.376448667em, 0.8090871616em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6956290545em, 1.7018687362em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9029354584em, 6.6009745031em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0757600861em, 4.7271803494em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4105512945em, 6.8769035517em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0306403362em, 2.475189433em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7167688275em, 2.0791729208em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8287907799em, 0.4417549153em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7861718558em, 4.387202444em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3157148199em, 5.1337463201em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9810866214em, -0.1464332934em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8844633757em, 8.7520220526em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4956650889em, 0.8524145782em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0364730553em, 6.8455506em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6168214543em, -0.1492244644em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2997129685em, 8.9921111916em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2609636404em, 3.9880383922em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2345211509em, 6.3904491537em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0660794503em, 1.3022638897em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6115930249em, 1.8438546622em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2822956383em, 0.0728888719em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.698092092em, 2.940201081em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1963688488em, 8.042244081em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7234020544em, 0.7438372436em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2092218828em, 8.3735013616em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5908409925em, 5.2721887389em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2945844077em, 6.3242275199em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9060298802em, 8.2443848652em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5549465758em, 0.1540858307em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1244631975em, 1.0646380912em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2529944554em, 6.8618048228em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9931015281em, 1.2988644095em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8458676779em, 3.8863323898em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3667193268em, 2.8549835263em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0904107309em, 3.6026016333em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4958699361em, 7.0428465771em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7140939635em, 2.3217570369em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9101569167em, 7.0296590509em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.252582949em, 4.0765002133em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4178066965em, 5.8862707404em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9049228551em, 4.7986681125em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9524236252em, 6.7202038466em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3377221939em, 6.5535787114em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4209515254em, 2.4779779782em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9991493941em, 5.2857583446em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2157714973em, 5.0181673099em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4378956146em, 1.4187793138em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0953592429em, 5.665331192em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1871395549em, 6.7872578819em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4264057061em, 4.6742908691em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1649622524em, 8.9044532974em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4353072271em, 8.4723168414em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0337391303em, 8.5627292066em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0662007367em, 1.1576090787em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4089091088em, 2.3037475377em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4405317315em, 6.1822951em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2952231253em, 0.7416903468em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0254310874em, 3.8771188393em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.040630914em, 1.6533465368em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9046867805em, 5.703417774em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0539674765em, 5.5034707371em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8341152186em, 5.7623845537em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1117187433em, 2.4321319927em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2457324591em, 6.263017928em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1437455464em, 8.6945486884em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0646736568em, 2.0504992042em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0310204378em, 7.7333175834em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7122748507em, 2.9967533962em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3619455297em, 5.183568751em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8005359232em, 6.6788559864em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2118167027em, 0.3051325487em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8695706906em, 0.0643329175em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9668441143em, 1.3231677084em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0014580856em, 9.4864946285em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1385172487em, 0.2621952117em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1663419507em, 1.6374252962em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4525015929em, 7.411956477em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5178500691em, 7.9890730247em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1176595508em, 7.4450478777em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5999580537em, 2.6236636653em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9193176456em, 5.8171517166em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0254234872em, 8.700499261em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5315131371em, 4.341544847em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1266225954em, 7.9090066875em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0748934155em, 7.9986416376em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2464062181em, 7.781795846em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3542329006em, 3.9418039719em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8932917926em, 6.7366323819em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6379721069em, 0.4623384362em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4881585216em, 7.9587817141em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7222089657em, 8.3493746163em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1575417844em, 7.6678544265em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1464613839em, 1.6420990345em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6653319651em, 8.2406346387em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6943552355em, 5.7351198978em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3756455731em, 7.3263151866em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3268989959em, 2.7716374075em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7295536335em, 6.8108489133em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7446862649em, 9.0139371542em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4303470881em, 5.3924194304em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3695620412em, 6.5820657186em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0384009627em, 3.1527604278em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2618284227em, -0.2280342283em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4335515088em, -0.4706133698em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2952341292em, 5.8824809321em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7913934288em, 4.2931401077em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8140632435em, 7.6299637473em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0515225365em, 3.6506092272em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3896917951em, 5.7553282361em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6907288652em, 3.6647382404em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6569867054em, 3.1123814652em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4768240303em, 4.8394732059em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9442879562em, -0.125196801em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2528989398em, 6.1784744501em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2685878126em, 7.335443834em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0975376999em, 7.6256520019em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7519830794em, 5.9040323152em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6393500805em, 2.4188226931em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2994561665em, 9.2084081334em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4296620798em, 4.8643754142em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5224667297em, 4.7425270483em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.03107854em, 1.4228712183em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1516879971em, 7.3406681706em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7097986167em, 3.4269046107em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.504168953em, 6.4468848054em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7638061223em, 0.2184504617em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1784655125em, 1.5561659864em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9625112921em, 1.4022195998em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9463911341em, 7.9677086562em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2005413388em, 6.2017251216em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4574958081em, 6.7779076799em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4236629369em, 3.8585926911em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4405680585em, 1.4897303084em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8258442357em, 4.8888457995em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8465777112em, 2.7256095038em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0262360152em, 7.1957958214em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5352782915em, 2.5039467425em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1092040087em, 7.7092906858em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6059481532em, -0.0777762999em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2864464691em, 8.4401269462em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1098015176em, 7.1905118525em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7155943085em, 2.2426225201em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3569095528em, 7.7452042617em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9972108779em, 8.9024721987em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.090084828em, 0.9030450884em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7699484892em, 3.6708104342em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.998562522em, 6.3641328631em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3194866533em, 4.2374806629em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2954521486em, 4.1537681984em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1220054233em, 3.849840955em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1732983077em, 0.7340939762em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1227696595em, 1.8557799546em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3385033685em, 1.2815367981em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1303451836em, 7.0860853767em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.635468023em, 4.9769247233em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9894416156em, 5.5840900924em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4571275973em, 2.6515490081em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5677113661em, 8.7928639995em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7234213794em, 4.274061507em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4872102389em, 0.5662199527em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1986429307em, 3.4038174998em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6618376492em, 5.0434492533em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1129213792em, 7.648846058em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0620680705em, 5.6320086308em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1674034386em, 1.4475493467em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0121095162em, 2.0029603316em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8972377291em, 1.8047521875em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3922009468em, 6.8394181977em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9702213158em, 6.1638366424em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3661810845em, 3.9586811965em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6255424878em, -0.0162840151em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4833438546em, 5.9966992062em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6877843234em, 3.1136685152em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.230047999em, 3.9141025802em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0785945779em, 0.1307239517em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5400258021em, 5.10815909em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7321509179em, 8.4960583892em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2452470836em, 6.5227272548em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7179844676em, 4.3436710837em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9038591203em, 6.4173802556em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3034953222em, 8.5238175461em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4121551789em, 8.4231388676em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7048346036em, 6.5899971611em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7069560035em, 3.9370753638em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9340359635em, 2.2316483763em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1875233727em, 0.1597215885em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7089608416em, 6.7528706138em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0707481284em, 3.1134304609em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.79519626em, 4.9885796562em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5011703006em, 2.4201405651em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3353025757em, 1.912723402em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6579609299em, 3.6002830669em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4686719967em, 3.9285320115em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4731807151em, 2.9115626918em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0610276911em, 5.4366831585em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2732956383em, 1.5325590607em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.954119063em, 1.8985323904em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3137773245em, 5.0567439893em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5452226017em, 2.0158199039em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0976260787em, 4.6787044843em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0070228138em, 0.5849179336em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1044099456em, 1.2650723124em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0602152652em, 5.9499029815em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9054591873em, 7.211073932em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3176413789em, 0.4718623047em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4286510077em, 8.4637543731em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8408137931em, 1.5596555265em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8872655298em, 6.9379717079em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1826650308em, 0.1802492088em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1108459519em, 3.8237715258em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5777125817em, 2.0546060559em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3771046573em, 8.1688438918em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9407206355em, 0.2686255085em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5723477251em, 6.7026356551em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0866858003em, 2.9551173364em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1533318833em, 7.9230375067em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8957689266em, 0.5659755208em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6911744842em, -0.4191798565em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3988596247em, 0.2127010159em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1529141712em, 2.7268224979em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5796879092em, 3.2326818403em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1777948714em, 2.6782615279em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7308690869em, 0.732180417em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4706154549em, 4.6677803458em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7408852077em, 4.5428310218em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7860644441em, 2.7607180707em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6618851477em, 0.7595304603em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7041895812em, 3.5014378371em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4190431278em, -0.0054177066em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2938797177em, 1.8802449583em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8592828789em, 5.4809899481em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5009652817em, 2.3478656545em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3230572137em, 8.3656292142em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5368783063em, 4.7706164192em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0381253631em, 0.0025108848em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6680182275em, 5.6059060618em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7289273988em, 0.5200543666em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2576558945em, 1.5342132576em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6847945555em, 8.8141069308em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4992861716em, 1.1313141474em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.319029227em, 6.0730109948em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8391224434em, 6.5812108894em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0062004368em, 3.2062563188em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3544176191em, 6.9967680729em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4051076711em, -0.16610433em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3106996015em, 7.5858148466em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2239476006em, 4.6068803659em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1731706304em, 0.8176955669em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3357608891em, 7.4662669773em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9205328712em, 3.3717357419em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0755051283em, 8.3330546772em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9429703157em, 8.5839026008em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8425392565em, 8.3932378027em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.748400416em, 1.6286185102em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0217461427em, 8.6227944764em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4341091801em, 1.3169978485em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4516180857em, 1.9158329013em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7316156072em, 1.0005617958em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1884771117em, -0.2437060696em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4467427586em, 6.7056779281em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3714399849em, 1.2534280761em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4097819869em, 2.3999120582em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5581364616em, 8.4571203168em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1715745694em, 8.2992793873em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9960602709em, 2.9744145196em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1890940247em, 3.5054591985em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6696508466em, 5.2323676648em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3805838766em, 8.0016748507em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.528095696em, 4.0010559218em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9801874181em, 4.8948691587em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1502995818em, 1.3185729048em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.578071704em, 3.9705981172em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4789304407em, 6.4297634982em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8423572503em, 9.4225681494em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0256042473em, 3.7694374822em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7794985207em, 5.1266211735em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0295158414em, 4.4309068937em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4184284776em, 1.4732800694em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1930704113em, 5.5915032065em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0690222521em, 5.9925699871em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4745302101em, 7.4411048548em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6738376493em, 5.3702559032em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4287631682em, 1.7114273119em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5903318855em, 6.2488405055em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5699554404em, 3.1571529697em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4394929923em, 2.0814970865em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0971874049em, 2.7574425712em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3708127393em, 6.0622807895em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4270654039em, 0.7407046898em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8379827774em, 5.1385888841em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8345441208em, 3.0376979247em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3250876514em, 4.985075069em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4496933776em, 6.7852556497em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2341384143em, 7.5321318596em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1574099341em, 9.2259615944em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9523864564em, 3.2833725525em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9561873544em, 1.5062578793em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6097914805em, 6.6581672958em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3595816867em, -0.3564041773em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5055875029em, 8.2719709979em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3435135334em, 1.0566455367em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.55306593em, 5.1596714453em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5649945487em, 9.0491255941em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0754883212em, 3.4435355762em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5878691503em, 1.3003618383em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6229524729em, -0.2508525912em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2003368004em, 0.3383398488em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.024896668em, 6.1040271585em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6898273314em, 7.536906427em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2721540719em, 6.5246815282em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7602231118em, 2.7810916967em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4218238471em, 3.7978803195em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2866843847em, 4.8073810277em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7734761979em, 8.4826911889em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9276122921em, 9.0390914569em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4567923687em, 3.4831300419em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2585911898em, 0.8624196545em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8554083721em, -0.322315488em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4759064323em, 7.2680470774em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4230614186em, 8.6485860504em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9882194278em, 0.8010593693em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0664352484em, 6.032672392em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3490950348em, 5.7101452361em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8942524978em, 6.4002087983em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3111413438em, 2.7553599895em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5650745614em, 8.2393005503em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9671971451em, 5.3947247069em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3135499147em, 8.3457572699em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1355411885em, 2.0141710717em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2606183447em, 7.2825952749em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9655522029em, 4.3218083124em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2585728602em, 4.4506568915em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2863781117em, 2.1881752972em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5482597357em, 9.4092925689em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6495233537em, 8.5888542886em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6102455776em, 2.9949239759em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5047776223em, 2.0249666509em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8763261004em, 3.5864964148em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2686708937em, 3.5974519357em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8072429822em, 0.7470641092em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4113106182em, 2.2211873001em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2012686614em, 1.6306843052em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1272666669em, 9.2236151823em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2025626983em, 8.7758846653em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7933478045em, 8.2841151933em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3312821052em, 9.2897586703em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1696068294em, 3.9965024771em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6721026015em, -0.155233661em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1505759286em, 3.3295640471em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5082338473em, 5.5186193551em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0844777109em, 6.5339749293em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5835555402em, 8.0580214325em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4433996826em, 2.9532161774em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2009694071em, 1.9207214925em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9334159239em, 8.7372653125em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3951042018em, 6.8559926248em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0747227488em, 0.309872927em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9520778914em, 1.0514909911em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0455009557em, 5.8217695709em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3256516217em, 3.7196522694em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4900044983em, 6.2286947893em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8506626479em, 8.3339376198em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1298874494em, 6.6937117695em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9345287821em, 4.4824228416em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8892512471em, 1.0181613208em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3636396855em, 5.728998698em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5830594088em, 0.3414285913em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.821072884em, 0.7879155199em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7496463363em, 2.2736993288em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9840837019em, 6.6290694572em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9822377412em, 2.9351756513em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2361055419em, 1.4738078472em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0595433263em, 2.3267513789em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3077762585em, 2.3872215485em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.7873670612em, 0.3524174047em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6258929324em, 8.7717975366em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7009075796em, 0.186865482em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5009416909em, 2.4645690503em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1195451419em, 5.2717583343em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4150119507em, 0.1722338517em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4264394422em, -0.4037469416em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3337911637em, 0.6271495897em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6713129915em, 6.2710261078em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0508556318em, 8.7998197744em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0413875041em, 0.2620680808em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3954920659em, 5.0488427885em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0564393504em, 8.8095278082em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.156248342em, 8.6101872383em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1804458732em, -0.0431173698em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6311880346em, -0.4408641338em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3544483086em, 1.7080666784em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7990698743em, 3.3693438288em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9371429567em, 5.646166956em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0485554345em, 8.9560867747em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.468439829em, 1.3765378425em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7448416848em, 2.1266926183em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8740589726em, 0.5627237796em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4508809117em, 6.5801617918em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4873242659em, 3.1891596585em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6110847483em, 6.6893506246em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7325763518em, 3.9927005245em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8144691765em, -0.4099259585em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2601248603em, 3.7786556764em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8477515295em, 4.2212692541em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0157694006em, 2.841539829em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3775413899em, 4.1486131441em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7823594217em, 5.2410315666em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.353127224em, 0.2032382632em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7949726051em, 9.0429639476em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4281243902em, 3.1393887403em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7737209722em, 7.1615112963em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8091154201em, 7.2226891452em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2510706589em, 1.5957785903em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9720878505em, 8.4437410959em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3205990199em, 0.9628491237em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4164531553em, 5.4753939085em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.487682888em, 5.3630064466em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7623593948em, 6.8319984141em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8151568627em, 1.6418180334em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4757289763em, 3.9527551671em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6745040289em, 5.0668381215em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5045434998em, 1.056786672em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6313975361em, -0.0815905099em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0478142566em, 4.0900010023em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0188591657em, 8.5051125155em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2179646702em, 3.6944846741em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3814684155em, 6.8863966116em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2737537768em, 6.4192513878em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.341711146em, 5.8206938618em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0416177611em, 5.3077813286em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2901818602em, 3.840547351em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5676450925em, 6.1734229912em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1616130434em, 7.1786341394em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3033315274em, 5.8809757229em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6960863237em, 1.6566302991em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8445562582em, 1.5500576565em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4848036435em, 3.6609411207em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2952915em, 9.4179826637em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4708423305em, 1.364501029em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4992383017em, 8.3504907032em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1571932654em, -0.4452954934em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0328160363em, 2.342729056em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3395383168em, 1.5704382953em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6892737498em, 0.8467755709em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1245019994em, 8.898669682em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4473740848em, 7.9813453499em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2719206377em, 0.771901114em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2131243088em, 9.1293040619em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8782207015em, 2.7180857399em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4766855377em, 8.1552480783em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1159524396em, 5.1303595584em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9628978729em, 2.9836448214em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1335038863em, 4.6985865868em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2797607393em, 2.2365733755em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3179526693em, 2.7796745134em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.832034983em, 7.7443791851em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.945883935em, 4.9950433328em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7298725259em, 1.5256469825em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7574282266em, 8.3790391274em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.464217386em, 2.50253711em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2317944288em, 0.450416736em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5918688486em, 3.4027354409em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9074348097em, 6.7137261976em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0390211027em, 0.4363066423em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2704422029em, 6.7116693976em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6576459501em, 5.4301571268em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5933892791em, 8.6278779534em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9263125529em, 0.044637941em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0358602311em, 6.9236976498em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.454757683em, 7.264143301em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.527418632em, 5.5729860598em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4088527011em, 1.5517133628em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5986445896em, 4.6228964233em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7272784378em, -0.3379453934em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9753330288em, 7.6264932824em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9875649742em, 1.8444840832em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3607060905em, 4.0115604792em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3535358735em, 7.3046974584em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0877463477em, 7.0307110262em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9908264234em, 7.20504579em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3208946668em, 9.0072286136em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5826246264em, 8.4595932774em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.396195533em, 7.2003945403em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4121970089em, 3.9810178592em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4467790725em, 7.6100568223em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6364287043em, 3.614666344em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0661923306em, 1.4421733051em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3150379095em, 1.0765748457em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0017073286em, 3.5454162766em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7438636929em, 2.0375338652em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1721779668em, 6.7863508692em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8985445707em, 1.5763561706em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.637149836em, 0.9423605661em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8747306139em, 8.9400427716em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5044193096em, 6.8520384088em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3253074314em, 7.4742251935em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6572300206em, 7.2711543273em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1062246827em, 1.1967018038em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4325407558em, 0.7620067662em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6691013169em, 4.7703395696em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.036158962em, -0.2513657874em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3646330413em, 7.8585776347em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7841715583em, 3.5315557294em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1198835782em, 0.5399274682em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6492963078em, 4.9681211387em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5916634528em, 6.7273723458em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9215142039em, -0.4469218682em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.011412194em, 6.9736361445em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5272414391em, 8.1196715241em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0135201113em, 3.2952654386em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8314989827em, 4.4133673702em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1826961037em, -0.1748829341em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2329405891em, 7.6522203286em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8672797771em, 8.329013632em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5488968789em, 8.3522154823em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5738685342em, 1.4494278186em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4706149219em, 1.7706820685em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9098612386em, 8.7498247165em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6013486909em, 9.1876092575em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.656220129em, 6.7570421736em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6936365763em, 5.4582399156em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5020084846em, 3.9852914711em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2504279267em, 2.2125437919em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3609554935em, 9.3014452184em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9931283619em, 3.8018291485em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.124746583em, 1.6976283628em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7190291582em, 8.0821683198em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5983303643em, 5.078242748em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2464700975em, 0.8914335319em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.441602597em, 6.1510715166em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.512720268em, -0.2127940547em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8496825598em, 5.5144400207em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1788977517em, 1.9868871188em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9204036486em, 4.2358831425em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0981127104em, 8.8405409068em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1185477172em, 7.7682320951em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2426191085em, 2.4337152887em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0531150541em, 6.5117677207em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5378857459em, 5.4242241665em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1752425565em, 6.5426684968em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4389491716em, 7.700038904em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0309675441em, 0.1215260787em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1445497488em, 3.8011200946em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4635920047em, 7.9249810854em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0117162512em, 5.7845084456em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7006178421em, -0.3719787898em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3248615327em, 3.9679389477em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4473413153em, 8.9990046226em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3555112993em, 5.7560451816em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4435407465em, 2.0834410222em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7267212983em, 2.7844484368em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6781096882em, 7.0157532311em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.7068306504em, 2.0099894816em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7779765251em, 3.8031378727em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2157931641em, 3.84449698em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0154835994em, 0.9518152004em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1099596006em, 1.9318996491em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2299906126em, 4.13235906em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.3518191588em, 0.252629514em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1817870603em, 0.6185531247em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.51066568em, 4.6602233968em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2741080261em, -0.0873410033em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6809530804em, 8.6786085264em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.728251154em, 6.6267934592em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5033821014em, 2.1247474579em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5540944573em, 0.1256976805em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4565590155em, 3.4804848123em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0421621515em, 9.1864178571em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4786060203em, 1.7723066784em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2961044372em, 2.7323339988em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.877891124em, 3.6823343725em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7556304921em, 7.1990388185em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9846772658em, 8.5694029446em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9015364434em, 4.5787124512em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0540425104em, 5.3163615667em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7820718908em, 5.4519463264em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8786740985em, 4.6185132066em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2341046475em, 9.1628405994em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0561304707em, 5.1418462636em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3386394218em, 2.6652742685em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.353664982em, 1.4063900597em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4550512749em, 6.0953178052em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1998255324em, 8.4176881929em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.0256012931em, 7.2480488277em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.170929371em, 1.9184095309em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4503922215em, -0.4867826163em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7121593722em, 1.5981512089em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3436786435em, 8.8346539362em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2338590315em, 0.9756381901em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6305852446em, 4.3251283244em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9950527634em, 4.4354377919em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0732579014em, 7.802736839em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.915689611em, 1.4893563543em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0685545199em, 6.2525258302em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.051724153em, 5.1375106479em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6905349941em, -0.1164995099em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6534018563em, 4.0028931148em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8889155435em, 0.2187438187em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2768214648em, 3.5950559459em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8472596153em, 0.9610524155em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4488613781em, 2.4085866486em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.841314013em, 4.9099466866em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7172932214em, 2.5068170117em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0884577997em, 9.0345052031em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1188466568em, 0.5731485712em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9562241796em, 1.3845394051em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.37843297em, 1.1409920951em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2397377071em, 2.4289326424em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3220512131em, 6.8564518098em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5303069249em, 8.2806725212em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2236011011em, 8.7552825214em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.4377574151em, -0.3778984023em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6713792921em, 9.2500429921em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4817188354em, 0.7023610437em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1530001864em, 6.1757407457em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5652911155em, 6.3871578583em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5957706227em, -0.0308490355em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9735364273em, 8.7063648774em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6644849113em, 7.1408656021em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7318672257em, 4.8453500503em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4991676631em, 2.1372367242em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2153825256em, 3.7464922274em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0884712971em, 3.6177137775em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8463245436em, 7.5954803844em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1956085715em, 2.4370895206em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5385179826em, 6.3384115932em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7037990875em, 2.3545401631em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0937759461em, 2.4828210951em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2916894883em, 2.8991264107em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4691273527em, 5.0014459275em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9977853704em, 3.340385455em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7712755937em, 2.1696543716em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.848034972em, 3.8677515174em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4030264524em, 3.3956858913em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2866447611em, 6.0067016347em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2988609193em, 2.7446456315em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3674022835em, 0.1613431023em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4509495521em, 4.8171246204em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2737544738em, 6.3702516807em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3365978071em, 1.4551994356em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5417429265em, 8.3293240485em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5399884871em, 5.2899643759em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0719313833em, 7.6254678084em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4772986861em, 8.5646735232em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5683162236em, 6.5110798459em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5108060158em, -0.4671989439em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2024538634em, 3.8116490992em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0391650965em, 9.1646896117em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1035268698em, 5.414026379em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9774483537em, 5.2457948701em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7188429206em, 5.8643856658em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0857372789em, 7.7655411608em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9821067999em, 0.4896187964em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.961368047em, 2.7119642542em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2363275629em, 2.092597991em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4984939128em, 9.433108632em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6437615977em, -0.2913811506em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6380013864em, 7.381902464em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3230033003em, 6.2122595901em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7924598932em, 1.8690731777em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3953287384em, 3.3293994255em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6842978299em, 0.2504501809em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8404922228em, 4.3761048042em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2578448002em, 2.5139347627em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5567672883em, 8.2653759673em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0021019779em, 0.4386960509em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3170852652em, 2.9109692086em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.119146046em, 4.2422651692em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3977857546em, 8.4001967006em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6034017909em, 5.1793823797em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1437604611em, 4.9488173061em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8813774271em, 8.5038888149em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8647276256em, 1.5811559341em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3913907207em, 6.877166561em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.6786075011em, 6.0214836461em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9110871974em, 4.2080618934em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3251504885em, 0.8325069355em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9741356408em, 7.3592436685em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1543738789em, 3.6870930664em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5840373429em, 0.1988786215em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7219441107em, 7.1690742659em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8074491454em, 6.0204284235em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0624942274em, 2.2430985973em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.568910414em, 3.0567360643em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4433801863em, 0.8848142807em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9249995091em, 8.6749270994em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5261534738em, -0.2118548677em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6438784763em, 1.0383497696em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7993835935em, 8.7973874164em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6759776562em, 3.7334025377em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4512557691em, 8.4492530251em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.4789971441em, 0.0291200714em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8840731208em, 0.0906201916em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1852678628em, 8.6952798223em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9838389904em, 8.6297244837em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3656776658em, 5.6124404474em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0698908975em, 8.3194509103em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2003426796em, 8.0208277516em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1652084108em, 6.0118983727em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.880538195em, 5.0417394993em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.1214411693em, 9.3703951941em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8163192241em, 0.5427794165em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3673561528em, 2.3261114398em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8323611406em, 6.6386808893em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4753614863em, 7.2017265719em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0591082379em, 6.6092133511em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8085403804em, 8.7894884181em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1465233851em, 1.8354471925em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0918249378em, 6.3544318565em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.9006999914em, -0.0964912241em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9469115965em, 5.2842423011em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1354124513em, 5.7665559895em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3692728314em, 2.2564187237em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2425994058em, -0.4873891414em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2346785179em, 4.3361926536em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6185786195em, 2.3821370352em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.490877188em, 8.4335487078em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9101124069em, 3.2667295884em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4447492209em, 7.8125610042em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2602872124em, 6.3941540627em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.524952991em, 6.1699053692em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6945992076em, 6.7979293175em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9142187322em, 1.1851284217em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2785824245em, 4.6973790269em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4553373408em, 4.6221872916em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6879811909em, 9.4011772163em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6189698464em, 5.8260919074em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1213938307em, 8.3520670381em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.8909147832em, 6.0384155863em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3981695358em, 6.466733506em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2524664124em, 3.5411381418em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.9324347849em, 5.2734706953em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2675809761em, 5.5760386684em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1411118159em, 1.5450723483em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.8202427736em, 8.0951581346em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.9530606873em, 7.5816450858em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5879961607em, 5.2014978586em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.694723626em, 5.7313327838em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4673234887em, 9.4340194161em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5011501057em, 4.5180371497em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.6749580909em, 3.4288904234em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3605440072em, 9.484918802em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3601678891em, 4.2903321154em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2410249499em, 3.1092278178em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1732561256em, 6.0179289637em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.6862837111em, 1.7648835774em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.425726268em, 9.3594510282em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0245564837em, 9.2143908686em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8365256141em, 5.8112357484em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.8054688914em, 3.9242320296em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7078437923em, 8.8994524849em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.2542196591em, 1.5949602239em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.8623542336em, 8.2791510582em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.947458502em, 5.6188294523em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7400598199em, 3.7192739318em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3546120896em, -0.4273092145em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7608841782em, -0.2605316581em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.6848491766em, 1.3394258299em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0975586247em, 4.5741644078em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.5197780344em, 5.1690436997em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.4242482467em, 6.5728770948em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.0934845131em, 8.330720035em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.041891438em, 3.0427452847em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5150458842em, 9.42601561em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0007689674em, 0.3933248136em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0085221528em, -0.2866635216em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9382683615em, 5.7333667747em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.2091791003em, 7.9145726635em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0317840257em, 1.8884462698em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.2392279235em, 4.505398255em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4993473607em, 7.9975794782em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3096212129em, 6.5356598993em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.3351817207em, 3.9456325738em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0763406991em, 0.5785204133em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1639492715em, 6.7497638864em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2117902167em, 0.1657214813em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6597679307em, 0.5290509257em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3416114116em, 6.2276726em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9412971489em, 7.3990395476em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2937677375em, 9.4044468109em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.873950316em, 2.4858696257em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.458534232em, 8.2030229884em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.475740643em, 2.8765951519em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.814848171em, 7.6190088722em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.8270105026em, 6.7544624377em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8952364201em, 9.2362455565em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.1726351981em, 3.5119394459em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.4885768363em, 5.7765776466em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7463921359em, 9.0407350809em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.336623447em, 7.7369312158em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5051106879em, 6.3884213698em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6496384826em, 2.0584019053em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.1360598671em, 3.2828088144em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5652070144em, 8.1763937949em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9972490985em, 8.6933635579em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1512767839em, 6.9362749788em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9246731241em, 4.0581853711em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.5020709417em, 9.3884552886em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2182832922em, 4.7082807236em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.5977031553em, 3.1141836785em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.123417516em, 6.9493398957em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.1524177738em, -0.0658966283em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.7366651488em, 6.659696944em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0079266607em, 1.4212399231em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.3419941335em, 0.1444768576em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.4456303765em, 7.8023263685em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7060959304em, 8.753087384em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7602028027em, 8.1886872339em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.4408543087em, 2.6211765344em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.8247828621em, 4.3984453594em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.7520254429em, 6.0103373755em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9331466615em, 9.0865438821em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.3267010102em, 8.2854387903em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1348424252em, 0.1800072243em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5029230516em, 5.8880047708em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7909531284em, -0.0349676272em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5608091218em, 1.2067034447em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0157100462em, 7.2371051546em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.792086117em, 3.341290091em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.990039634em, 5.4744888191em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.868835972em, 2.1052797174em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.7141756689em, 6.785754925em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9380783598em, 0.6112475446em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0767037023em, 8.7994306345em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.9099304266em, 4.9443947346em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0708784757em, 7.8846953786em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0754369309em, 2.5499502208em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8998404767em, 9.1961848692em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0744324218em, 4.2930637498em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2934978136em, 5.2245206783em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0997664626em, 1.0567257588em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3128912323em, 5.4618430934em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5565393631em, 4.517696088em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.3243384521em, 7.4569830669em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.6314914129em, 9.4173001252em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2705400194em, 6.5458956178em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2884649195em, 5.159130825em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9436557376em, 5.3399751863em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.7200726779em, 4.8029148822em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0808163521em, 7.8601131046em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.452533217em, 7.1773863639em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3507585379em, 5.8817580713em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.7180327971em, 8.3963098307em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.677787242em, 1.0639646563em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.5485345539em, 2.8299567974em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2370229766em, 0.6870967263em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.1529281678em, 0.0358426633em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9959483929em, 2.7722348348em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.0847793403em, 8.1500483079em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.6979233176em, 3.2491202129em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.9305393242em, 1.1129877764em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.767600079em, 4.9445969901em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.667344111em, 1.0650439861em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0839684584em, 4.5932122758em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.1954191818em, 0.7583658964em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2744178894em, 0.0276329934em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2883504559em, 5.5381017065em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.0749042421em, 9.2098455521em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.0006707523em, 5.7902965749em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.7339392967em, 2.4380699452em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2862703488em, 0.6109281279em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2269324457em, 0.7334878006em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.3899254936em, 2.0957563089em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8232803006em, -0.1988372157em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.2533009747em, 3.107385853em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6066805427em, 2.258123713em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.654717808em, 5.2452309848em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.5896956817em, 8.4847959113em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.7832534632em, 1.607522868em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5577863323em, -0.2240125523em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.8145177454em, 4.4775003259em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.2406157161em, 5.177905689em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.0233468665em, 8.3926444296em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.1211725893em, 1.6634424717em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.0793427276em, 4.8660993927em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.8081568875em, 7.8224903338em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.752725225em, 5.9023681983em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.1217838548em, 3.0220972655em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.5545513901em, 3.4688352863em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4396111989em, 2.7913200042em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0807448898em, 0.1831179902em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4806035648em, 9.3324168357em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.4678649392em, 7.319228016em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1570071195em, 6.4206088161em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3483130533em, 8.881534988em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6236996842em, 2.4512233143em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.6776470972em, -0.2363885387em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.2698951284em, 4.7608301513em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.0807984299em, 5.9765972381em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9592365418em, 3.7144316158em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.3769712826em, 5.0442862967em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.6933409839em, 4.4603101766em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.0263861801em, 4.1597137242em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.6277867596em, 6.5112853674em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.9000198076em, 5.1030132803em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.4415209758em, 0.3012345379em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.4803253258em, 5.7978688291em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.2585552209em, 6.3102783374em, 7px, 7px, var(--primary-theme-accent-dim-1), 3.9775311133em, 5.1833482501em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.9564087661em, 4.1788471985em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.1271230645em, 2.4359264358em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.2232179724em, 1.7970589414em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.3908721594em, 0.0504173341em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.3891369003em, 8.4604210101em, 7px, 7px, var(--primary-theme-accent-dim-1), 7.9909494554em, 3.003109353em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.4585473578em, 4.4521489738em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.0919115936em, 6.2972593097em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.3441286219em, 5.8054433601em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.663184817em, 5.596197658em, 7px, 7px, var(--primary-theme-accent-dim-1), 5.5439735175em, 8.9063399087em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.2448488947em, 5.9945529656em, 7px, 7px, var(--primary-theme-accent-dim-1), 4.5112013031em, 7.5417836276em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.1807845242em, 7.916606358em, 7px, 7px, var(--primary-theme-accent-dim-1), 9.375634117em, 1.4397353576em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.258206214em, 4.0611257866em, 7px, 7px, var(--primary-theme-accent-dim-1), 1.4160496706em, 2.2416890401em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.0413469656em, -0.1015217744em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2058455759em, 4.5126222021em, 7px, 7px, var(--primary-theme-accent-dim-1), 8.1338178716em, 5.5562058985em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.296460708em, 5.1442557392em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2758303481em, 1.9135524438em, 7px, 7px, var(--primary-theme-accent-dim-1), -0.2509754413em, 1.3677372102em, 7px, 7px, var(--primary-theme-accent-dim-1), 6.5762450442em, 3.9823682938em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.2239041373em, 6.2818372178em, 7px, 7px, var(--primary-theme-accent-dim-1), 2.3168260829em, 3.25666837em, 7px, 7px, var(--primary-theme-accent-dim-1), 0.8436851383em, 6.276815558em, 7px, 7px, var(--primary-theme-accent-dim-1);
+  animation-duration: 22s;
+  animation-delay: -27s;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD {
+  filter: blur(0) !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD span::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD::after, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD span::before, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockSpoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD span::after {
+  opacity: 0;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD {
+  background: transparent;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD .Markup\.module__spoilerContent___XzQ5ZD {
+  color: var(--primary-theme-accent-dim-1);
+  opacity: 1;
+  filter: blur(3px);
+  transition: filter 0.3s ease;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD[data-revealed=true] .Markup\.module__spoilerContent___XzQ5ZD, .Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__spoilerWrapper___XzQ5ZD .Markup\.module__spoiler___XzQ5ZD:hover .Markup\.module__spoilerContent___XzQ5ZD {
+  filter: blur(0) !important;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg) scale(12) translateX(-5px);
+  }
+  to {
+    transform: rotate(360deg) scale(18) translateX(5px);
+  }
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockquoteContainer___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-left: 5px solid var(--primary-theme-accent);
+  border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+  padding: 0.2rem;
+  padding-right: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__blockquoteContainer___XzQ5ZD .Markup\.module__blockquoteDivider___XzQ5ZD {
+  background-color: transparent;
+  margin-left: -0.5rem;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD {
+  background-color: color-mix(in srgb, currentColor 10%, black);
+  border: 1px solid color-mix(in srgb, currentColor 85%, black);
+  border-left: 5px solid currentColor;
+  border-radius: 0 var(--global-border-radius) var(--global-border-radius) 0;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD::before {
+  background-color: transparent;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD .Markup\.module__alertTitle___XzQ5ZD {
+  font-size: 1.3rem;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__alert___XzQ5ZD .Markup\.module__alertContent___XzQ5ZD {
+  color: currentColor;
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD {
+  color: var(--primary-theme-accent) !important;
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  padding: 0.1rem 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: none !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD:hover {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-1);
+  color: var(--primary-theme-accent) !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__link___XzQ5ZD::before {
+  content: "🔗 ";
+}
+
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+  border-radius: var(--global-border-radius);
+  color: var(--primary-theme-accent) !important;
+  padding: 0.05rem 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD:hover {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-1) !important;
+  color: var(--primary-theme-accent) !important;
+}
+.Message\.module__messageContent___YzRhZj .Markup\.module__markup___XzQ5ZD .Markup\.module__mention___XzQ5ZD:hover span {
+  color: var(--primary-theme-accent) !important;
+}
+
+.GuildLayout\.module__guildMainContent___XzY3N2,
+.ChannelLayout\.module__channelLayoutContainer___ZDU4Mz,
+.ChannelIndexPage\.module__channelGrid___XzNmOW {
+  background-color: var(--primary-theme-accent-dim-6);
+}
+
+.SettingsModalHeader\.module__headerTransition___XzNkMG,
+.SettingsModalLayout\.module__desktopSidebarInner___XzBjZD {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+
+.UserSettingsModal\.module__userProfile___XzFlZT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.ChannelIndexPage\.module__searchPanel___XzNmOW .ChannelSearchResults\.module__container___XzFhMD {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+.ChannelIndexPage\.module__searchPanel___XzNmOW .ChannelSearchResults\.module__container___XzFhMD .ChannelSearchResults\.module__messageItem___XzFhMD {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+}
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz .VoiceActivityCard\.module__card___YmUzND {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.ActiveNowSidebar\.module__sidebar___ZDQ4Yz .VoiceActivityCard\.module__card___YmUzND .Button\.module__button___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.DMFriendsView\.module__content___XzFlMG,
+.DirectMessageList\.module__dmChannelList___YTlkYT {
+  background-color: var(--primary-theme-accent-dim-5);
+}
+.DMFriendsView\.module__content___XzFlMG .FormSurface\.module__surface___YzIwNT,
+.DirectMessageList\.module__dmChannelList___YTlkYT .FormSurface\.module__surface___YzIwNT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+
+.DirectMessageList\.module__dmListHeader___YTlkYT,
+.GuildHeader\.module__headerWrapper___YmVlOG:not(:has(.GuildHeader.module__bannerBackground___YmVlOG)) .GuildHeader\.module__headerContainer___YmVlOG {
+  background-color: var(--primary-theme-accent-dim-4);
+}
+
+.PopoverPopout\.module__popout___YzY5YW .InboxPopout\.module__sidebar___YzAwYT,
+.InboxPopout\.module__container___YzAwYT .InboxPopout\.module__sidebar___YzAwYT,
+.InboxPopout\.module__containerWithSidebar___YzAwYT .InboxPopout\.module__sidebar___YzAwYT {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.PopoverPopout\.module__popout___YzY5YW,
+.InboxPopout\.module__container___YzAwYT,
+.InboxPopout\.module__containerWithSidebar___YzAwYT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.PopoverPopout\.module__popout___YzY5YW .InboxMessageHeader\.module__header___ZmI4Nm,
+.InboxPopout\.module__container___YzAwYT .InboxMessageHeader\.module__header___ZmI4Nm,
+.InboxPopout\.module__containerWithSidebar___YzAwYT .InboxMessageHeader\.module__header___ZmI4Nm {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  padding: 0.5rem;
+}
+
+.Button\.module__primary___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-4) !important;
+  border: 1px solid var(--primary-theme-accent-dim-3) !important;
+  border-radius: var(--global-border-radius);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__primary___ZDBiYz:not(:disabled):hover {
+  background-color: var(--primary-theme-accent-dim-3) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.Button\.module__secondary___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-3) !important;
+  border-radius: var(--global-border-radius);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__secondary___ZDBiYz:not(:disabled):hover {
+  background-color: var(--primary-theme-accent-dim-4) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.Button\.module__danger___ZDBiYz {
+  background-color: color-mix(in srgb, var(--status-danger) 50%, black) !important;
+  border: 1px solid var(--status-danger) !important;
+  border-radius: var(--global-border-radius);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__danger___ZDBiYz:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--status-danger) 70%, black) !important;
+  border: 1px solid var(--status-danger) !important;
+  color: var(--text-warning) !important;
+}
+
+.Button\.module__inverted___ZDBiYz {
+  background-color: var(--primary-theme-accent-dim-4) !important;
+  border: 1px solid var(--primary-theme-accent-dim-1) !important;
+  border-radius: var(--global-border-radius);
+  color: var(--text-primary) !important;
+  filter: invert(1);
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.Button\.module__inverted___ZDBiYz:not(:disabled):hover {
+  background-color: var(--primary-theme-accent-dim-3) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.FormCombobox\.module__inputGroup___XzQ0Nm {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.FormCombobox\.module__inputGroup___XzQ0Nm:not(:disabled) {
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+.FormInput\.module__inputGroup___XzA0NG:not(:disabled, :has(.FormInput\.module__error___XzA0NG)) {
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.FormInput\.module__inputGroup___XzA0NG:has(.FormInput\.module__error___XzA0NG) {
+  filter: drop-shadow(0 0 1.5px var(--status-danger));
+}
+.FormInput\.module__inputGroup___XzA0NG .FormSurface\.module__surface___YzIwNT {
+  background-color: var(--primary-theme-accent-dim-6);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.FormInput\.module__inputGroup___XzA0NG .FormSurface\.module__surface___YzIwNT:disabled {
+  background-color: var(--primary-theme-accent-dim-5);
+  border: 1px solid var(--primary-theme-accent-dim-4);
+  color: color-mix(in srgb, currentColor 50%, black 50%) !important;
+  filter: drop-shadow(0 0 0px var(--primary-theme-accent-dim-4));
+}
+.FormInput\.module__inputGroup___XzA0NG .FormSurface\.module__surface___YzIwNT:has(.FormInput\.module__error___XzIwNT) {
+  border: 1px solid var(--status-danger) !important;
+}
+.FormInput\.module__inputGroup___XzA0NG .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__passwordToggle___XzA0NG) input[type=password] {
+  color: var(--primary-theme-accent-dim-1) !important;
+}
+.FormInput\.module__inputGroup___XzA0NG .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__passwordToggle___XzA0NG) input[type=text] {
+  color: var(--status-danger) !important;
+}
+.FormInput\.module__inputGroup___XzA0NG .FormInput\.module__inputWrapper___XzA0NG:has(.FormInput\.module__error___XzA0NG) {
+  filter: drop-shadow(0 0 5px var(--status-danger));
+}
+
+.InlineEdit\.module__idleButton___YjI1OT {
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.InlineEdit\.module__idleButton___YjI1OT .InlineEdit\.module__wrapper___YjI1OT {
+  background-color: var(--primary-theme-accent-dim-4);
+  border-radius: var(--global-border-radius);
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+.InlineEdit\.module__idleButton___YjI1OT:not(:disabled):hover .InlineEdit\.module__wrapper___YjI1OT {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+}
+
+.InlineEdit\.module__container___YjI1OT:has(.InlineEdit\.module__editable___YjI1OT) .InlineEdit\.module__wrapper___YjI1OT {
+  background-color: var(--primary-theme-accent-dim-5) !important;
+  border: 1px solid var(--primary-theme-accent-dim-2) !important;
+  border-radius: var(--global-border-radius);
+}
+
+.ColorPickerField\.module__inputWrapper___Xzc5ZT {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+.FormSwitch\.module__switchRoot___XzcxYz {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.FormSwitch\.module__switchRoot___XzcxYz[data-state=checked] {
+  background-color: var(--primary-theme-accent);
+}
+
+.Checkbox\.module__checkbox___XzM4Zj,
+.ContextMenu\.module__checkbox___XzdkZj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.Checkbox\.module__checkbox___XzM4Zj[data-state=checked], .Checkbox\.module__checkbox___XzM4Zj.ContextMenu\.module__checkboxChecked___XzdkZj,
+.ContextMenu\.module__checkbox___XzdkZj[data-state=checked],
+.ContextMenu\.module__checkbox___XzdkZj.ContextMenu\.module__checkboxChecked___XzdkZj {
+  background-color: var(--primary-theme-accent-dim-2);
+}
+
+.RadioGroup\.module__radioGroupOption___XzM3Mj .RadioGroup\.module__radioIndicator___XzM3Mj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.RadioGroup\.module__radioGroupOption___XzM3Mj[data-state=checked] .RadioGroup\.module__outerRadioBase___XzM3Mj {
+  fill: var(--primary-theme-accent-dim-3) !important;
+  stroke: var(--primary-theme-accent-dim-2) !important;
+}
+.RadioGroup\.module__radioGroupOption___XzM3Mj[data-state=checked] .RadioGroup\.module__innerDotRadio___XzM3Mj {
+  fill: var(--primary-theme-accent) !important;
+}
+.RadioGroup\.module__radioGroupOption___XzM3Mj[data-state=unchecked] .RadioGroup\.module__outerRadioBase___XzM3Mj {
+  fill: var(--primary-theme-accent-dim-4) !important;
+  stroke: var(--primary-theme-accent-dim-3) !important;
+}
+
+.MenuItemRadio\.module__radioButton___XzRmNj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+}
+.MenuItemRadio\.module__radioButton___XzRmNj.MenuItemRadio\.module__radioButtonSelected___XzRmNj {
+  background-color: var(--primary-theme-accent-dim-2);
+  border: 1px solid var(--primary-theme-accent-dim-2);
+}
+
+.Slider\.module__control___Xzk1Zj .Slider\.module__sliderControl___Xzk1Zj .Slider\.module__track___Xzk1Zj {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__sliderControl___Xzk1Zj .Slider\.module__track___Xzk1Zj .Slider\.module__barFill___Xzk1Zj {
+  background: var(--primary-theme-accent-dim-3);
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__sliderControl___Xzk1Zj .Slider\.module__grabber___Xzk1Zj {
+  background: var(--primary-theme-accent-dim-2);
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__defaultValue___Xzk1Zj .Slider\.module__markValue___Xzk1Zj {
+  color: var(--primary-theme-accent);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+.Slider\.module__control___Xzk1Zj .Slider\.module__defaultValue___Xzk1Zj .Slider\.module__markDash___Xzk1Zj {
+  background-color: var(--primary-theme-accent);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+.ContextMenu\.module__contextMenu___XzdkZj,
+.ContextMenu\.module__submenuPopover___XzdkZj {
+  background-color: var(--primary-theme-accent-dim-4);
+}
+.ContextMenu\.module__contextMenu___XzdkZj .Scroller\.module__scroller___ZmI2ND,
+.ContextMenu\.module__submenuPopover___XzdkZj .Scroller\.module__scroller___ZmI2ND {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  border-radius: var(--global-border-radius);
+}
+.ContextMenu\.module__contextMenu___XzdkZj .ContextMenu\.module__item___XzdkZj,
+.ContextMenu\.module__submenuPopover___XzdkZj .ContextMenu\.module__item___XzdkZj {
+  transition: all 0.3s ease;
+}
+.ContextMenu\.module__contextMenu___XzdkZj .ContextMenu\.module__item___XzdkZj:is(:hover,
+[data-hovered],
+[data-focus-visible],
+[data-highlighted]):not(.ContextMenu\.module__disabled___XzdkZj):not([data-disabled]),
+.ContextMenu\.module__submenuPopover___XzdkZj .ContextMenu\.module__item___XzdkZj:is(:hover,
+[data-hovered],
+[data-focus-visible],
+[data-highlighted]):not(.ContextMenu\.module__disabled___XzdkZj):not([data-disabled]) {
+  background-color: var(--primary-theme-accent-dim-3);
+  color: var(--primary-theme-accent);
+}
+
+.MentionBadge\.module__badge___Xzg2ZT {
+  background-color: var(--primary-theme-accent-dim-4);
+  border: 1px solid var(--primary-theme-accent-dim-3);
+  color: var(--primary-theme-accent);
+  filter: drop-shadow(0 0 1.5px var(--primary-theme-accent-dim-3));
+}
+
+@property --overhauled-profiles {
+  syntax: "off | on";
+  inherits: false;
+  initial-value: on;
+}
+@container body style(--overhauled-profiles: on) {
+  .ProfileCardLayout\.module__profileCard___YWFiZW,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 {
+    background: var(--primary-theme-accent-dim-6);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD {
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    display: flex;
+    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD {
+    background: var(--primary-theme-accent-dim-5);
+    color: var(--text-normal);
+    box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    transition: all ease 0.3s !important;
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD:hover,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD:hover {
+    background: var(--primary-theme-accent-dim-4);
+    color: var(--primary-theme-accent);
+    box-shadow: 0 0 0 1px var(--primary-theme-accent-dim-3);
+    border: 1px solid var(--primary-theme-accent-dim-2);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD.Tabs\.module__selected___YzdlOD,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Tabs\.module__container___YzdlOD .Tabs\.module__tab___YzdlOD.Tabs\.module__selected___YzdlOD {
+    background: var(--primary-theme-accent-dim-4);
+    color: var(--primary-theme-accent);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .Scroller\.module__scrollerChildren___ZmI2ND,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .Scroller\.module__scrollerChildren___ZmI2ND {
+    background: var(--primary-theme-accent-dim-6);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT {
+    background: var(--primary-theme-accent-dim-6);
+    border-radius: var(--global-border-radius);
+  }
+  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .ProfileCardLayout\.module__profileCard___YWFiZW .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .UserProfileModal\.module__profileContent___ZDg5Y2 .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG,
+  .UserProfileModal\.module__modalContainer___ZDg5Y2 .ProfileCardContent\.module__contentSection___YzQ5YT .UserProfileShared\.module__bioContainer___ZTgyMG {
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+  }
+  /* ---------------------------------------------------------------- */
+  /* discord-like user profiles by deer
+  /* ---------------------------------------------------------------- */
+  /* full user profile */
+  [class*="UserProfileModal.module__modalRoot_"] {
+    height: unset; /* shrink to only occupy necessary space */
+  }
+  /* pfp button */
+  [class*="ProfileCardBanner.module__avatarButton_"],
+  [class*="UserProfileModal.module__avatarContainer_"] {
+    anchor-name: --anchor-userstatus;
+  }
+  /* "display name, username, pronouns */
+  [class*="ProfileCardUserInfo.module__userInfoContainer_"],
+  [class*="UserProfileModal.module__userInfoContent_"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /* display name */
+  [class*="ProfileCardUserInfo.module__nameRow_"],
+  [class*="UserProfileModal.module__nameRow_"] {
+    width: 100%;
+  }
+  /* username */
+  [class*="ProfileCardUserInfo.module__usernameRow_"],
+  [class*="UserProfileModal.module__usernameRow_"] {
+    gap: unset;
+    color: var(--text-tertiary);
+  }
+  /* username pronouns separator */
+  [class*="ProfileCardUserInfo.module__pronouns_"]::before,
+  [class*="UserProfileModal.module__pronouns_"]::before {
+    content: "";
+    width: 4px !important;
+    height: 4px !important;
+    margin: 0rem 0.5rem;
+    background-color: var(--text-tertiary);
+    border-radius: var(--radius-full);
+  }
+  /* pronouns */
+  [class*="ProfileCardUserInfo.module__pronouns_"],
+  [class*="UserProfileModal.module__pronouns_"] {
+    font-size: 14px;
+    margin-top: unset;
+    color: var(--text-tertiary);
+    display: inline-flex;
+    align-items: center;
+  }
+  /* custom profile status */
+  [class*="UserProfilePopout.module__profileCustomStatus_"],
+  [class*="UserAreaPopout.module__customStatusRow_"],
+  [class*="ProfilePreview.module__profileCustomStatus_"] {
+    align-items: flex-start;
+    position: absolute;
+    position-anchor: --anchor-userstatus;
+    translate: 0 1rem;
+    position-area: right span-all;
+    position-visibility: always;
+    margin-left: 0.75rem;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 175px;
+    max-height: 3.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    border-top-left-radius: 0 !important;
+    z-index: 11; /* display above plutonium/visionary badge */
+    transition: var(--transition-normal);
+  }
+  [class*="UserProfileModal.module__customStatusRow_"] {
+    align-items: flex-start;
+    position: absolute;
+    position-anchor: --anchor-userstatus;
+    position-area: right span-all;
+    position-visibility: always;
+    margin-left: 0.75rem;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 575px !important;
+    max-height: 3.7rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: var(--primary-theme-accent-dim-5);
+    border: 1px solid var(--primary-theme-accent-dim-3);
+    border-radius: var(--global-border-radius);
+    border-top-left-radius: 0;
+    z-index: 11; /* display above plutonium/visionary badge */
+    transition: var(--transition-normal);
+  }
+  /* custom profile status */
+  [class*="UserProfilePopout.module__profileCustomStatus_"]:hover,
+  [class*="UserAreaPopout.module__customStatusRow_"]:hover,
+  [class*="UserProfileModal.module__customStatusRow_"]:hover,
+  [class*="ProfilePreview.module__profileCustomStatus_"]:hover {
+    max-height: 10rem;
+    translate: unset;
+  }
+  /* custom profile status inner */
+  [class*=CustomStatusDisplay] > [class*="CustomStatusDisplay.module__content_"],
+  [class*=UserProfilePopout] > [class*="CustomStatusDisplay.module__content_"],
+  [class*=UserProfileModal] > [class*="CustomStatusDisplay.module__content_"],
+  [class*=ProfilePreview] > [class*="CustomStatusDisplay.module__content_"],
+  [class*="UserAreaPopout.module__customStatusPlaceholder_"] {
+    margin: 0.25rem 0.5rem;
+  }
+  [class*="UserProfileModal.module__profileContentWrapper_"] {
+    background: var(--primary-theme-accent-dim-6);
+  }
+  /* profile popout bio background */
+  [class*="UserProfileShared.module__bioContainer_"] {
+    background: var(--primary-theme-accent-dim-5);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--primary-theme-accent-dim-3);
+  }
+  /* bio join date notes etc container */
+  [class*="UserProfileModal.module__profileContent_"] {
+    padding-top: 16px !important;
+  }
+  .ProfileCardUserInfo\.module__usernameButton___XzY3Zj:before {
+    content: "@";
+  }
+}
+.SettingsModalLayout\.module__desktopSidebarInner___XzBjZD .ClientInfo\.module__button___Xzg2Zj [data-flx="app.client-info.span--2"]:after {
+  content: "NeoFluxer v1.0-pre-release";
+  display: block;
+}
+
+.theme-light .AppLayout\.module__appLayout___XzQ5NW::before {
+  content: '⚠️ WARNING ⚠️\aUnsupported Core Theme Detected.\aOnly Dark mode is Supported.\aPlease Switch to Dark Mode by opening the settings with "CTRL+," > Appearance > Theme > Dark';
+  white-space: pre-line;
+  color: white;
+  display: block;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  z-index: 9999;
+}
+
+.theme-coal .AppLayout\.module__appLayout___XzQ5NW::before {
+  content: '⚠️ WARNING ⚠️\aUnsupported Core Theme Detected.\aThe Coal theme is too dark for NeoFluxer to work Properly.\aPlease Switch to Dark Mode by opening the settings with "CTRL+," > Appearance > Theme > Dark';
+  white-space: pre-line;
+  color: white;
+  display: block;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  z-index: 9999;
+}
+
+.theme-light .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"], .theme-coal .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"] {
+  border: 2px solid yellow;
+  background-color: yellow;
+}
+.theme-light .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"] *, .theme-coal .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"] * {
+  fill: black !important;
+  stroke: black !important;
+  color: black !important;
+}
+.theme-light .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"]:after, .theme-coal .UserArea\.module__userAreaContainer___XzI2YW [data-flx="app.user-area.user-area-inner.control-button.settings-click"]:after {
+  z-index: 10000 !important;
+  content: "!";
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: -0.5rem !important;
+  animation: hover-n-glow 2s infinite;
+}
+@keyframes hover-n-glow {
+  0% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+  50% {
+    translate: 0 5px;
+    filter: drop-shadow(0 0 0px red);
+  }
+  100% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance {
+  border: 2px solid yellow;
+  background-color: yellow;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance *, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance * {
+  fill: black !important;
+  stroke: black !important;
+  color: black !important;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance:after, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .SettingsModalLayout\.module__sidebarItem___XzBjZD#settings-tab-appearance:after {
+  z-index: 10000 !important;
+  content: "!";
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  position: absolute !important;
+  right: 0.5rem !important;
+  animation: hover-n-glow 2s infinite;
+}
+@keyframes hover-n-glow {
+  0% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+  50% {
+    translate: 0 5px;
+    filter: drop-shadow(0 0 0px red);
+  }
+  100% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"], .theme-coal .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"] {
+  border: 2px solid yellow;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:before, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:before {
+  content: "CLICK ME";
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 0.8rem !important;
+}
+.theme-light .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:after, .theme-coal .SettingsModalLayout\.module__container___XzBjZD .ThemeTab\.module__themeButtonDark___ZmNlYj[style="background-color: hsl(258, calc(10% * var(--saturation-factor)), 12.04%);"]:after {
+  z-index: 10000 !important;
+  content: "!";
+  color: red !important;
+  font-weight: bold !important;
+  font-size: 2rem !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  right: -0.5rem !important;
+  animation: hover-n-glow 2s infinite;
+}
+@keyframes hover-n-glow {
+  0% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+  50% {
+    translate: 0 5px;
+    filter: drop-shadow(0 0 0px red);
+  }
+  100% {
+    translate: 0 -5px;
+    filter: drop-shadow(0 0 5px red);
+  }
+}
+
+body {
+  container-name: body;
+}
