@@ -17,3 +17,18 @@
 .ChannelListContent\.module__channelGroupsContainer___ZDI5M2 {
     margin-bottom: 4rem;
 }
+
+.UserArea\.module__userAreaContainer___XzI2YW {
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: color-mix(in srgb, black var(--darkening), transparent);
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: var(--layout-user-area-height);
+        border-top: 1px solid var(--primary-theme-accent-dim-2);
+        border-radius: var(--global-border-radius);
+    }
+}
